@@ -44,92 +44,55 @@ const Categories = () => {
 
   return (
     <section 
-      className="py-8 sm:py-12 md:py-16 relative overflow-hidden bg-white"
+      className="py-8 sm:py-12 md:py-16 relative overflow-hidden bg-gray-50"
     >
-      {/* Floating Bubbles Animation */}
+      {/* Clean Minimal Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Bubble 1 */}
-        <div className="absolute top-1/4 left-1/6 w-4 h-4 bg-[#0a1a3f]/20 rounded-full animate-bounce" style={{animationDuration: '3s', animationDelay: '0s'}}></div>
-        {/* Bubble 2 */}
-        <div className="absolute top-1/3 right-1/5 w-6 h-6 bg-[#0a1a3f]/15 rounded-full animate-bounce" style={{animationDuration: '4s', animationDelay: '1s'}}></div>
-        {/* Bubble 3 */}
-        <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-[#0a1a3f]/25 rounded-full animate-bounce" style={{animationDuration: '2.5s', animationDelay: '2s'}}></div>
-        {/* Bubble 4 */}
-        <div className="absolute bottom-1/4 right-1/3 w-5 h-5 bg-[#0a1a3f]/10 rounded-full animate-bounce" style={{animationDuration: '3.5s', animationDelay: '0.5s'}}></div>
-        {/* Bubble 5 */}
-        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-[#0a1a3f]/30 rounded-full animate-bounce" style={{animationDuration: '2s', animationDelay: '1.5s'}}></div>
-        {/* Bubble 6 */}
-        <div className="absolute top-2/3 right-1/4 w-4 h-4 bg-[#0a1a3f]/20 rounded-full animate-bounce" style={{animationDuration: '3.2s', animationDelay: '2.5s'}}></div>
-        {/* Bubble 7 */}
-        <div className="absolute bottom-1/2 left-1/3 w-3 h-3 bg-[#0a1a3f]/15 rounded-full animate-bounce" style={{animationDuration: '2.8s', animationDelay: '3s'}}></div>
-        {/* Bubble 8 */}
-        <div className="absolute top-1/5 right-1/2 w-5 h-5 bg-[#0a1a3f]/25 rounded-full animate-bounce" style={{animationDuration: '4.5s', animationDelay: '1.2s'}}></div>
-        {/* Bubble 9 */}
-        <div className="absolute bottom-1/5 left-1/5 w-2 h-2 bg-[#0a1a3f]/20 rounded-full animate-bounce" style={{animationDuration: '2.2s', animationDelay: '0.8s'}}></div>
-        {/* Bubble 10 */}
-        <div className="absolute top-3/4 right-1/6 w-4 h-4 bg-[#0a1a3f]/18 rounded-full animate-bounce" style={{animationDuration: '3.8s', animationDelay: '2.2s'}}></div>
-        {/* Bubble 11 */}
-        <div className="absolute top-1/6 left-1/3 w-3 h-3 bg-[#0a1a3f]/22 rounded-full animate-bounce" style={{animationDuration: '2.8s', animationDelay: '1.8s'}}></div>
-        {/* Bubble 12 */}
-        <div className="absolute bottom-1/6 right-1/5 w-4 h-4 bg-[#0a1a3f]/16 rounded-full animate-bounce" style={{animationDuration: '3.3s', animationDelay: '2.8s'}}></div>
-        {/* Bubble 13 */}
-        <div className="absolute top-2/5 left-1/8 w-2 h-2 bg-[#0a1a3f]/28 rounded-full animate-bounce" style={{animationDuration: '2.3s', animationDelay: '0.3s'}}></div>
-        {/* Bubble 14 */}
-        <div className="absolute bottom-2/5 right-1/8 w-5 h-5 bg-[#0a1a3f]/12 rounded-full animate-bounce" style={{animationDuration: '4.2s', animationDelay: '1.7s'}}></div>
-        {/* Bubble 15 */}
-        <div className="absolute top-4/5 left-2/3 w-3 h-3 bg-[#0a1a3f]/24 rounded-full animate-bounce" style={{animationDuration: '2.7s', animationDelay: '3.2s'}}></div>
-        {/* Bubble 16 */}
-        <div className="absolute bottom-3/5 right-2/3 w-4 h-4 bg-[#0a1a3f]/19 rounded-full animate-bounce" style={{animationDuration: '3.6s', animationDelay: '0.9s'}}></div>
-        {/* Bubble 17 */}
-        <div className="absolute top-1/8 left-1/2 w-2 h-2 bg-[#0a1a3f]/26 rounded-full animate-bounce" style={{animationDuration: '2.1s', animationDelay: '2.1s'}}></div>
-        {/* Bubble 18 */}
-        <div className="absolute bottom-1/8 right-1/2 w-3 h-3 bg-[#0a1a3f]/21 rounded-full animate-bounce" style={{animationDuration: '2.9s', animationDelay: '1.4s'}}></div>
-        {/* Bubble 19 */}
-        <div className="absolute top-3/5 left-1/7 w-4 h-4 bg-[#0a1a3f]/17 rounded-full animate-bounce" style={{animationDuration: '3.4s', animationDelay: '2.6s'}}></div>
-        {/* Bubble 20 */}
-        <div className="absolute bottom-4/5 right-1/7 w-2 h-2 bg-[#0a1a3f]/27 rounded-full animate-bounce" style={{animationDuration: '2.4s', animationDelay: '0.6s'}}></div>
-        
-        {/* Additional Falling Bubbles */}
-        {/* Bubble 21 - Falling */}
-        <div className="absolute top-0 left-1/4 w-3 h-3 bg-[#0a1a3f]/20 rounded-full animate-bounce" style={{animationDuration: '4s', animationDelay: '0s'}}></div>
-        {/* Bubble 22 - Falling */}
-        <div className="absolute top-0 right-1/3 w-4 h-4 bg-[#0a1a3f]/15 rounded-full animate-bounce" style={{animationDuration: '5s', animationDelay: '1s'}}></div>
-        {/* Bubble 23 - Falling */}
-        <div className="absolute top-0 left-1/2 w-2 h-2 bg-[#0a1a3f]/25 rounded-full animate-bounce" style={{animationDuration: '3.5s', animationDelay: '2s'}}></div>
-        {/* Bubble 24 - Falling */}
-        <div className="absolute top-0 right-1/4 w-5 h-5 bg-[#0a1a3f]/12 rounded-full animate-bounce" style={{animationDuration: '6s', animationDelay: '0.5s'}}></div>
-        {/* Bubble 25 - Falling */}
-        <div className="absolute top-0 left-1/6 w-3 h-3 bg-[#0a1a3f]/18 rounded-full animate-bounce" style={{animationDuration: '4.5s', animationDelay: '1.5s'}}></div>
-        {/* Bubble 26 - Falling */}
-        <div className="absolute top-0 right-1/6 w-2 h-2 bg-[#0a1a3f]/22 rounded-full animate-bounce" style={{animationDuration: '3.8s', animationDelay: '2.5s'}}></div>
-        {/* Bubble 27 - Falling */}
-        <div className="absolute top-0 left-2/3 w-4 h-4 bg-[#0a1a3f]/16 rounded-full animate-bounce" style={{animationDuration: '5.5s', animationDelay: '0.8s'}}></div>
-        {/* Bubble 28 - Falling */}
-        <div className="absolute top-0 right-2/3 w-3 h-3 bg-[#0a1a3f]/21 rounded-full animate-bounce" style={{animationDuration: '4.2s', animationDelay: '1.8s'}}></div>
-        {/* Bubble 29 - Falling */}
-        <div className="absolute top-0 left-3/4 w-2 h-2 bg-[#0a1a3f]/28 rounded-full animate-bounce" style={{animationDuration: '3.2s', animationDelay: '2.8s'}}></div>
-        {/* Bubble 30 - Falling */}
-        <div className="absolute top-0 right-3/4 w-4 h-4 bg-[#0a1a3f]/14 rounded-full animate-bounce" style={{animationDuration: '5.8s', animationDelay: '1.2s'}}></div>
-        {/* Bubble 31 - Falling */}
-        <div className="absolute top-0 left-1/8 w-3 h-3 bg-[#0a1a3f]/19 rounded-full animate-bounce" style={{animationDuration: '4.8s', animationDelay: '0.3s'}}></div>
-        {/* Bubble 32 - Falling */}
-        <div className="absolute top-0 right-1/8 w-2 h-2 bg-[#0a1a3f]/26 rounded-full animate-bounce" style={{animationDuration: '3.6s', animationDelay: '2.2s'}}></div>
-        {/* Bubble 33 - Falling */}
-        <div className="absolute top-0 left-5/6 w-4 h-4 bg-[#0a1a3f]/17 rounded-full animate-bounce" style={{animationDuration: '5.2s', animationDelay: '1.6s'}}></div>
-        {/* Bubble 34 - Falling */}
-        <div className="absolute top-0 right-5/6 w-3 h-3 bg-[#0a1a3f]/23 rounded-full animate-bounce" style={{animationDuration: '4.1s', animationDelay: '2.9s'}}></div>
-        {/* Bubble 35 - Falling */}
-        <div className="absolute top-0 left-1/5 w-2 h-2 bg-[#0a1a3f]/29 rounded-full animate-bounce" style={{animationDuration: '3.9s', animationDelay: '0.7s'}}></div>
-        {/* Bubble 36 - Falling */}
-        <div className="absolute top-0 right-1/5 w-5 h-5 bg-[#0a1a3f]/13 rounded-full animate-bounce" style={{animationDuration: '6.2s', animationDelay: '1.9s'}}></div>
-        {/* Bubble 37 - Falling */}
-        <div className="absolute top-0 left-4/5 w-3 h-3 bg-[#0a1a3f]/20 rounded-full animate-bounce" style={{animationDuration: '4.7s', animationDelay: '2.3s'}}></div>
-        {/* Bubble 38 - Falling */}
-        <div className="absolute top-0 right-4/5 w-2 h-2 bg-[#0a1a3f]/27 rounded-full animate-bounce" style={{animationDuration: '3.4s', animationDelay: '0.9s'}}></div>
-        {/* Bubble 39 - Falling */}
-        <div className="absolute top-0 left-1/3 w-4 h-4 bg-[#0a1a3f]/15 rounded-full animate-bounce" style={{animationDuration: '5.3s', animationDelay: '1.4s'}}></div>
-        {/* Bubble 40 - Falling */}
-        <div className="absolute top-0 right-1/3 w-3 h-3 bg-[#0a1a3f]/24 rounded-full animate-bounce" style={{animationDuration: '4.4s', animationDelay: '2.7s'}}></div>
+        {/* Animation Styles */}
+        <style>{`
+          @keyframes rotate-dots {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          @keyframes rotate-dots-reverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+          }
+          @keyframes pulse-ring {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+          }
+          @keyframes bounce-in {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            70% { transform: scale(0.95); }
+            100% { transform: scale(1.1); }
+          }
+          @keyframes glow-expand {
+            0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+            50% { box-shadow: 0 0 30px 10px rgba(250, 204, 21, 0.4); }
+            100% { box-shadow: 0 0 40px 15px rgba(250, 204, 21, 0.6); }
+          }
+          @keyframes icon-pop {
+            0% { transform: scale(1) rotate(0deg); }
+            30% { transform: scale(1.2) rotate(-5deg); }
+            60% { transform: scale(0.9) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+          }
+          @keyframes ring-pulse-hover {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+          }
+          .rotate-dots { animation: rotate-dots 8s linear infinite; }
+          .rotate-dots-reverse { animation: rotate-dots-reverse 6s linear infinite; }
+          .pulse-ring { animation: pulse-ring 3s ease-in-out infinite; }
+          .group:hover .hover-bounce { animation: bounce-in 0.5s ease-out forwards; }
+          .group:hover .hover-glow { animation: glow-expand 0.4s ease-out forwards; }
+          .group:hover .hover-icon { animation: icon-pop 0.6s ease-out; }
+          .group:hover .hover-ring-pulse { animation: ring-pulse-hover 0.6s ease-in-out infinite; }
+          .group:hover .hover-rotate-fast { animation: rotate-dots 2s linear infinite; }
+          .group:hover .hover-rotate-reverse-fast { animation: rotate-dots-reverse 1.5s linear infinite; }
+        `}</style>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -152,12 +115,24 @@ const Categories = () => {
                   className="flex flex-col items-center text-center group cursor-pointer p-2 sm:p-4"
                   onClick={() => handleCategoryClick(category.route)}
                 >
-                  {/* Circular Icon */}
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:bg-[#facc15] transition-all duration-300 group-hover:scale-110">
-                    <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center">
-                      {React.cloneElement(category.icon, {
-                        className: "w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
-                      })}
+                  {/* Circular Icon with Animated Dotted Rings */}
+                  <div className="relative mb-2 sm:mb-3 md:mb-4">
+                    {/* Outer Rotating Dotted Circle */}
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dashed border-[#0a1a3f]/30 group-hover:border-[#facc15]/80 transition-all duration-300 rotate-dots hover-rotate-fast" style={{padding: '6px'}}></div>
+                    
+                    {/* Middle Rotating Dotted Circle (Reverse) */}
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dotted border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 rotate-dots-reverse hover-rotate-reverse-fast" style={{padding: '3px'}}></div>
+                    
+                    {/* Pulsing Ring */}
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#facc15]/60 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
+                    
+                    {/* Main Icon Circle */}
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce hover-glow transform-gpu">
+                      <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center hover-icon">
+                        {React.cloneElement(category.icon, {
+                          className: "w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
+                        })}
+                      </div>
                     </div>
                   </div>
                   
@@ -177,12 +152,24 @@ const Categories = () => {
                   className="flex flex-col items-center text-center group cursor-pointer p-2 sm:p-4"
                   onClick={() => handleCategoryClick(category.route)}
                 >
-                  {/* Circular Icon */}
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:bg-[#facc15] transition-all duration-300 group-hover:scale-110">
-                    <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center">
-                      {React.cloneElement(category.icon, {
-                        className: "w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
-                      })}
+                  {/* Circular Icon with Animated Dotted Rings */}
+                  <div className="relative mb-2 sm:mb-3 md:mb-4">
+                    {/* Outer Rotating Dotted Circle */}
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dashed border-[#0a1a3f]/30 group-hover:border-[#facc15]/80 transition-all duration-300 rotate-dots hover-rotate-fast" style={{padding: '6px'}}></div>
+                    
+                    {/* Middle Rotating Dotted Circle (Reverse) */}
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dotted border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 rotate-dots-reverse hover-rotate-reverse-fast" style={{padding: '3px'}}></div>
+                    
+                    {/* Pulsing Ring */}
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#facc15]/60 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
+                    
+                    {/* Main Icon Circle */}
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce hover-glow transform-gpu">
+                      <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center hover-icon">
+                        {React.cloneElement(category.icon, {
+                          className: "w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
+                        })}
+                      </div>
                     </div>
                   </div>
                   
@@ -203,12 +190,24 @@ const Categories = () => {
                 className="flex flex-col items-center text-center group cursor-pointer p-4"
                 onClick={() => handleCategoryClick(category.route)}
               >
-                {/* Circular Icon */}
-                <div className="w-32 h-32 bg-[#0a1a3f] rounded-full flex items-center justify-center mb-4 group-hover:bg-[#facc15] transition-all duration-300 group-hover:scale-110">
-                  <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center">
-                    {React.cloneElement(category.icon, {
-                      className: "w-12 h-12"
-                    })}
+                {/* Circular Icon with Animated Dotted Rings */}
+                <div className="relative mb-4">
+                  {/* Outer Rotating Dotted Circle */}
+                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-dashed border-[#0a1a3f]/30 group-hover:border-[#facc15]/80 transition-all duration-300 rotate-dots hover-rotate-fast" style={{padding: '8px'}}></div>
+                  
+                  {/* Middle Rotating Dotted Circle (Reverse) */}
+                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-dotted border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 rotate-dots-reverse hover-rotate-reverse-fast" style={{padding: '4px'}}></div>
+                  
+                  {/* Pulsing Ring */}
+                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#facc15]/60 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
+                  
+                  {/* Main Icon Circle */}
+                  <div className="relative w-32 h-32 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce hover-glow transform-gpu">
+                    <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center hover-icon">
+                      {React.cloneElement(category.icon, {
+                        className: "w-12 h-12"
+                      })}
+                    </div>
                   </div>
                 </div>
                 
