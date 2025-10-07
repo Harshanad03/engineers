@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #1C1C1C;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #1C1C1C;
+  }
+  
+  .text-bharath-dark {
+    color: #1C1C1C;
+  }
+  
+  .text-bharath-grey {
+    color: #6B7280;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-bharath-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-bharath-yellow text-bharath-blue px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors duration-200;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}
