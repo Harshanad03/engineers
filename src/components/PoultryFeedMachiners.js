@@ -105,9 +105,9 @@ const PoultryFeedMachiners = () => {
         {/* Category Description */}
         <div className="text-center mb-16">
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Complete Poultry Feed Manufacturing Solutions</h2>
+            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Complete Mash Plant Manufacturing Solutions</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our specialized poultry feed machinery is engineered to deliver consistent, high-quality feed that meets 
+              Our specialized mash plant machinery is engineered to deliver consistent, high-quality feed that meets 
               the specific nutritional requirements of different poultry species. From broilers to layers, our equipment 
               ensures optimal feed conversion ratios and bird health.
             </p>
@@ -196,10 +196,10 @@ const PoultryFeedMachiners = () => {
         <div className="mt-20 text-center">
           <div className="bg-gradient-to-r from-[#0a1a3f] to-[#1e3a8a] rounded-xl shadow-xl p-12 text-white">
             <h2 className="text-3xl font-bold mb-4">
-              Optimize Your Poultry Feed Production
+              Optimize Your Mash Plant Production
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Get specialized solutions tailored for your poultry operation
+              Get specialized solutions tailored for your mash plant operation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-[#facc15] text-[#0a1a3f] px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] transition-all duration-300 hover:scale-105">

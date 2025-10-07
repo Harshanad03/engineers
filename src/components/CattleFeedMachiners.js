@@ -105,9 +105,9 @@ const CattleFeedMachiners = () => {
         {/* Category Description */}
         <div className="text-center mb-16">
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Comprehensive Cattle Feed Solutions</h2>
+            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Comprehensive Cattle Feed Unit Solutions</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our complete range of cattle feed processing machinery is designed for efficient, high-quality feed production. 
+              Our complete range of cattle feed unit processing machinery is designed for efficient, high-quality feed production. 
               From raw material handling to finished pellet packaging, we provide integrated solutions that ensure optimal 
               nutrition for your livestock while maximizing operational efficiency.
             </p>

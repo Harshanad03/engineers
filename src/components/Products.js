@@ -2,52 +2,45 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
-  const [activeTab, setActiveTab] = useState('Cattle Feed Machiners');
+  const [activeTab, setActiveTab] = useState('Mash plant');
   const navigate = useNavigate();
 
   const categories = [
-    'Cattle Feed Machiners',
-    'Poultry Feed Machiners', 
-    'Conveyers',
-    'Special Purpose Machiners',
-    'Automation',
-    'Services And Spares'
+    'Mash plant',
+    'Cattle feed unit', 
+    'Special purpose machine',
+    'Conveyors',
+    'Service and Spares'
   ];
 
   const products = {
-    'Cattle Feed Machiners': {
+    'Mash plant': {
       id: 1,
-      title: "Cattle Feed Mixer",
-      image: "/images/Cattle Feed Machiners.png",
-      description: "The cattle feed mixer is designed for efficient mixing of various feed ingredients. It features robust construction and easy operation, ensuring consistent feed quality for optimal livestock nutrition."
-    },
-    'Poultry Feed Machiners': {
-      id: 2,
-      title: "Poultry Feed Machine",
+      title: "Mash Plant Machine",
       image: "/images/Poultry Feed Machiners.png",
-      description: "Advanced poultry feed manufacturing equipment designed for optimal nutrition and efficient production processes."
+      description: "Advanced mash plant manufacturing equipment designed for optimal nutrition and efficient production processes."
     },
-    'Conveyers': {
+    'Cattle feed unit': {
+      id: 2,
+      title: "Cattle Feed Unit",
+      image: "/images/Cattle Feed Machiners.png",
+      description: "The cattle feed unit is designed for efficient mixing of various feed ingredients. It features robust construction and easy operation, ensuring consistent feed quality for optimal livestock nutrition."
+    },
+    'Special purpose machine': {
       id: 3,
-      title: "Conveyor System",
-      image: "/images/Conveyers.png",
-      description: "Robust conveyor systems for efficient material handling and transportation in industrial environments."
-    },
-    'Special Purpose Machiners': {
-      id: 4,
       title: "Special Purpose Machine",
       image: "/images/Special Purpose Machiners.png",
       description: "Specialized machinery designed for specific industrial applications with precision engineering."
     },
-    'Automation': {
-      id: 5,
-      title: "Automated Control System",
-      image: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23f3f4f6'/><rect x='50' y='50' width='200' height='100' fill='%23d1d5db' rx='10'/><rect x='70' y='70' width='160' height='60' fill='%239ca3af' rx='5'/><rect x='90' y='90' width='30' height='20' fill='%23fbbf24' rx='3'/><rect x='130' y='90' width='30' height='20' fill='%23fbbf24' rx='3'/><rect x='170' y='90' width='30' height='20' fill='%23fbbf24' rx='3'/><circle cx='105' cy='100' r='3' fill='%23d1d5db'/><circle cx='145' cy='100' r='3' fill='%23d1d5db'/><circle cx='185' cy='100' r='3' fill='%23d1d5db'/></svg>",
-      description: "State-of-the-art automation solutions for enhanced productivity and operational efficiency."
+    'Conveyors': {
+      id: 4,
+      title: "Conveyor System",
+      image: "/images/Conveyers.png",
+      description: "Robust conveyor systems for efficient material handling and transportation in industrial environments."
     },
-    'Services And Spares': {
-      id: 6,
-      title: "Services And Spares",
+    'Service and Spares': {
+      id: 5,
+      title: "Service and Spares",
       image: "/images/Services And Spares.png",
       description: "Comprehensive maintenance and spare parts services for all equipment with expert technical support."
     }
@@ -204,18 +197,17 @@ const Products = () => {
                     <button 
                       onClick={() => {
                         const routeMap = {
-                          'Cattle Feed Machiners': '/cattle-feed-machiners',
-                          'Poultry Feed Machiners': '/poultry-feed-machiners',
-                          'Conveyers': '/conveyers',
-                          'Special Purpose Machiners': '/special-purpose-machiners',
-                          'Automation': '/automation',
-                          'Services And Spares': '/services-and-spares'
+                          'Mash plant': '/poultry-feed-machiners',
+                          'Cattle feed unit': '/cattle-feed-machiners',
+                          'Special purpose machine': '/special-purpose-machiners',
+                          'Conveyors': '/conveyers',
+                          'Service and Spares': '/services-and-spares'
                         };
                         navigate(routeMap[activeTab]);
                       }}
                       className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
                     >
-                      View All {activeTab}
+                      View Details
                       <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
