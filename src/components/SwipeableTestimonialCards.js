@@ -93,7 +93,7 @@ const TestimonialCard = ({ card, isFront, stackIndex, nextCard }) => {
       }}
     >
       {/* Company Logo or Fallback */}
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-4 mt-8">
         <div className="w-20 h-20 bg-white rounded-lg p-3 flex items-center justify-center shadow-md border border-gray-200 overflow-hidden">
           {!imgError ? (
             <img
@@ -111,9 +111,9 @@ const TestimonialCard = ({ card, isFront, stackIndex, nextCard }) => {
       </div>
 
       {/* Testimonial Text */}
-      <div className="flex flex-col items-center justify-center flex-1">
+      <div className="flex flex-col items-center justify-center flex-1 px-4">
         <blockquote
-          className="text-base leading-relaxed mb-6 text-center"
+          className="text-base leading-relaxed mb-4 text-center"
           style={{
             color: "#ffffff",
             fontFamily: "Poppins, sans-serif",
@@ -123,6 +123,23 @@ const TestimonialCard = ({ card, isFront, stackIndex, nextCard }) => {
         >
           "{card.testimonial}"
         </blockquote>
+
+        {/* Star Rating */}
+        <div className="flex justify-center mb-4">
+          <div className="flex space-x-1">
+            {[...Array(5)].map((_, index) => (
+              <svg
+                key={index}
+                className="w-4 h-4"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                style={{ color: "#facc15" }}
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+        </div>
 
         {/* Client Info */}
         <div className="text-center">
@@ -134,7 +151,7 @@ const TestimonialCard = ({ card, isFront, stackIndex, nextCard }) => {
               fontWeight: "600",
             }}
           >
-            {card.name} - {card.position} @ {card.company}
+            {card.name}  {card.position}  {card.company}
           </p>
         </div>
       </div>
@@ -142,7 +159,7 @@ const TestimonialCard = ({ card, isFront, stackIndex, nextCard }) => {
       {/* Swipe Indicator */}
       {isFront && (
         <div
-          className="absolute top-6 right-6 text-xs font-medium"
+          className="absolute top-3 right-6 text-xs font-medium"
           style={{
             color: "rgba(250, 204, 21, 0.8)",
             fontFamily: "Poppins, sans-serif",
@@ -160,38 +177,36 @@ export default SwipeableTestimonialCards;
 const testimonialCardData = [
   {
     id: 1,
-    name: "Rajesh Kumar",
+    
     company: "Rasi Foods",
-    position: "Plant Manager",
-    testimonial:
-      "Bharath Engineerings has been our trusted partner for over 10 years. Their cattle feed machinery has significantly improved our production efficiency and quality.",
+   
+    testimonial:"Reliable and efficient products from Bharath Engineering.Team support and quality are truly commendable.",
     logo: "/images/review1.png",
   },
   {
     id: 2,
-    name: "Priya Sharma",
+   
     company: "SPAC Starch & Derivatives",
-    position: "Operations Director",
+   
     testimonial:
-      "The cement silos from Bharath Engineerings are incredibly durable and maintenance-free. Their nationwide supply network makes procurement hassle-free.",
+      "Bharath Engineering provides durable equipment with great precision.Very satisfied with their service response.",
     logo: "/images/review2.png",
   },
   {
-    id: 3,
-    name: "Amit Patel",
+  
     company: "Ultramarine & Pigments Ltd",
-    position: "CEO",
+   
     testimonial:
-      "Outstanding quality and excellent after-sales support. Their fly ash silos have exceeded our expectations in terms of performance and longevity.",
+      "High-quality products with excellent finishing.Bharath Engineering’s timely service truly makes a difference",
     logo: "/images/review3.png",
   },
   {
     id: 4,
-    name: "Sunita Reddy",
+    
     company: "RGS Feeds",
-    position: "Production Head",
+    
     testimonial:
-      "The high-strength materials and corrosion-resistant coating of their machinery have reduced our maintenance costs by 40%. Highly recommended!",
+      "Bharath Engineering delivers strong and high-quality machines.Service and support are quick and reliable.",
     logo: "/images/review4.png",
   },
 ];

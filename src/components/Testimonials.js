@@ -44,7 +44,7 @@ const Testimonials = () => {
                 textShadow: '1px 1px 2px rgba(255,255,255,0.8)'
               }}
             >
-              Trusted by industry leaders across India for over 30 years. Our engineering solutions have powered countless successful projects.
+              Trusted by industry leaders across India for over 25 years. Our engineering solutions have powered countless successful projects.
             </p>
 
             {/* Call to Action */}
