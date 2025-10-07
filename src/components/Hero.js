@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import GradientText from './GradientText';
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
@@ -24,41 +25,48 @@ const Hero = () => {
       {/* Background Video */}
       <video
         key={currentVideo}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
         autoPlay
         loop
         muted
         playsInline
+        preload="metadata"
       >
         <source src={videos[currentVideo]} type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
       
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       {/* Hero Content */}
-      <div className="relative z-10 text-left px-6 max-w-4xl mx-auto -mt-13 -ml-1">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-          Leading Manufacturer of
-        </h1>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-          Industrial & Feed Machinery
-        </h2>
-        <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-          Since 1990
-        </h3>
+      <div className="relative z-10 text-center sm:text-left px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+         <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 xs:mb-4 sm:mb-6 lg:mb-8">
+           <GradientText
+             colors={["#0C1D45", "#FFFFFF", "#0C1D45", "#FFFFFF", "#0C1D45"]}
+             animationSpeed={8}
+             showBorder={false}
+             className="block sm:inline"
+           >
+             Design, Build, Deliver
+           </GradientText>
+         </h1>
         
-        <p className="text-lg md:text-xl text-gray-300 mb-10 font-normal">
-          Precision Engineered | Trusted Quality Proven Performance
+        <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 mb-4 xs:mb-5 sm:mb-6 lg:mb-8 xl:mb-10 font-normal max-w-4xl mx-auto sm:mx-0 leading-relaxed px-2 xs:px-0">
+          With a focus on responsible transformation, advanced solutions, and sustainable investments, we build a future that benefits all.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-start items-start">
-          <button className="bg-[#0a1a3f] hover:bg-[#142c66] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:scale-105 hover:shadow-lg">
-            Our Products
-          </button>
-          <button className="bg-[#facc15] hover:bg-[#fde047] text-[#0a1a3f] px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:scale-105 hover:shadow-lg">
-            Request Quote
-          </button>
-        </div>
+         <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center sm:justify-start items-center sm:items-start px-2 xs:px-0">
+           <button className="hero-btn group relative w-3/4 xs:w-auto bg-bharath-blue-900 hover:bg-bharath-blue-800 text-white px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-lg font-semibold text-sm xs:text-base sm:text-lg transition-all duration-300 hover:scale-105 overflow-hidden">
+             <span className="relative z-10">Our Products</span>
+             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+             <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+           </button>
+           <button className="hero-btn group relative w-3/4 xs:w-auto bg-bharath-yellow-500 hover:bg-bharath-yellow-400 text-bharath-blue-900 px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-lg font-semibold text-sm xs:text-base sm:text-lg transition-all duration-300 hover:scale-105 overflow-hidden">
+             <span className="relative z-10">Request Quote</span>
+             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+             <div className="absolute inset-0 bg-gradient-to-r from-yellow-300/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+           </button>
+         </div>
       </div>
     </section>
   );
