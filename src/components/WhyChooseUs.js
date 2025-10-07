@@ -98,18 +98,6 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div 
-            className="inline-block px-8 py-4 rounded-lg text-white font-semibold text-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-            style={{ 
-              backgroundColor: '#0a1a3f',
-              fontFamily: 'Poppins, sans-serif'
-            }}
-          >
-            Experience the Difference
-          </div>
-        </div>
       </div>
     </section>
   );

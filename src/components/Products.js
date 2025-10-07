@@ -8,9 +8,9 @@ const Products = () => {
   const categories = [
     'Mash plant',
     'Cattle feed unit', 
-    'Special purpose machine',
     'Conveyors',
-    'Service and Spares'
+    'Service and Spares',
+    'Special purpose machine'
   ];
 
   const products = {
@@ -49,13 +49,11 @@ const Products = () => {
   return (
     <section 
       id="products" 
-      className="py-16 px-4 bg-cover bg-center bg-no-repeat relative overflow-hidden"
+      className="py-16 px-4 bg-cover bg-center bg-fixed bg-no-repeat relative overflow-hidden"
       style={{
         backgroundImage: 'url(/images/productsbg.jpg)'
       }}
     >
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-white/60"></div>
       
       {/* Decorative Elements */}
       <div className="absolute top-10 left-10 w-20 h-20 bg-[#0a1a3f] rounded-full opacity-20 blur-xl"></div>
@@ -65,7 +63,7 @@ const Products = () => {
         {/* Enhanced Section Title */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 sm:mb-5 md:mb-6">
-            Our Products
+          Discover Our Signature Offerings
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive range of industrial machinery and solutions designed for excellence
@@ -75,15 +73,15 @@ const Products = () => {
 
         {/* Enhanced Category Tab Selector */}
         <div className="flex justify-center mb-8 md:mb-16 px-4">
-          <div className="bg-[#0a1a3f] rounded-xl shadow-xl p-3 sm:p-4 border border-gray-200/50 w-full max-w-7xl">
-            {/* Mobile Layout - 2 per row */}
-            <div className="grid grid-cols-2 gap-2 sm:hidden">
-              {categories.map((category, index) => (
+          <div className="bg-[#0a1a3f] rounded-xl shadow-xl p-4 sm:p-5 border border-gray-200/50 w-full max-w-5xl">
+            {/* Mobile Layout - 2 per row with centered last item */}
+            <div className="grid grid-cols-2 gap-4 sm:hidden">
+              {categories.slice(0, 4).map((category, index) => (
                 <button
                   key={category}
                   onClick={() => setActiveTab(category)}
                   className={`
-                    relative px-2 py-2.5 rounded-lg font-semibold 
+                    relative px-3 py-3 rounded-lg font-semibold 
                     text-xs
                     transition-all duration-300 ease-out
                     border border-gray-200/50
@@ -102,16 +100,42 @@ const Products = () => {
                   <span className="relative z-10">{category}</span>
                 </button>
               ))}
+              {/* Centered last item */}
+              {categories.length > 4 && (
+                <div className="col-span-2 flex justify-center">
+                  <button
+                    onClick={() => setActiveTab(categories[4])}
+                    className={`
+                      relative px-3 py-3 rounded-lg font-semibold 
+                      text-xs
+                      transition-all duration-300 ease-out
+                      border border-gray-200/50
+                      hover:scale-105 hover:shadow-lg
+                      group overflow-hidden
+                      whitespace-nowrap
+                      ${activeTab === categories[4] 
+                        ? 'text-[#0a1a3f] shadow-lg border-transparent transform scale-105' 
+                        : 'text-white bg-transparent hover:bg-[#facc15]/10'
+                      }
+                    `}
+                    style={{
+                      backgroundColor: activeTab === categories[4] ? '#facc15' : 'transparent'
+                    }}
+                  >
+                    <span className="relative z-10">{categories[4]}</span>
+                  </button>
+                </div>
+              )}
             </div>
 
-            {/* Desktop Layout - Flex wrap */}
-            <div className="hidden sm:flex flex-wrap justify-center gap-2">
+            {/* Desktop Layout - Single row */}
+            <div className="hidden sm:flex justify-center gap-4">
               {categories.map((category, index) => (
                 <button
                   key={category}
                   onClick={() => setActiveTab(category)}
                   className={`
-                    relative px-4 py-2.5 md:px-5 md:py-3 rounded-full font-semibold 
+                    relative px-5 py-3 md:px-6 md:py-4 rounded-full font-semibold 
                     text-sm md:text-base
                     transition-all duration-500 ease-out
                     border border-gray-200/50
@@ -152,8 +176,6 @@ const Products = () => {
         <div className="max-w-6xl mx-auto mb-8 md:mb-16 px-4">
           {products[activeTab] && (
             <div className="relative">
-              {/* Transparent Background */}
-              <div className="absolute inset-0 bg-white/20 rounded-2xl backdrop-blur-sm"></div>
               
               <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12">
                 {/* Product Image Section */}
