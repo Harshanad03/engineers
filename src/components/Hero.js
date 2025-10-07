@@ -39,8 +39,8 @@ const Hero = () => {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       {/* Hero Content */}
-      <div className="relative z-10 text-center sm:text-left px-3 xs:px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-         <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 xs:mb-4 sm:mb-6 lg:mb-8">
+      <div className="relative z-10 text-center sm:text-left px-3 xs:px-4 sm:px-6 lg:px-12 xl:px-16 max-w-7xl sm:mr-auto">
+         <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-tight mb-3 xs:mb-4 sm:mb-6 lg:mb-8">
            <GradientText
              colors={["#0C1D45", "#FFFFFF", "#0C1D45", "#FFFFFF", "#0C1D45"]}
              animationSpeed={8}
