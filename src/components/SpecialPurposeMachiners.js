@@ -105,9 +105,9 @@ const SpecialPurposeMachiners = () => {
         {/* Category Description */}
         <div className="text-center mb-16">
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Bespoke Machinery Solutions</h2>
+            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Special Purpose Machine Solutions</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our special purpose machines are engineered to meet your specific manufacturing challenges. 
+              Our special purpose machine are engineered to meet your specific manufacturing challenges. 
               From custom automation systems to precision processing equipment, we design and build 
               machinery that perfectly fits your unique production requirements and quality standards.
             </p>

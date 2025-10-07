@@ -105,9 +105,9 @@ const ServicesAndSpares = () => {
         {/* Category Description */}
         <div className="text-center mb-16">
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Comprehensive Support Services</h2>
+            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Service and Spares Support</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our complete range of services and spare parts ensures your equipment operates at peak performance. 
+              Our complete range of service and spares ensures your equipment operates at peak performance. 
               From preventive maintenance to emergency repairs, we provide reliable support that minimizes downtime 
               and maximizes your investment in industrial machinery.
             </p>

@@ -15,7 +15,6 @@ import CattleFeedMachiners from './components/CattleFeedMachiners';
 import PoultryFeedMachiners from './components/PoultryFeedMachiners';
 import Conveyers from './components/Conveyers';
 import SpecialPurposeMachiners from './components/SpecialPurposeMachiners';
-import Automation from './components/Automation';
 import ServicesAndSpares from './components/ServicesAndSpares';
 
 function HomePage() {
@@ -45,7 +44,6 @@ function App() {
             <Route path="/poultry-feed-machiners" element={<PoultryFeedMachiners />} />
             <Route path="/conveyers" element={<Conveyers />} />
             <Route path="/special-purpose-machiners" element={<SpecialPurposeMachiners />} />
-            <Route path="/automation" element={<Automation />} />
             <Route path="/services-and-spares" element={<ServicesAndSpares />} />
           </Routes>
         </main>

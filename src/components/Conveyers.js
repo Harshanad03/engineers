@@ -105,7 +105,7 @@ const Conveyers = () => {
         {/* Category Description */}
         <div className="text-center mb-16">
           <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Complete Conveyor System Solutions</h2>
+            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Complete Conveyors System Solutions</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               Our comprehensive range of conveyor systems is designed to handle various materials and applications 
               with maximum efficiency. From simple belt conveyors to complex automated systems, we provide 
