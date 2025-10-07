@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     company: '',
-    subject: '',
     message: ''
   });
 
@@ -30,10 +28,8 @@ const ContactForm = () => {
       setSubmitStatus('success');
       setFormData({
         name: '',
-        email: '',
         phone: '',
         company: '',
-        subject: '',
         message: ''
       });
       
@@ -43,12 +39,12 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <section className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
             Get In Touch
@@ -218,54 +214,29 @@ const ContactForm = () => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name and Email Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label 
-                    htmlFor="name" 
-                    className="block text-sm font-semibold mb-2"
-                    style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
-                  >
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
-                    style={{ 
-                      fontFamily: 'Open Sans, sans-serif',
-                      '--tw-ring-color': '#facc15'
-                    }}
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label 
-                    htmlFor="email" 
-                    className="block text-sm font-semibold mb-2"
-                    style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
-                  >
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
-                    style={{ 
-                      fontFamily: 'Open Sans, sans-serif',
-                      '--tw-ring-color': '#facc15'
-                    }}
-                    placeholder="your@email.com"
-                  />
-                </div>
+              {/* Name Field */}
+              <div>
+                <label 
+                  htmlFor="name" 
+                  className="block text-sm font-semibold mb-2"
+                  style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+                >
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
+                  style={{ 
+                    fontFamily: 'Open Sans, sans-serif',
+                    '--tw-ring-color': '#facc15'
+                  }}
+                  placeholder="Your full name"
+                />
               </div>
 
               {/* Phone and Company Row */}
@@ -276,7 +247,7 @@ const ContactForm = () => {
                     className="block text-sm font-semibold mb-2"
                     style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
                   >
-                    Phone Number
+                    Phone Number *
                   </label>
                   <input
                     type="tel"
@@ -284,6 +255,7 @@ const ContactForm = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
                     style={{ 
                       fontFamily: 'Open Sans, sans-serif',
@@ -316,36 +288,6 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              {/* Subject */}
-              <div>
-                <label 
-                  htmlFor="subject" 
-                  className="block text-sm font-semibold mb-2"
-                  style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
-                >
-                  Subject *
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
-                  style={{ 
-                    fontFamily: 'Open Sans, sans-serif',
-                    '--tw-ring-color': '#facc15'
-                  }}
-                >
-                  <option value="">Select a subject</option>
-                  <option value="cattle-feed-machinery">Cattle Feed Machinery</option>
-                  <option value="cement-silo">Cement Silo</option>
-                  <option value="fly-ash-silo">Fly Ash Silo</option>
-                  <option value="general-inquiry">General Inquiry</option>
-                  <option value="quotation">Request Quotation</option>
-                  <option value="support">Technical Support</option>
-                </select>
-              </div>
 
               {/* Message */}
               <div>
@@ -354,14 +296,13 @@ const ContactForm = () => {
                   className="block text-sm font-semibold mb-2"
                   style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
                 >
-                  Message *
+                  Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300 resize-vertical"
                   style={{ 

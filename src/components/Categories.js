@@ -44,7 +44,7 @@ const Categories = () => {
 
   return (
     <section 
-      className="py-8 sm:py-12 md:py-16 relative overflow-hidden bg-gray-50"
+      className="py-6 sm:py-8 md:py-10 relative overflow-hidden bg-gray-50"
     >
       {/* Clean Minimal Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -98,7 +98,7 @@ const Categories = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a1a3f] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1a3f] mb-4">
            Our Categories
           </h2>
         </div>

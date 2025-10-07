@@ -42,12 +42,12 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <section className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
             Why Choose Us

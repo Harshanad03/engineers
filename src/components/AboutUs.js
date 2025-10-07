@@ -3,7 +3,7 @@ import React from 'react';
 const AboutUs = () => {
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 bg-white">
+    <section className="py-12 px-4 md:px-8 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
@@ -19,7 +19,7 @@ const AboutUs = () => {
               </h2>
               
               <h3 
-                className="text-3xl md:text-4xl lg:text-5xl font-bold"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
                 style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
               >
                 Bharath Engineerings
