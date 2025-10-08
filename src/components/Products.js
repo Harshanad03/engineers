@@ -62,8 +62,11 @@ const Products = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced Section Title */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1a3f] mb-4 sm:mb-5 md:mb-6">
-          Discover Our Signature Offerings
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
+            style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+          >
+            Discover Our Signature Offerings
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive range of industrial machinery and solutions designed for excellence

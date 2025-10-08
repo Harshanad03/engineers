@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ServicesAndSpares = () => {
   const navigate = useNavigate();
-  const [activeSubCategory, setActiveSubCategory] = useState('');
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -12,208 +11,264 @@ const ServicesAndSpares = () => {
 
   const subcategories = [
     {
-      id: 'maintenance-services',
-      name: 'Maintenance Services',
+      id: 'die',
+      name: 'Die',
       image: '/images/Services And Spares.png',
-      description: 'Professional maintenance services to ensure optimal equipment performance and longevity',
+      description: 'A Ring Die is a cylindrical, precision-engineered steel component used in pellet mills, where feedstock is compressed by rollers and forced through radial holes on the die\'s inner surface to form uniform pellets. Known for its high strength, wear resistance, and long service life, the ring die is ideal for large-scale pellet production in industries such as animal feed, biomass fuel, and fertilizers, ensuring consistent high efficiency, and reduced operational costs.',
       products: [
-        'Preventive Maintenance - Scheduled maintenance programs',
-        'Corrective Maintenance - Emergency repair services',
-        'Predictive Maintenance - Condition-based monitoring',
-        'Performance Optimization - Efficiency improvement services',
-        'Equipment Overhaul - Complete system refurbishment',
-        'Maintenance Training - Operator and technician training'
+        {
+          name: 'Ring Die - 6mm Holes',
+          capacity: '6mm hole diameter',
+          features: ['High quality steel', 'Precision holes', 'Long lasting']
+        },
+        {
+          name: 'Ring Die - 8mm Holes',
+          capacity: '8mm hole diameter',
+          features: ['Durable construction', 'Consistent pellets', 'Easy maintenance']
+        },
+        {
+          name: 'Flat Die - 4mm Holes',
+          capacity: '4mm hole diameter',
+          features: ['Compact design', 'High efficiency', 'Cost effective']
+        }
       ]
     },
     {
-      id: 'spare-parts',
-      name: 'Spare Parts',
+      id: 'beaters',
+      name: 'Beaters',
       image: '/images/Services And Spares.png',
-      description: 'Genuine spare parts and components for all machinery with guaranteed quality',
+      description: 'Beaters in animal feed grinders are impact parts fixed on the rotor to crush materials against the screen. Made from hardened alloy steel or wear-resistant plates (50-60 HRC), they are usually 4-6 mm thick with their performance depends on hardness, tip speed, and balance, and they may be hardfaced for abrasive feeds reversible edges for longer life. Beaters should be flipped or replaced when worn or unbalanced to ensure smooth and efficient grinding.',
       products: [
-        'Original Equipment Parts - OEM certified components',
-        'Wear Parts - High-wear components and replacements',
-        'Electrical Components - Motors, drives, and controls',
-        'Hydraulic Components - Pumps, valves, and cylinders',
-        'Mechanical Parts - Gears, bearings, and shafts',
-        'Consumables - Filters, belts, and lubricants'
+        {
+          name: 'Heavy Duty Beaters - 4 inch',
+          capacity: '4 inch length',
+          features: ['Hardened steel', 'High impact resistance', 'Long service life']
+        },
+        {
+          name: 'Standard Beaters - 3 inch',
+          capacity: '3 inch length',
+          features: ['Durable construction', 'Easy replacement', 'Cost effective']
+        },
+        {
+          name: 'Compact Beaters - 2 inch',
+          capacity: '2 inch length',
+          features: ['Lightweight design', 'Quick installation', 'Reliable performance']
+        }
       ]
     },
     {
-      id: 'technical-support',
-      name: 'Technical Support',
+      id: 'connecting-rod',
+      name: 'Rods',
       image: '/images/Services And Spares.png',
-      description: 'Expert technical support and consultation services for all your equipment needs',
+      description: 'Connecting rods (also called hammer pins or beater rods) in animal feed grinders are hardened alloy steel shafts that hold the beaters and spacers in place on the rotor, allowing the beaters to swing freely during operation. They are usually 16-25 mm in diameter, precision-ground, and heat-treated for strength and wear resistance, with lengths matching the rotor width. These rods are secured with nuts or locking systems, and must be kept smooth and straight to avoid vibration or uneven wear. They should be replaced if bent, worn, or scored. And always checked for balance to ensure efficient grinder performance.',
       products: [
-        '24/7 Technical Support - Round-the-clock assistance',
-        'On-site Consultation - Expert field service',
-        'Remote Diagnostics - Online troubleshooting',
-        'Installation Services - Professional equipment setup',
-        'Commissioning - System startup and optimization',
-        'Training Programs - Comprehensive operator training'
+        {
+          name: 'Heavy Duty Connecting Rod - 50 HP',
+          capacity: '50 HP rated',
+          features: ['Precision machined', 'High strength steel', 'Reliable operation']
+        },
+        {
+          name: 'Standard Connecting Rod - 30 HP',
+          capacity: '30 HP rated',
+          features: ['Durable construction', 'Easy installation', 'Long lasting']
+        },
+        {
+          name: 'Compact Connecting Rod - 20 HP',
+          capacity: '20 HP rated',
+          features: ['Lightweight design', 'Cost effective', 'Reliable performance']
+        }
       ]
     },
     {
-      id: 'upgrade-services',
-      name: 'Upgrade Services',
+      id: 'screens',
+      name: 'Screens',
       image: '/images/Services And Spares.png',
-      description: 'Equipment modernization and upgrade services to enhance performance and efficiency',
+      description: 'Our durable grinder screens deliver uniform particle size, higher efficiency, and smoother feed production every time.',
       products: [
-        'System Upgrades - Technology and performance enhancements',
-        'Automation Integration - Modern control system installation',
-        'Energy Efficiency - Power consumption optimization',
-        'Capacity Expansion - Production capacity increases',
-        'Safety Upgrades - Modern safety system installation',
-        'Retrofitting - Legacy equipment modernization'
+        {
+          name: 'Fine Mesh Screen - 0.5mm',
+          capacity: '0.5mm mesh size',
+          features: ['Stainless steel', 'Fine screening', 'Easy cleaning']
+        },
+        {
+          name: 'Medium Mesh Screen - 1mm',
+          capacity: '1mm mesh size',
+          features: ['Durable construction', 'Consistent screening', 'Long lasting']
+        },
+        {
+          name: 'Coarse Mesh Screen - 2mm',
+          capacity: '2mm mesh size',
+          features: ['Heavy duty', 'High capacity', 'Reliable operation']
+        }
       ]
     },
     {
-      id: 'calibration-services',
-      name: 'Calibration Services',
+      id: 'rollers',
+      name: 'Roller Shells',
       image: '/images/Services And Spares.png',
-      description: 'Precision calibration services to ensure accurate measurements and optimal performance',
+      description: 'Our roll shells deliver unbeatable grip, consistent pellets and longer service life, keeping your production running at its best.',
       products: [
-        'Equipment Calibration - Precision measurement calibration',
-        'Process Calibration - System parameter optimization',
-        'Quality Assurance - Calibration certification',
-        'Calibration Training - In-house calibration programs',
-        'Calibration Equipment - Precision measurement tools',
-        'Compliance Testing - Regulatory standard validation'
-      ]
-    },
-    {
-      id: 'emergency-services',
-      name: 'Emergency Services',
-      image: '/images/Services And Spares.png',
-      description: 'Rapid response emergency services to minimize downtime and production losses',
-      products: [
-        'Emergency Repairs - 24/7 breakdown service',
-        'Rapid Response - On-site emergency support',
-        'Critical Spares - Emergency parts delivery',
-        'Temporary Solutions - Quick fix implementations',
-        'Damage Assessment - Post-incident evaluation',
-        'Recovery Services - System restoration support'
+        {
+          name: 'Pellet Mill Rollers - 6 inch',
+          capacity: '6 inch diameter',
+          features: ['Hardened surface', 'High pressure', 'Long service life']
+        },
+        {
+          name: 'Conveyor Rollers - 4 inch',
+          capacity: '4 inch diameter',
+          features: ['Smooth operation', 'Low maintenance', 'Durable construction']
+        },
+        {
+          name: 'Heavy Duty Rollers - 8 inch',
+          capacity: '8 inch diameter',
+          features: ['High capacity', 'Robust design', 'Reliable performance']
+        }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f9fafb] via-white to-[#f1f5f9]">
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 pt-24 pb-12">
-        {/* Category Description */}
-        <div className="text-center mb-16">
-          <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Service and Spares Support</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Our complete range of service and spares ensures your equipment operates at peak performance. 
-              From preventive maintenance to emergency repairs, we provide reliable support that minimizes downtime 
-              and maximizes your investment in industrial machinery.
-            </p>
-            <div className="mt-6 flex justify-center space-x-8 text-sm text-gray-500">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Reliable Support
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Quality Parts
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Expert Service
-              </div>
-            </div>
-          </div>
+    <section 
+      className="py-10 px-4 bg-cover bg-center bg-fixed bg-no-repeat relative overflow-hidden min-h-screen"
+      style={{
+        backgroundImage: 'url(/images/productsbg.jpg)'
+      }}
+    >
+      {/* Decorative Elements */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-[#0a1a3f] rounded-full opacity-20 blur-xl"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#0a1a3f] rounded-full opacity-10 blur-2xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10 pt-16">
+        {/* Enhanced Section Title */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
+            style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+          >
+            Service and Spares Support
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
+            Complete range of service and spares to ensure your equipment operates at peak performance
+          </p>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#0a1a3f] mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"></div>
         </div>
 
-        {/* Subcategories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {subcategories.map((subcategory) => (
-            <div 
-              key={subcategory.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-              onClick={() => setActiveSubCategory(activeSubCategory === subcategory.id ? '' : subcategory.id)}
-            >
-              {/* Subcategory Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={subcategory.image} 
-                  alt={subcategory.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <h3 className="text-white text-xl font-bold">{subcategory.name}</h3>
+        {/* All Products Display */}
+        <div className="max-w-6xl mx-auto px-4 space-y-16 md:space-y-20">
+          {subcategories.map((subcategory, categoryIndex) => (
+            <div key={subcategory.id} className="relative">
+              <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12 ${categoryIndex % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                {/* Product Image Section */}
+                <div className={`relative flex justify-center lg:justify-start ${categoryIndex % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="relative">
+                    <img 
+                      src={subcategory.image} 
+                      alt={subcategory.name}
+                      className="w-full max-w-md h-auto object-contain transform hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-[#facc15] rounded-full opacity-20"></div>
+                    <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-[#0a1a3f] rounded-full opacity-10"></div>
+                    <div className="absolute top-1/2 -right-8 w-6 h-6 bg-[#facc15] rounded-full opacity-30"></div>
+                  </div>
+                </div>
+                
+                {/* Product Content Section */}
+                <div className={`flex flex-col justify-center space-y-6 lg:space-y-8 ${categoryIndex % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div>
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 leading-tight">
+                      {subcategory.name}
+                    </h3>
+                    <div className="w-16 h-1 bg-[#facc15] rounded-full"></div>
+                  </div>
+                  
+                  <div className="text-gray-700 text-lg sm:text-xl leading-relaxed space-y-4">
+                    <p>{subcategory.description}</p>
+                    
+                    {/* Additional content for Beaters Types */}
+                    {subcategory.id === 'beaters' && (
+                      <div className="space-y-3 mt-6">
+                        <h5 className="font-bold text-[#0a1a3f] text-xl mb-3">Types:</h5>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                          <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border-l-4 border-[#facc15] text-center">
+                            <p className="font-semibold text-[#0a1a3f]">Single Edged Hammer</p>
+                          </div>
+                          <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border-l-4 border-[#0a1a3f] text-center">
+                            <p className="font-semibold text-[#0a1a3f]">Multi Edged Hammer</p>
+                          </div>
+                          <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border-l-4 border-[#facc15] text-center">
+                            <p className="font-semibold text-[#0a1a3f]">Hard Facing Hammer</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Additional content for Roller Shells Types */}
+                    {subcategory.id === 'rollers' && (
+                      <div className="space-y-3 mt-6">
+                        <h5 className="font-bold text-[#0a1a3f] text-xl mb-3">Types:</h5>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border-l-4 border-[#facc15] text-center">
+                            <p className="font-semibold text-[#0a1a3f]">Corrugated Roll Shell</p>
+                          </div>
+                          <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border-l-4 border-[#0a1a3f] text-center">
+                            <p className="font-semibold text-[#0a1a3f]">Helical Roll Shell</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Additional content for Rods Types */}
+                    {subcategory.id === 'connecting-rod' && (
+                      <div className="space-y-3 mt-6">
+                        <h5 className="font-bold text-[#0a1a3f] text-xl mb-3">Types:</h5>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border-l-4 border-[#facc15] text-center">
+                            <p className="font-semibold text-[#0a1a3f]">16 MM Rod</p>
+                          </div>
+                          <div className="bg-white/60 backdrop-blur-sm rounded-lg p-4 border-l-4 border-[#0a1a3f] text-center">
+                            <p className="font-semibold text-[#0a1a3f]">20 MM Rod</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Premium Quality Indicator */}
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-[#facc15] rounded-full"></div>
+                    <span className="text-[#0a1a3f] font-semibold text-lg">Premium Quality</span>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <div className="pt-4">
+                    <button 
+                      onClick={() => navigate('/#contact')}
+                      className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                    >
+                      Get Quote
+                      <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
               
-              {/* Subcategory Content */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {subcategory.description}
-                </p>
-                
-                {/* Products List */}
-                {activeSubCategory === subcategory.id && (
-                  <div className="border-t pt-4 animate-fadeIn">
-                    <h4 className="font-semibold text-[#0a1a3f] mb-3 flex items-center">
-                      <svg className="w-4 h-4 mr-2 text-[#facc15]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      Available Services:
-                    </h4>
-                    <ul className="space-y-2">
-                      {subcategory.products.map((product, index) => (
-                        <li key={index} className="flex items-start text-sm text-gray-600">
-                          <div className="w-2 h-2 bg-[#facc15] rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span>{product}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                
-                {/* Expand/Collapse Button */}
-                <button className="mt-4 text-[#0a1a3f] font-semibold hover:text-[#facc15] transition-colors duration-300 flex items-center">
-                  {activeSubCategory === subcategory.id ? 'Show Less' : 'View Services'}
-                  <svg 
-                    className={`ml-2 w-4 h-4 transition-transform duration-300 ${activeSubCategory === subcategory.id ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
+              {/* Divider between sections (except last one) */}
+              {categoryIndex < subcategories.length - 1 && (
+                <div className="mt-12 mb-4">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Contact Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-[#0a1a3f] to-[#1e3a8a] rounded-xl shadow-xl p-12 text-white">
-            <h2 className="text-3xl font-bold mb-4">
-              Need Immediate Support?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Our expert team is ready to help you with all your service and spare parts needs
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#facc15] text-[#0a1a3f] px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] transition-all duration-300 hover:scale-105">
-                Emergency Service
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] transition-all duration-300 hover:scale-105">
-                Request Quote
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Back to Home Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 mb-8 text-center">
           <button 
             onClick={() => navigate('/')}
             className="bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 flex items-center mx-auto"
@@ -225,7 +280,7 @@ const ServicesAndSpares = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

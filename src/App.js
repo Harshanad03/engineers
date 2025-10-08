@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -8,6 +8,7 @@ import Categories from './components/Categories';
 import Products from './components/Products';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
+import Stats from './components/Stats';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
@@ -18,6 +19,24 @@ import SpecialPurposeMachiners from './components/SpecialPurposeMachiners';
 import ServicesAndSpares from './components/ServicesAndSpares';
 
 function HomePage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle hash navigation
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        // Use setTimeout to ensure the page has loaded
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    } else {
+      // Scroll to top if no hash
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
   return (
     <>
       <Hero />
@@ -27,6 +46,7 @@ function HomePage() {
       <Products />
       <WhyChooseUs />
       <Testimonials />
+      <Stats />
       <ContactForm />
     </>
   );

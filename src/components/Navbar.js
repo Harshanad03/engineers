@@ -53,10 +53,16 @@ const Navbar = () => {
               className="w-12 h-12 object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-xl font-bold uppercase text-white leading-tight">
+              <span 
+                className="text-xl font-bold uppercase text-white leading-tight"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
                 BHARATH
               </span>
-              <span className="text-sm font-bold uppercase text-white">
+              <span 
+                className="text-sm font-bold uppercase text-white"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
                 ENGINEERINGS
               </span>
             </div>

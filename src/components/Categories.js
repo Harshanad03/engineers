@@ -98,8 +98,11 @@ const Categories = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1a3f] mb-4">
-           Our Categories
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+            style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+          >
+            Our Categories
           </h2>
         </div>
 

@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Conveyers = () => {
   const navigate = useNavigate();
-  const [activeSubCategory, setActiveSubCategory] = useState('');
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -12,208 +11,193 @@ const Conveyers = () => {
 
   const subcategories = [
     {
-      id: 'belt-conveyors',
-      name: 'Belt Conveyors',
+      id: 'belt-conveyor',
+      name: 'Belt Conveyor',
       image: '/images/Conveyers.png',
-      description: 'Heavy-duty belt conveyor systems for efficient material handling in various industrial applications',
+      description: 'A belt conveyor in a feed mill is a machine used to efficiently transport bulk materials such as grains, powders, or pellets from one process to another, either horizontally or at an incline. It consists of a continuous belt stretched over pulleys, with one pulley powered by a motor to move the material. Belt conveyors help reduce manual labor, handle large volumes, and maintain a continuous, controlled flow of feed ingredients or finished pellets between machines like grinders, mixers, pellet mills, coolers, and storage bins, improving overall production efficiency and workflow in the feed mill.',
       products: [
-        'Flat Belt Conveyor - 5-200 tons/hour capacity',
-        'Troughed Belt Conveyor - 10-500 tons/hour capacity',
-        'Inclined Belt Conveyor - 3-150 tons/hour capacity',
-        'Declined Belt Conveyor - 5-300 tons/hour capacity',
-        'Curved Belt Conveyor - 2-100 tons/hour capacity',
-        'Modular Belt Conveyor - 1-50 tons/hour capacity'
+        {
+          name: 'Heavy Duty Belt Conveyor - 50 TPH',
+          capacity: '50 tons per hour',
+          features: ['Industrial grade belt', 'High capacity', 'Durable construction']
+        },
+        {
+          name: 'Inclined Belt Conveyor - 30 TPH',
+          capacity: '30 tons per hour',
+          features: ['Steep incline capability', 'Secure material handling', 'Efficient transport']
+        },
+        {
+          name: 'Flat Belt Conveyor - 25 TPH',
+          capacity: '25 tons per hour',
+          features: ['Level transport', 'Smooth operation', 'Low maintenance']
+        }
       ]
     },
     {
-      id: 'screw-conveyors',
-      name: 'Screw Conveyors',
+      id: 'z-type-conveyor',
+      name: 'Z Type Conveyor',
       image: '/images/Conveyers.png',
-      description: 'Efficient screw conveyor systems for bulk material handling with precise control',
+      description: 'A Z-type conveyor in a feed mill is a compact machine designed to lift and transport feed materials both vertically and horizontally in a single system, following a "Z" shaped path. Material is fed into a lower hopper, carried upward by a belt or chain with flights, and then discharged horizontally to the next process, such as a mixer, pellet mill, or storage bin. It ensures continuous, controlled flow, handles large volumes without damaging feed, reduces manual labor and spillage, and saves floor space, making it an efficient solution for moving ingredients or finished feed within the feed mill.',
       products: [
-        'Horizontal Screw Conveyor - 2-100 tons/hour',
-        'Inclined Screw Conveyor - 1-75 tons/hour',
-        'Vertical Screw Conveyor - 0.5-50 tons/hour',
-        'Flexible Screw Conveyor - 0.1-20 tons/hour',
-        'Tubular Screw Conveyor - 1-80 tons/hour',
-        'U-Trough Screw Conveyor - 2-120 tons/hour'
+        {
+          name: 'Z Type Bucket Conveyor - 20 TPH',
+          capacity: '20 tons per hour',
+          features: ['Space efficient design', 'Vertical elevation', 'High capacity']
+        },
+        {
+          name: 'Z Type Belt Conveyor - 15 TPH',
+          capacity: '15 tons per hour',
+          features: ['Smooth operation', 'Low noise', 'Easy maintenance']
+        },
+        {
+          name: 'Compact Z Type Conveyor - 10 TPH',
+          capacity: '10 tons per hour',
+          features: ['Compact design', 'Versatile application', 'Reliable operation']
+        }
       ]
     },
     {
-      id: 'chain-conveyors',
-      name: 'Chain Conveyors',
+      id: 'loading-conveyor',
+      name: 'Loading Conveyor',
       image: '/images/Conveyers.png',
-      description: 'Robust chain conveyor systems for heavy-duty applications and harsh environments',
+      description: 'A loading conveyor in a feed mill is a machine used to transfer feed materials, grains, or finished pellets from the production area to trucks, silos, or storage bins efficiently. It consists of a belt or chain system that moves material from the feed inlet to the discharge point, often with adjustable height or incline to reach the desired loading position. Loading conveyors ensure continuous, controlled flow, reduce manual handling and spillage, and speed up the loading process, making feed mill operations more efficient and organized.',
       products: [
-        'Drag Chain Conveyor - 10-500 tons/hour',
-        'Apron Chain Conveyor - 5-300 tons/hour',
-        'Flight Chain Conveyor - 3-200 tons/hour',
-        'Bucket Chain Conveyor - 2-150 tons/hour',
-        'Slat Chain Conveyor - 1-100 tons/hour',
-        'Overhead Chain Conveyor - 0.5-50 tons/hour'
+        {
+          name: 'Truck Loading Conveyor - 40 TPH',
+          capacity: '40 tons per hour',
+          features: ['Adjustable height', 'Truck loading', 'High speed loading']
+        },
+        {
+          name: 'Rail Car Loading Conveyor - 60 TPH',
+          capacity: '60 tons per hour',
+          features: ['Rail car loading', 'High capacity', 'Precise positioning']
+        },
+        {
+          name: 'Portable Loading Conveyor - 20 TPH',
+          capacity: '20 tons per hour',
+          features: ['Portable design', 'Easy setup', 'Versatile application']
+        }
       ]
     },
     {
-      id: 'pneumatic-conveyors',
-      name: 'Pneumatic Conveyors',
+      id: 'chain-conveyor',
+      name: 'Chain Conveyor',
       image: '/images/Conveyers.png',
-      description: 'Air-powered conveying systems for dust-free material transportation',
+      description: 'A chain conveyor in a feed mill is a durable machine used to transport bulk materials or feed products over short or long distances, especially in heavy-duty applications. It consists of a series of chains with attached flights or paddles that move material along a trough or enclosed channel. Chain conveyors are ideal for moving heavy, abrasive, or hot feed ingredients, ensuring a controlled, continuous flow between machines like grinders, mixers, pellet mills, or storage bins. They are robust, reliable, and capable of handling large volumes while minimizing spillage and labor, making them essential for efficient feed mill operations.',
       products: [
-        'Dense Phase Conveyor - 1-50 tons/hour',
-        'Dilute Phase Conveyor - 0.5-30 tons/hour',
-        'Vacuum Conveyor - 0.1-20 tons/hour',
-        'Pressure Conveyor - 1-40 tons/hour',
-        'Combination System - 2-60 tons/hour',
-        'Mobile Pneumatic Conveyor - 0.5-15 tons/hour'
-      ]
-    },
-    {
-      id: 'bucket-elevators',
-      name: 'Bucket Elevators',
-      image: '/images/Conveyers.png',
-      description: 'Vertical material handling systems for efficient elevation of bulk materials',
-      products: [
-        'Centrifugal Bucket Elevator - 5-200 tons/hour',
-        'Continuous Bucket Elevator - 3-150 tons/hour',
-        'Super Capacity Elevator - 10-500 tons/hour',
-        'Chain Bucket Elevator - 2-100 tons/hour',
-        'Belt Bucket Elevator - 1-80 tons/hour',
-        'Z-Type Bucket Elevator - 0.5-50 tons/hour'
-      ]
-    },
-    {
-      id: 'vibrating-conveyors',
-      name: 'Vibrating Conveyors',
-      image: '/images/Conveyers.png',
-      description: 'Vibration-based conveying systems for gentle material handling and screening',
-      products: [
-        'Natural Frequency Conveyor - 2-100 tons/hour',
-        'Electromagnetic Conveyor - 1-75 tons/hour',
-        'Mechanical Vibrating Conveyor - 3-150 tons/hour',
-        'Resonant Conveyor - 5-200 tons/hour',
-        'Screening Conveyor - 1-50 tons/hour',
-        'Cooling Conveyor - 2-80 tons/hour'
+        {
+          name: 'Heavy Duty Chain Conveyor - 30 TPH',
+          capacity: '30 tons per hour',
+          features: ['Heavy-duty chains', 'Abrasive material handling', 'High temperature resistance']
+        },
+        {
+          name: 'Enclosed Chain Conveyor - 25 TPH',
+          capacity: '25 tons per hour',
+          features: ['Enclosed channel', 'Minimal spillage', 'Dust-free operation']
+        },
+        {
+          name: 'Industrial Chain Conveyor - 40 TPH',
+          capacity: '40 tons per hour',
+          features: ['Large volume capacity', 'Robust construction', 'Long-distance transport']
+        }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f9fafb] via-white to-[#f1f5f9]">
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 pt-24 pb-12">
-        {/* Category Description */}
-        <div className="text-center mb-16">
-          <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Complete Conveyors System Solutions</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Our comprehensive range of conveyor systems is designed to handle various materials and applications 
-              with maximum efficiency. From simple belt conveyors to complex automated systems, we provide 
-              reliable solutions that optimize your material handling operations.
-            </p>
-            <div className="mt-6 flex justify-center space-x-8 text-sm text-gray-500">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Reliable Performance
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Custom Solutions
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Low Maintenance
-              </div>
-            </div>
-          </div>
+    <section 
+      className="py-10 px-4 bg-cover bg-center bg-fixed bg-no-repeat relative overflow-hidden min-h-screen"
+      style={{
+        backgroundImage: 'url(/images/productsbg.jpg)'
+      }}
+    >
+      {/* Decorative Elements */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-[#0a1a3f] rounded-full opacity-20 blur-xl"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#0a1a3f] rounded-full opacity-10 blur-2xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10 pt-16">
+        {/* Enhanced Section Title */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
+            style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+          >
+            Conveyor System Solutions
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
+            Comprehensive range of conveyor systems designed for efficient material handling and transportation
+          </p>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#0a1a3f] mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"></div>
         </div>
 
-        {/* Subcategories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {subcategories.map((subcategory) => (
-            <div 
-              key={subcategory.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-              onClick={() => setActiveSubCategory(activeSubCategory === subcategory.id ? '' : subcategory.id)}
-            >
-              {/* Subcategory Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={subcategory.image} 
-                  alt={subcategory.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <h3 className="text-white text-xl font-bold">{subcategory.name}</h3>
+        {/* All Products Display */}
+        <div className="max-w-6xl mx-auto px-4 space-y-16 md:space-y-20">
+          {subcategories.map((subcategory, categoryIndex) => (
+            <div key={subcategory.id} className="relative">
+              <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12 ${categoryIndex % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                {/* Product Image Section */}
+                <div className={`relative flex justify-center lg:justify-start ${categoryIndex % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="relative">
+                    <img 
+                      src={subcategory.image} 
+                      alt={subcategory.name}
+                      className="w-full max-w-md h-auto object-contain transform hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-[#facc15] rounded-full opacity-20"></div>
+                    <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-[#0a1a3f] rounded-full opacity-10"></div>
+                    <div className="absolute top-1/2 -right-8 w-6 h-6 bg-[#facc15] rounded-full opacity-30"></div>
+                  </div>
+                </div>
+                
+                {/* Product Content Section */}
+                <div className={`flex flex-col justify-center space-y-6 lg:space-y-8 ${categoryIndex % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div>
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 leading-tight">
+                      {subcategory.name}
+                    </h3>
+                    <div className="w-16 h-1 bg-[#facc15] rounded-full"></div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                    {subcategory.description}
+                  </p>
+                  
+                  {/* Premium Quality Indicator */}
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-[#facc15] rounded-full"></div>
+                    <span className="text-[#0a1a3f] font-semibold text-lg">Premium Quality</span>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <div className="pt-4">
+                    <button 
+                      onClick={() => navigate('/#contact')}
+                      className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                    >
+                      Get Quote
+                      <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
               
-              {/* Subcategory Content */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {subcategory.description}
-                </p>
-                
-                {/* Products List */}
-                {activeSubCategory === subcategory.id && (
-                  <div className="border-t pt-4 animate-fadeIn">
-                    <h4 className="font-semibold text-[#0a1a3f] mb-3 flex items-center">
-                      <svg className="w-4 h-4 mr-2 text-[#facc15]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      Available Products:
-                    </h4>
-                    <ul className="space-y-2">
-                      {subcategory.products.map((product, index) => (
-                        <li key={index} className="flex items-start text-sm text-gray-600">
-                          <div className="w-2 h-2 bg-[#facc15] rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span>{product}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                
-                {/* Expand/Collapse Button */}
-                <button className="mt-4 text-[#0a1a3f] font-semibold hover:text-[#facc15] transition-colors duration-300 flex items-center">
-                  {activeSubCategory === subcategory.id ? 'Show Less' : 'View Products'}
-                  <svg 
-                    className={`ml-2 w-4 h-4 transition-transform duration-300 ${activeSubCategory === subcategory.id ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
+              {/* Divider between sections (except last one) */}
+              {categoryIndex < subcategories.length - 1 && (
+                <div className="mt-12 mb-4">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Contact Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-[#0a1a3f] to-[#1e3a8a] rounded-xl shadow-xl p-12 text-white">
-            <h2 className="text-3xl font-bold mb-4">
-              Streamline Your Material Handling
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Get customized conveyor solutions for your specific requirements
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#facc15] text-[#0a1a3f] px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] transition-all duration-300 hover:scale-105">
-                Request Design
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] transition-all duration-300 hover:scale-105">
-                Get Consultation
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Back to Home Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 mb-8 text-center">
           <button 
             onClick={() => navigate('/')}
             className="bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 flex items-center mx-auto"
@@ -225,7 +209,7 @@ const Conveyers = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

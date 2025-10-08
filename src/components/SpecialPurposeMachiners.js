@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SpecialPurposeMachiners = () => {
   const navigate = useNavigate();
-  const [activeSubCategory, setActiveSubCategory] = useState('');
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -12,208 +11,239 @@ const SpecialPurposeMachiners = () => {
 
   const subcategories = [
     {
-      id: 'custom-machines',
-      name: 'Custom Machines',
+      id: 'industrial-blender',
+      name: 'Industrial Blender',
       image: '/images/Special Purpose Machiners.png',
-      description: 'Tailored machinery solutions designed specifically for your unique manufacturing requirements',
+      description: 'In a feed mill unit, an industrial blender is a machine used to thoroughly mix various feed ingredients to produce a uniform and homogeneous feed blend. It ensures that every particle of feed contains the correct proportion of energy, protein, vitamins, and minerals, which is essential for animal growth and health.',
       products: [
-        'Custom Processing Line - Designed to specifications',
-        'Specialized Assembly Machine - Automated assembly solutions',
-        'Custom Packaging Machine - Product-specific packaging',
-        'Bespoke Manufacturing Unit - Complete production systems',
-        'Custom Testing Equipment - Quality control systems',
-        'Specialized Cutting Machine - Precision cutting solutions'
+        {
+          name: 'Heavy Duty Industrial Blender - 5 Ton',
+          capacity: '5 ton capacity',
+          features: ['Robust construction', 'High torque mixing', 'Easy maintenance']
+        },
+        {
+          name: 'Continuous Industrial Blender - 10 TPH',
+          capacity: '10 tons per hour',
+          features: ['Continuous operation', 'Uniform mixing', 'High efficiency']
+        },
+        {
+          name: 'Batch Industrial Blender - 2 Ton',
+          capacity: '2 ton batch',
+          features: ['Precise mixing', 'Variable speed', 'Quality control']
+        }
       ]
     },
     {
-      id: 'automation-systems',
-      name: 'Automation Systems',
+      id: 'jacket-blender',
+      name: 'Jacket Blender',
       image: '/images/Special Purpose Machiners.png',
-      description: 'Advanced automated systems for enhanced productivity and precision manufacturing',
+      description: 'A jacketed blender is a specialized type of industrial mixer designed to mix feed ingredients while controlling temperature. The jacket surrounding the blender allows hot or cold fluid (usually steam, hot water, or oil) to circulate, which can heat or maintain the temperature of the feed during mixing. This is particularly useful when fats, molasses, or other heat-sensitive additives are included, or when slightly warming the feed improves pellet quality and binding.',
       products: [
-        'PLC Control System - Programmable logic controllers',
-        'Robotic Integration - Industrial robot systems',
-        'Automated Assembly Line - Complete assembly automation',
-        'Smart Manufacturing System - IoT-enabled production',
-        'CNC Integration - Computer numerical control',
-        'Vision Inspection System - Automated quality control'
+        {
+          name: 'Jacket Blender with Heating - 1 Ton',
+          capacity: '1 ton capacity',
+          features: ['Temperature control', 'Steam jacket', 'Precise heating']
+        },
+        {
+          name: 'Jacket Blender with Cooling - 1.5 Ton',
+          capacity: '1.5 ton capacity',
+          features: ['Cooling jacket', 'Temperature monitoring', 'Efficient cooling']
+        },
+        {
+          name: 'Dual Jacket Blender - 2 Ton',
+          capacity: '2 ton capacity',
+          features: ['Heating & cooling', 'Advanced control', 'Versatile operation']
+        }
       ]
     },
     {
-      id: 'precision-machines',
-      name: 'Precision Machines',
+      id: 'crumbler',
+      name: 'Crumbler',
       image: '/images/Special Purpose Machiners.png',
-      description: 'High-precision machinery for applications requiring exact tolerances and quality',
+      description: 'A crumbler is a machine used to break large pellets into smaller, uniform sizes suitable for young animals like chicks, piglets, or fish that cannot consume standard-size pellets. Crumbling ensures that the feed is easier to ingest and digest, reduces wastage, and maintains nutrient balance.',
       products: [
-        'Precision Grinding Machine - Micro-tolerance grinding',
-        'High-Speed Machining Center - Rapid precision cutting',
-        'Laser Processing System - Laser cutting and welding',
-        'EDM Machine - Electrical discharge machining',
-        'Coordinate Measuring Machine - Dimensional inspection',
-        'Ultra-Precision Lathe - Micro-machining capabilities'
+        {
+          name: 'Pellet Crumbler - 3 TPH',
+          capacity: '3 tons per hour',
+          features: ['Adjustable rollers', 'Gentle crumbling', 'Consistent output']
+        },
+        {
+          name: 'Heavy Duty Crumbler - 5 TPH',
+          capacity: '5 tons per hour',
+          features: ['High capacity', 'Durable construction', 'Easy adjustment']
+        },
+        {
+          name: 'Compact Crumbler - 1 TPH',
+          capacity: '1 ton per hour',
+          features: ['Space efficient', 'Low maintenance', 'Reliable operation']
+        }
       ]
     },
     {
-      id: 'material-processing',
-      name: 'Material Processing',
+      id: 'peddle-conveyor',
+      name: 'Paddle Conveyor',
       image: '/images/Special Purpose Machiners.png',
-      description: 'Specialized equipment for processing various materials with specific requirements',
+      description: 'A paddle conveyor (also called a paddle feeder or drag conveyor) is used to move bulk materials such as grains, feed powders, or pellets from one process to another in a controlled manner. It consists of a rotating shaft with paddles inside a trough, which gently pushes the material forward without damaging it.',
       products: [
-        'Heat Treatment Furnace - Controlled heating systems',
-        'Surface Treatment Line - Coating and finishing',
-        'Material Testing Machine - Mechanical property testing',
-        'Powder Processing System - Powder metallurgy equipment',
-        'Composite Processing - Advanced composite manufacturing',
-        'Ceramic Processing - High-temperature ceramic production'
+        {
+          name: 'Heavy Duty Peddle Conveyor - 20 TPH',
+          capacity: '20 tons per hour',
+          features: ['Robust peddles', 'High capacity', 'Smooth operation']
+        },
+        {
+          name: 'Inclined Peddle Conveyor - 15 TPH',
+          capacity: '15 tons per hour',
+          features: ['Steep incline', 'Secure material handling', 'Efficient transport']
+        },
+        {
+          name: 'Horizontal Peddle Conveyor - 25 TPH',
+          capacity: '25 tons per hour',
+          features: ['Level transport', 'High speed', 'Low maintenance']
+        }
       ]
     },
     {
-      id: 'quality-control',
-      name: 'Quality Control Systems',
+      id: 'swever',
+      name: 'Swever',
       image: '/images/Special Purpose Machiners.png',
-      description: 'Advanced quality control and inspection systems for manufacturing excellence',
+      description: 'Precision sieving and screening equipment for material separation and grading',
       products: [
-        'Automated Inspection System - 100% quality inspection',
-        'Dimensional Measurement - Precision measurement tools',
-        'Surface Quality Analyzer - Surface finish analysis',
-        'Non-Destructive Testing - NDT equipment and systems',
-        'Statistical Process Control - SPC monitoring systems',
-        'Quality Data Management - Quality tracking software'
+        {
+          name: 'Vibrating Swever - 2 TPH',
+          capacity: '2 tons per hour',
+          features: ['Multiple screens', 'Adjustable vibration', 'Precise separation']
+        },
+        {
+          name: 'Rotary Swever - 3 TPH',
+          capacity: '3 tons per hour',
+          features: ['Gentle screening', 'Low noise', 'High efficiency']
+        },
+        {
+          name: 'Linear Swever - 1.5 TPH',
+          capacity: '1.5 tons per hour',
+          features: ['Linear motion', 'Compact design', 'Easy cleaning']
+        }
       ]
     },
     {
-      id: 'research-equipment',
-      name: 'Research Equipment',
+      id: 'grass-cutting-machine',
+      name: 'Grass Cutting Machine',
       image: '/images/Special Purpose Machiners.png',
-      description: 'Specialized research and development equipment for innovation and testing',
+      description: 'A grass cutting machine (also called a forage cutter or chopper) is widely used in agriculture and feed preparation to cut, chop, or shred green fodder like grass, maize stalks, sugarcane tops, and other crops into smaller pieces suitable for animal feeding or silage preparation. It helps livestock farmers provide uniform, manageable, and digestible feed, improving intake and nutrient utilization.',
       products: [
-        'Laboratory Testing Machine - R&D testing equipment',
-        'Prototype Development - Rapid prototyping systems',
-        'Material Characterization - Advanced material analysis',
-        'Process Development - Pilot plant equipment',
-        'Simulation Equipment - Process simulation systems',
-        'Innovation Lab Setup - Complete R&D facilities'
+        {
+          name: 'Heavy Duty Grass Cutter - 10 HP',
+          capacity: '10 HP motor',
+          features: ['Sharp blades', 'High capacity', 'Durable construction']
+        },
+        {
+          name: 'Compact Grass Cutter - 5 HP',
+          capacity: '5 HP motor',
+          features: ['Portable design', 'Easy operation', 'Efficient cutting']
+        },
+        {
+          name: 'Industrial Grass Chopper - 15 HP',
+          capacity: '15 HP motor',
+          features: ['Fine chopping', 'High output', 'Reliable performance']
+        }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f9fafb] via-white to-[#f1f5f9]">
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 pt-24 pb-12">
-        {/* Category Description */}
-        <div className="text-center mb-16">
-          <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-[#0a1a3f] mb-4">Special Purpose Machine Solutions</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Our special purpose machine are engineered to meet your specific manufacturing challenges. 
-              From custom automation systems to precision processing equipment, we design and build 
-              machinery that perfectly fits your unique production requirements and quality standards.
-            </p>
-            <div className="mt-6 flex justify-center space-x-8 text-sm text-gray-500">
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Custom Design
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Precision Engineering
-              </div>
-              <div className="flex items-center">
-                <div className="w-2 h-2 bg-[#facc15] rounded-full mr-2"></div>
-                Advanced Technology
-              </div>
-            </div>
-          </div>
+    <section 
+      className="py-10 px-4 bg-cover bg-center bg-fixed bg-no-repeat relative overflow-hidden min-h-screen"
+      style={{
+        backgroundImage: 'url(/images/productsbg.jpg)'
+      }}
+    >
+      {/* Decorative Elements */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-[#0a1a3f] rounded-full opacity-20 blur-xl"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#0a1a3f] rounded-full opacity-10 blur-2xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10 pt-16">
+        {/* Enhanced Section Title */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
+            style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+          >
+            Special Purpose Machine Solutions
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
+            Engineered solutions to meet your specific manufacturing challenges with precision and reliability
+          </p>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#0a1a3f] mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"></div>
         </div>
 
-        {/* Subcategories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {subcategories.map((subcategory) => (
-            <div 
-              key={subcategory.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-              onClick={() => setActiveSubCategory(activeSubCategory === subcategory.id ? '' : subcategory.id)}
-            >
-              {/* Subcategory Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={subcategory.image} 
-                  alt={subcategory.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <h3 className="text-white text-xl font-bold">{subcategory.name}</h3>
+        {/* All Products Display */}
+        <div className="max-w-6xl mx-auto px-4 space-y-16 md:space-y-20">
+          {subcategories.map((subcategory, categoryIndex) => (
+            <div key={subcategory.id} className="relative">
+              <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12 ${categoryIndex % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
+                {/* Product Image Section */}
+                <div className={`relative flex justify-center lg:justify-start ${categoryIndex % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="relative">
+                    <img 
+                      src={subcategory.image} 
+                      alt={subcategory.name}
+                      className="w-full max-w-md h-auto object-contain transform hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-[#facc15] rounded-full opacity-20"></div>
+                    <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-[#0a1a3f] rounded-full opacity-10"></div>
+                    <div className="absolute top-1/2 -right-8 w-6 h-6 bg-[#facc15] rounded-full opacity-30"></div>
+                  </div>
+                </div>
+                
+                {/* Product Content Section */}
+                <div className={`flex flex-col justify-center space-y-6 lg:space-y-8 ${categoryIndex % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div>
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 leading-tight">
+                      {subcategory.name}
+                    </h3>
+                    <div className="w-16 h-1 bg-[#facc15] rounded-full"></div>
+                  </div>
+                  
+                  <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                    {subcategory.description}
+                  </p>
+                  
+                  {/* Premium Quality Indicator */}
+                  <div className="flex items-center space-x-3">
+                    <div className="w-4 h-4 bg-[#facc15] rounded-full"></div>
+                    <span className="text-[#0a1a3f] font-semibold text-lg">Premium Quality</span>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <div className="pt-4">
+                    <button 
+                      onClick={() => navigate('/#contact')}
+                      className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                    >
+                      Get Quote
+                      <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
               
-              {/* Subcategory Content */}
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {subcategory.description}
-                </p>
-                
-                {/* Products List */}
-                {activeSubCategory === subcategory.id && (
-                  <div className="border-t pt-4 animate-fadeIn">
-                    <h4 className="font-semibold text-[#0a1a3f] mb-3 flex items-center">
-                      <svg className="w-4 h-4 mr-2 text-[#facc15]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      Available Solutions:
-                    </h4>
-                    <ul className="space-y-2">
-                      {subcategory.products.map((product, index) => (
-                        <li key={index} className="flex items-start text-sm text-gray-600">
-                          <div className="w-2 h-2 bg-[#facc15] rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span>{product}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                
-                {/* Expand/Collapse Button */}
-                <button className="mt-4 text-[#0a1a3f] font-semibold hover:text-[#facc15] transition-colors duration-300 flex items-center">
-                  {activeSubCategory === subcategory.id ? 'Show Less' : 'View Solutions'}
-                  <svg 
-                    className={`ml-2 w-4 h-4 transition-transform duration-300 ${activeSubCategory === subcategory.id ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
+              {/* Divider between sections (except last one) */}
+              {categoryIndex < subcategories.length - 1 && (
+                <div className="mt-12 mb-4">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
-        {/* Contact Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-[#0a1a3f] to-[#1e3a8a] rounded-xl shadow-xl p-12 text-white">
-            <h2 className="text-3xl font-bold mb-4">
-              Need a Custom Solution?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Let's discuss your specific requirements and design the perfect machine for your needs
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#facc15] text-[#0a1a3f] px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] transition-all duration-300 hover:scale-105">
-                Discuss Project
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] transition-all duration-300 hover:scale-105">
-                Request Consultation
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Back to Home Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-12 mb-8 text-center">
           <button 
             onClick={() => navigate('/')}
             className="bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 flex items-center mx-auto"
@@ -225,7 +255,7 @@ const SpecialPurposeMachiners = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
