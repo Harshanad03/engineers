@@ -47,7 +47,7 @@ const AboutUs = () => {
               <div className="relative bg-white p-3 md:p-4 shadow-lg border-8 border-gray-100">
                 <div className="relative overflow-hidden">
                   <video
-                    src="/images/about1.mp4"
+                    src="/images/aboutus.mp4"
                     className="w-full h-48 md:h-64 object-cover"
                     autoPlay
                     loop
@@ -67,7 +67,7 @@ const AboutUs = () => {
               <div className="relative bg-white p-3 md:p-4 shadow-lg border-8 border-gray-100">
                 <div className="relative overflow-hidden">
                   <video
-                    src="/images/about2.mp4"
+                    src="/images/aboutus1.mp4"
                     className="w-full h-48 md:h-64 object-cover"
                     autoPlay
                     loop

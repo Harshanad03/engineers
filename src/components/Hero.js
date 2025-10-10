@@ -5,8 +5,7 @@ const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
   
   const videos = [
-    '/images/about1.mp4',
-    '/images/about2.mp4'
+    '/images/landingpage.mp4',
   ];
 
   // Switch videos every 10 seconds
