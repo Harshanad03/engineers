@@ -63,15 +63,15 @@ const Products = () => {
         {/* Enhanced Section Title */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
           <h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
             Discover Our Signature Offerings
           </h2>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#facc15] mx-auto mb-6 rounded-full"></div>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive range of industrial machinery and solutions designed for excellence
           </p>
-          <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#0a1a3f] mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"></div>
         </div>
 
         {/* Enhanced Category Tab Selector */}
@@ -88,17 +88,17 @@ const Products = () => {
                     text-xs
                     transition-all duration-300 ease-out
                     border border-gray-200/50
-                    hover:scale-105 hover:shadow-lg
+                    hover:scale-105 hover:shadow-sm
                     group overflow-hidden
                     whitespace-nowrap
                     ${activeTab === category 
-                      ? 'text-[#0a1a3f] shadow-lg border-transparent transform scale-105' 
-                      : 'text-white bg-transparent hover:bg-[#facc15]/10'
+                      ? 'text-[#0a1a3f] shadow-sm border-transparent transform scale-105' 
+                      : 'text-white bg-transparent hover:bg-transparent'
                     }
                   `}
-                  style={{
-                    backgroundColor: activeTab === category ? '#facc15' : 'transparent'
-                  }}
+                    style={{
+                      backgroundColor: activeTab === category ? '#fefce8' : 'transparent'
+                    }}
                 >
                   <span className="relative z-10">{category}</span>
                 </button>
@@ -113,12 +113,12 @@ const Products = () => {
                       text-xs
                       transition-all duration-300 ease-out
                       border border-gray-200/50
-                      hover:scale-105 hover:shadow-lg
+                      hover:scale-105 hover:shadow-sm
                       group overflow-hidden
                       whitespace-nowrap
                       ${activeTab === categories[4] 
-                        ? 'text-[#0a1a3f] shadow-lg border-transparent transform scale-105' 
-                        : 'text-white bg-transparent hover:bg-[#facc15]/10'
+                        ? 'text-[#0a1a3f] shadow-sm border-transparent transform scale-105' 
+                        : 'text-white bg-transparent hover:bg-transparent'
                       }
                     `}
                     style={{
@@ -142,12 +142,12 @@ const Products = () => {
                     text-sm md:text-base
                     transition-all duration-500 ease-out
                     border border-gray-200/50
-                    hover:scale-105 hover:shadow-lg
+                    hover:scale-105 hover:shadow-sm
                     group overflow-hidden
                     whitespace-nowrap
                     ${activeTab === category 
-                      ? 'text-[#0a1a3f] shadow-lg border-transparent transform scale-105' 
-                      : 'text-white bg-transparent hover:bg-[#facc15]/10'
+                      ? 'text-[#0a1a3f] shadow-sm border-transparent transform scale-105' 
+                      : 'text-white bg-transparent hover:bg-transparent'
                     }
                   `}
                   style={{
@@ -155,10 +155,6 @@ const Products = () => {
                     backgroundColor: activeTab === category ? '#facc15' : 'transparent'
                   }}
                 >
-                  {/* Active tab glow effect */}
-                  {activeTab === category && (
-                    <div className="absolute inset-0 bg-[#0a1a3f]/20 rounded-full blur-sm"></div>
-                  )}
                   
                   {/* Hover effect overlay */}
                   <div className="absolute inset-0 bg-[#0a1a3f]/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -192,9 +188,7 @@ const Products = () => {
                     />
                     
                     {/* Decorative Elements */}
-                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-[#facc15] rounded-full opacity-20"></div>
                     <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-[#0a1a3f] rounded-full opacity-10"></div>
-                    <div className="absolute top-1/2 -right-8 w-6 h-6 bg-[#facc15] rounded-full opacity-30"></div>
                   </div>
                 </div>
                 
@@ -230,7 +224,7 @@ const Products = () => {
                         };
                         navigate(routeMap[activeTab]);
                       }}
-                      className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center"
+                      className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-sm flex items-center"
                     >
                       View Details
                       <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

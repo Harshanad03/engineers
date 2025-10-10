@@ -59,7 +59,7 @@ const Conveyers = () => {
     {
       id: 'loading-conveyor',
       name: 'Loading Conveyor',
-      image: '/images/Conveyers.png',
+      image: '/images/loadingconveyor.png',
       description: 'A loading conveyor in a feed mill is a machine used to transfer feed materials, grains, or finished pellets from the production area to trucks, silos, or storage bins efficiently. It consists of a belt or chain system that moves material from the feed inlet to the discharge point, often with adjustable height or incline to reach the desired loading position. Loading conveyors ensure continuous, controlled flow, reduce manual handling and spillage, and speed up the loading process, making feed mill operations more efficient and organized.',
       products: [
         {

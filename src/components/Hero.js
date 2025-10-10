@@ -3,6 +3,20 @@ import GradientText from './GradientText';
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
+
+  const scrollToProducts = () => {
+    const productsSection = document.getElementById('products');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   
   const videos = [
     '/images/landingpage.mp4',
@@ -55,12 +69,18 @@ const Hero = () => {
         </p>
         
          <div className="flex flex-col xs:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center sm:justify-start items-center sm:items-start px-2 xs:px-0">
-           <button className="hero-btn group relative w-3/4 xs:w-auto bg-bharath-blue-900 hover:bg-bharath-blue-800 text-white px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-lg font-semibold text-sm xs:text-base sm:text-lg transition-all duration-300 hover:scale-105 overflow-hidden">
+           <button 
+             onClick={scrollToProducts}
+             className="hero-btn group relative w-3/4 xs:w-auto bg-bharath-blue-900 hover:bg-bharath-blue-800 text-white px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-lg font-semibold text-sm xs:text-base sm:text-lg transition-all duration-300 hover:scale-105 overflow-hidden"
+           >
              <span className="relative z-10">Our Products</span>
              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
            </button>
-           <button className="hero-btn group relative w-3/4 xs:w-auto bg-bharath-yellow-500 hover:bg-bharath-yellow-400 text-bharath-blue-900 px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-lg font-semibold text-sm xs:text-base sm:text-lg transition-all duration-300 hover:scale-105 overflow-hidden">
+           <button 
+             onClick={scrollToContact}
+             className="hero-btn group relative w-3/4 xs:w-auto bg-bharath-yellow-500 hover:bg-bharath-yellow-400 text-bharath-blue-900 px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-lg font-semibold text-sm xs:text-base sm:text-lg transition-all duration-300 hover:scale-105 overflow-hidden"
+           >
              <span className="relative z-10">Request Quote</span>
              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
              <div className="absolute inset-0 bg-gradient-to-r from-yellow-300/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -36,7 +36,7 @@ const PoultryFeedMachiners = () => {
     {
       id: 'elevator',
       name: 'Elevator',
-      image: '/images/Poultry Feed Machiners.png',
+      image: '/images/elevator.png',
       description: 'A bucket elevator is a continuous vertical conveyor. It consists of a belt or chain running around two pulleys with evenly spaced "buckets" attached. As the belt moves, the buckets scoop up material from a boot section (intake) and discharge it at the head (outlet) at the top.',
       products: [
         {
@@ -59,7 +59,7 @@ const PoultryFeedMachiners = () => {
     {
       id: 'storage-hopper',
       name: 'Storage Hopper',
-      image: '/images/Poultry Feed Machiners.png',
+      image: '/images/storagehopper.png',
       description: 'A storage hopper is a conical or pyramidal-bottomed vessel used to hold and discharge bulk materials in a controlled way. In a feed mill, it acts as an intermediate storage point between processes. Think of it as a small silo or bin designed for short-term holding and controlled flow.',
       products: [
         {
@@ -82,7 +82,7 @@ const PoultryFeedMachiners = () => {
     {
       id: 'grinder',
       name: 'Grinder',
-      image: '/images/Poultry Feed Machiners.png',
+      image: '/images/grinder.png',
       description: 'In a feed mill unit, a grinder (also called a hammer mill or pulverizer) is an essential machine used for size reduction of raw materials like grains, maize, soybean, or other feed ingredients. The purpose is to make the feed ingredients smaller, uniform, and easier to mix or pelletize.',
       products: [
         {
@@ -105,7 +105,7 @@ const PoultryFeedMachiners = () => {
     {
       id: 'mixture',
       name: 'Mixture',
-      image: '/images/Poultry Feed Machiners.png',
+      image: '/images/mixture.png',
       description: 'In a feed mill unit, the mixture refers to the process of blending different feed ingredients into a homogeneous feed mix before it is either pelleted or packed as mash feed. This ensures animals get a balanced diet with proper nutrients in every portion.',
       products: [
         {

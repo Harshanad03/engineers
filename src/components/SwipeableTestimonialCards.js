@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
 const SwipeableTestimonialCards = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cards] = useState([...testimonialCardData]);
 
-  const nextCard = () => {
+  const nextCard = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % cards.length);
-  };
+  }, [cards.length]);
 
   useEffect(() => {
     const interval = setInterval(nextCard, 5000);
     return () => clearInterval(interval);
-  }, [cards.length]);
+  }, [cards.length, nextCard]);
 
   return (
     <div className="relative h-[500px] w-full flex items-center justify-center overflow-hidden">

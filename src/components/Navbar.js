@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('Home');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -10,26 +11,89 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Add scroll listener to detect active section
+  useEffect(() => {
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (location.pathname !== '/') return;
+      
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const sections = ['home', 'about', 'products', 'contact'];
+          const scrollPosition = window.scrollY + 200; // Increased offset for better detection
+          
+          let currentSection = 'Home';
+          
+          for (let i = 0; i < sections.length; i++) {
+            const section = document.getElementById(sections[i]);
+            if (section) {
+              const sectionTop = section.offsetTop;
+              const sectionHeight = section.offsetHeight;
+              const sectionBottom = sectionTop + sectionHeight;
+              
+              // Check if we're in the middle portion of the section for better accuracy
+              if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionBottom - 100) {
+                currentSection = sections[i].charAt(0).toUpperCase() + sections[i].slice(1);
+                break;
+              }
+            }
+          }
+          
+          setActiveSection(currentSection);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Call once to set initial state
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
+
   const handleLinkClick = (link) => {
     setIsMenuOpen(false);
+    
     if (link.name === 'Home') {
       navigate('/');
+      setActiveSection('Home');
     } else {
-      navigate('/#' + link.href);
+      // If we're already on the home page, just scroll to the section
+      if (location.pathname === '/') {
+        const element = document.querySelector('#' + link.href);
+        if (element) {
+          // Set active section after a small delay to allow smooth scrolling
+          setTimeout(() => {
+            setActiveSection(link.name);
+          }, 100);
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        // Navigate to home page with hash
+        navigate('/#' + link.href);
+        setActiveSection(link.name);
+      }
     }
   };
 
   const getActiveLink = () => {
-    if (location.pathname === '/') {
-      return 'Home';
-    } else if (location.pathname.includes('cattle-feed-machiners') || 
-               location.pathname.includes('poultry-feed-machiners') || 
-               location.pathname.includes('conveyers') || 
-               location.pathname.includes('special-purpose-machiners') || 
-               location.pathname.includes('automation') || 
-               location.pathname.includes('services-and-spares')) {
+    // Check if we're on a product page
+    if (location.pathname.includes('cattle-feed-machiners') || 
+        location.pathname.includes('poultry-feed-machiners') || 
+        location.pathname.includes('conveyers') || 
+        location.pathname.includes('special-purpose-machiners') || 
+        location.pathname.includes('automation') || 
+        location.pathname.includes('services-and-spares')) {
       return 'Products';
     }
+    
+    // Use the activeSection state for home page
+    if (location.pathname === '/') {
+      return activeSection;
+    }
+    
     return 'Home';
   };
 
@@ -37,7 +101,6 @@ const Navbar = () => {
     { name: 'Home', href: 'home' },
     { name: 'About', href: 'about' },
     { name: 'Products', href: 'products' },
-    { name: 'Services', href: 'services' },
     { name: 'Contact', href: 'contact' }
   ];
 
@@ -57,13 +120,7 @@ const Navbar = () => {
                 className="text-xl font-bold uppercase text-white leading-tight"
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
-                BHARATH
-              </span>
-              <span 
-                className="text-sm font-bold uppercase text-white"
-                style={{ fontFamily: 'Poppins, sans-serif' }}
-              >
-                ENGINEERINGS
+                BHARATH ENGINEERINGS
               </span>
             </div>
           </div>
@@ -74,10 +131,10 @@ const Navbar = () => {
               <button
                 key={link.name}
                 onClick={() => handleLinkClick(link)}
-                className={`font-medium text-base transition-all duration-200 ease-in-out relative ${
+                className={`font-medium text-base transition-all duration-300 ease-in-out relative border-b-2 pb-1 ${
                   getActiveLink() === link.name
-                    ? 'text-[#facc15] border-b-2 border-[#facc15] pb-1'
-                    : 'text-white hover:text-[#facc15]'
+                    ? 'text-[#facc15] border-[#facc15]'
+                    : 'text-white border-transparent hover:text-[#facc15] hover:border-[#facc15]'
                 }`}
               >
                 {link.name}

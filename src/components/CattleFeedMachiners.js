@@ -36,7 +36,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'elevator',
       name: 'Elevator',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/elevator.png',
       description: 'A bucket elevator is a continuous vertical conveyor. It consists of a belt or chain running around two pulleys with evenly spaced "buckets" attached. As the belt moves, the buckets scoop up material from a boot section (intake) and discharge it at the head (outlet) at the top.',
       products: [
         {
@@ -59,7 +59,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'storage-hopper',
       name: 'Storage Hopper',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/storagehopper.png',
       description: 'A storage hopper is a conical or pyramidal-bottomed vessel used to hold and discharge bulk materials in a controlled way. In a feed mill, it acts as an intermediate storage point between processes. Think of it as a small silo or bin designed for short-term holding and controlled flow.',
       products: [
         {
@@ -82,7 +82,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'grinder',
       name: 'Grinder',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/grinder.png',
       description: 'In a feed mill unit, a grinder (also called a hammer mill or pulverizer) is an essential machine used for size reduction of raw materials like grains, maize, soybean, or other feed ingredients. The purpose is to make the feed ingredients smaller, uniform, and easier to mix or pelletize.',
       products: [
         {
@@ -105,7 +105,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'mixture',
       name: 'Mixture',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/mixture.png',
       description: 'In a feed mill unit, the mixture refers to the process of blending different feed ingredients into a homogeneous feed mix before it is either pelleted or packed as mash feed. This ensures animals get a balanced diet with proper nutrients in every portion.',
       products: [
         {
@@ -128,7 +128,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'pellet-mill',
       name: 'Pellet Mill',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/pelletmill.png',
       description: 'In a feed mill unit, the pellet mill is a critical machine that compresses and shapes mixed feed into uniform pellets, improving digestibility, feed efficiency, and handling. Mixed feed is fed into the mill, often through a conditioner where steam or moisture may be added, and then pressed through a die by rollers to form pellets of desired size, which are cut and discharged for cooling and storage. Pellet mills can be flat die (for small to medium production) or ring die (for large-scale production), and proper control of moisture, temperature, and pellet size ensures high-quality feed with reduced wastage, dust, and selective feeding, making it easier to store, transport, and feed to animals.',
       products: [
         {
@@ -151,7 +151,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'cooler',
       name: 'Cooler',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/cooler.png',
       description: 'In a feed mill unit, a cooler is an essential machine used after pelleting to reduce the temperature and moisture of freshly produced pellets. Fresh pellets coming out of the pellet mill are usually hot (80–90°C) and soft due to the heat and steam used during pelleting. If stored or packed immediately, they can become moldy, break easily, or stick together. The cooler resolves this problem.',
       products: [
         {
@@ -197,7 +197,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'vibrator',
       name: 'Vibrator',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/vibrator.png',
       description: 'In a feed mill unit, a vibrator (also called a vibratory feeder or vibrator feeder) is a device used to move, feed, or separate materials efficiently using vibration. It plays a crucial role in handling bulk ingredients such as grains, powders, or pellets without clogging or manual intervention.',
       products: [
         {

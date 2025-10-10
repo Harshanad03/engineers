@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Phone, MessageCircle, X, Mail } from 'lucide-react';
+// eslint-disable-next-line no-unused-vars
+import { Phone, X, Mail } from 'lucide-react';
 
 const FloatingButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -9,18 +10,18 @@ const FloatingButtons = () => {
   };
 
   const handleCall = () => {
-    window.open('tel:+1234567890', '_self');
+    window.open('tel:+919842750053', '_self');
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = '1234567890'; // Replace with your actual phone number
+    const phoneNumber = '919842750053'; // Your actual WhatsApp number
     const message = 'Hello! I am interested in your industrial machinery and equipment.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleEmail = () => {
-    const email = 'info@bharathengineerings.com'; // Replace with your actual email
+    const email = 'bharathengineerings@gmail.com'; // Your actual email
     const subject = 'Inquiry about Industrial Machinery';
     const body = 'Hello,\n\nI am interested in your industrial machinery and equipment. Please provide more information.\n\nThank you!';
     const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;

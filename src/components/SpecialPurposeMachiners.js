@@ -36,7 +36,7 @@ const SpecialPurposeMachiners = () => {
     {
       id: 'jacket-blender',
       name: 'Jacket Blender',
-      image: '/images/Special Purpose Machiners.png',
+      image: '/images/jacketmixture.png',
       description: 'A jacketed blender is a specialized type of industrial mixer designed to mix feed ingredients while controlling temperature. The jacket surrounding the blender allows hot or cold fluid (usually steam, hot water, or oil) to circulate, which can heat or maintain the temperature of the feed during mixing. This is particularly useful when fats, molasses, or other heat-sensitive additives are included, or when slightly warming the feed improves pellet quality and binding.',
       products: [
         {
@@ -99,29 +99,6 @@ const SpecialPurposeMachiners = () => {
           name: 'Horizontal Peddle Conveyor - 25 TPH',
           capacity: '25 tons per hour',
           features: ['Level transport', 'High speed', 'Low maintenance']
-        }
-      ]
-    },
-    {
-      id: 'swever',
-      name: 'Swever',
-      image: '/images/Special Purpose Machiners.png',
-      description: 'Precision sieving and screening equipment for material separation and grading',
-      products: [
-        {
-          name: 'Vibrating Swever - 2 TPH',
-          capacity: '2 tons per hour',
-          features: ['Multiple screens', 'Adjustable vibration', 'Precise separation']
-        },
-        {
-          name: 'Rotary Swever - 3 TPH',
-          capacity: '3 tons per hour',
-          features: ['Gentle screening', 'Low noise', 'High efficiency']
-        },
-        {
-          name: 'Linear Swever - 1.5 TPH',
-          capacity: '1.5 tons per hour',
-          features: ['Linear motion', 'Compact design', 'Easy cleaning']
         }
       ]
     },

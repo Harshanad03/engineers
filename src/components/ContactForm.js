@@ -71,6 +71,10 @@ const ContactForm = () => {
               >
                 Contact Information
               </h3>
+              <div 
+                className="w-16 h-1 mb-6"
+                style={{ backgroundColor: '#facc15' }}
+              ></div>
               <p 
                 className="text-gray-600 mb-8"
                 style={{ fontFamily: 'Open Sans, sans-serif' }}
@@ -201,6 +205,10 @@ const ContactForm = () => {
             >
               Send us a Message
             </h3>
+            <div 
+              className="w-16 h-1 mb-6"
+              style={{ backgroundColor: '#facc15' }}
+            ></div>
 
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -230,10 +238,9 @@ const ContactForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#0a1a3f] focus:outline-none transition-all duration-300"
                   style={{ 
-                    fontFamily: 'Open Sans, sans-serif',
-                    '--tw-ring-color': '#facc15'
+                    fontFamily: 'Open Sans, sans-serif'
                   }}
                   placeholder="Your full name"
                 />
@@ -256,7 +263,7 @@ const ContactForm = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#0a1a3f] focus:outline-none transition-all duration-300"
                     style={{ 
                       fontFamily: 'Open Sans, sans-serif',
                       '--tw-ring-color': '#facc15'
@@ -278,7 +285,7 @@ const ContactForm = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#0a1a3f] focus:outline-none transition-all duration-300"
                     style={{ 
                       fontFamily: 'Open Sans, sans-serif',
                       '--tw-ring-color': '#facc15'
@@ -306,8 +313,7 @@ const ContactForm = () => {
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent transition-all duration-300 resize-vertical"
                   style={{ 
-                    fontFamily: 'Open Sans, sans-serif',
-                    '--tw-ring-color': '#facc15'
+                    fontFamily: 'Open Sans, sans-serif'
                   }}
                   placeholder="Tell us about your requirements, specifications, or any questions you have..."
                 ></textarea>
@@ -351,6 +357,45 @@ const ContactForm = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+
+        {/* Map Section */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+              style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+            >
+              Find Us Here
+            </h3>
+            <div 
+              className="w-24 h-1 mx-auto mb-6"
+              style={{ backgroundColor: '#facc15' }}
+            ></div>
+            <p 
+              className="text-gray-600"
+              style={{ fontFamily: 'Open Sans, sans-serif' }}
+            >
+              Visit our manufacturing facility in Erode, Tamil Nadu
+            </p>
+          </div>
+          
+          {/* Google Maps Embed */}
+          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+            <div className="relative w-full h-96 md:h-[500px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2083.2951772827223!2d77.80714258697354!3d11.249727301216861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba97b7aca0db6a1%3A0x2a1d3f3633a2a19c!2sBharath%20Engineerings!5e0!3m2!1sen!2sin!4v1760081381356!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Bharath Engineerings Location - Erode, Tamil Nadu"
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

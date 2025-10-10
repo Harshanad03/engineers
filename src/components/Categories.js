@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Beef, Egg, ArrowRightLeft, Cog, Cpu, Settings } from "lucide-react";
+import { Beef, Egg, ArrowRightLeft, Cog, Settings } from "lucide-react";
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -68,11 +68,6 @@ const Categories = () => {
             70% { transform: scale(0.95); }
             100% { transform: scale(1.1); }
           }
-          @keyframes glow-expand {
-            0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
-            50% { box-shadow: 0 0 30px 10px rgba(250, 204, 21, 0.4); }
-            100% { box-shadow: 0 0 40px 15px rgba(250, 204, 21, 0.6); }
-          }
           @keyframes icon-pop {
             0% { transform: scale(1) rotate(0deg); }
             30% { transform: scale(1.2) rotate(-5deg); }
@@ -87,7 +82,6 @@ const Categories = () => {
           .rotate-dots-reverse { animation: rotate-dots-reverse 6s linear infinite; }
           .pulse-ring { animation: pulse-ring 3s ease-in-out infinite; }
           .group:hover .hover-bounce { animation: bounce-in 0.5s ease-out forwards; }
-          .group:hover .hover-glow { animation: glow-expand 0.4s ease-out forwards; }
           .group:hover .hover-icon { animation: icon-pop 0.6s ease-out; }
           .group:hover .hover-ring-pulse { animation: ring-pulse-hover 0.6s ease-in-out infinite; }
           .group:hover .hover-rotate-fast { animation: rotate-dots 2s linear infinite; }
@@ -104,6 +98,10 @@ const Categories = () => {
           >
             Our Categories
           </h2>
+          <div 
+            className="w-24 h-1 mx-auto mb-6"
+            style={{ backgroundColor: '#facc15' }}
+          ></div>
         </div>
 
         {/* Categories Grid */}
@@ -121,16 +119,16 @@ const Categories = () => {
                   {/* Circular Icon with Animated Dotted Rings */}
                   <div className="relative mb-2 sm:mb-3 md:mb-4">
                     {/* Outer Rotating Dotted Circle */}
-                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dashed border-[#0a1a3f]/30 group-hover:border-[#facc15]/80 transition-all duration-300 rotate-dots hover-rotate-fast" style={{padding: '6px'}}></div>
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-solid border-[#0a1a3f]/30 group-hover:border-[#0a1a3f]/50 transition-all duration-300 " style={{padding: '6px'}}></div>
                     
                     {/* Middle Rotating Dotted Circle (Reverse) */}
-                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dotted border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 rotate-dots-reverse hover-rotate-reverse-fast" style={{padding: '3px'}}></div>
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-solid border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 " style={{padding: '3px'}}></div>
                     
                     {/* Pulsing Ring */}
-                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#facc15]/60 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#0a1a3f]/40 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
                     
                     {/* Main Icon Circle */}
-                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce hover-glow transform-gpu">
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce  transform-gpu">
                       <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center hover-icon">
                         {React.cloneElement(category.icon, {
                           className: "w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
@@ -158,16 +156,16 @@ const Categories = () => {
                   {/* Circular Icon with Animated Dotted Rings */}
                   <div className="relative mb-2 sm:mb-3 md:mb-4">
                     {/* Outer Rotating Dotted Circle */}
-                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dashed border-[#0a1a3f]/30 group-hover:border-[#facc15]/80 transition-all duration-300 rotate-dots hover-rotate-fast" style={{padding: '6px'}}></div>
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-solid border-[#0a1a3f]/30 group-hover:border-[#0a1a3f]/50 transition-all duration-300 " style={{padding: '6px'}}></div>
                     
                     {/* Middle Rotating Dotted Circle (Reverse) */}
-                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-dotted border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 rotate-dots-reverse hover-rotate-reverse-fast" style={{padding: '3px'}}></div>
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-solid border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 " style={{padding: '3px'}}></div>
                     
                     {/* Pulsing Ring */}
-                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#facc15]/60 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#0a1a3f]/40 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
                     
                     {/* Main Icon Circle */}
-                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce hover-glow transform-gpu">
+                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce  transform-gpu">
                       <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center hover-icon">
                         {React.cloneElement(category.icon, {
                           className: "w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
@@ -196,16 +194,16 @@ const Categories = () => {
                 {/* Circular Icon with Animated Dotted Rings */}
                 <div className="relative mb-4">
                   {/* Outer Rotating Dotted Circle */}
-                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-dashed border-[#0a1a3f]/30 group-hover:border-[#facc15]/80 transition-all duration-300 rotate-dots hover-rotate-fast" style={{padding: '8px'}}></div>
+                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-solid border-[#0a1a3f]/30 group-hover:border-[#0a1a3f]/50 transition-all duration-300 " style={{padding: '8px'}}></div>
                   
                   {/* Middle Rotating Dotted Circle (Reverse) */}
-                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-dotted border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 rotate-dots-reverse hover-rotate-reverse-fast" style={{padding: '4px'}}></div>
+                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-solid border-[#facc15]/40 group-hover:border-[#0a1a3f]/70 transition-all duration-300 " style={{padding: '4px'}}></div>
                   
                   {/* Pulsing Ring */}
-                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#facc15]/60 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
+                  <div className="absolute inset-0 w-32 h-32 rounded-full border-2 border-[#0a1a3f]/20 group-hover:border-[#0a1a3f]/40 transition-all duration-300 pulse-ring hover-ring-pulse"></div>
                   
                   {/* Main Icon Circle */}
-                  <div className="relative w-32 h-32 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce hover-glow transform-gpu">
+                  <div className="relative w-32 h-32 bg-[#0a1a3f] rounded-full flex items-center justify-center group-hover:bg-[#facc15] transition-all duration-300 shadow-lg hover-bounce  transform-gpu">
                     <div className="text-white group-hover:text-[#0a1a3f] transition-colors duration-300 flex items-center justify-center hover-icon">
                       {React.cloneElement(category.icon, {
                         className: "w-12 h-12"

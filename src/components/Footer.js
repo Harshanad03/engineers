@@ -1,6 +1,27 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLinkClick = (href) => {
+    if (href === 'home') {
+      navigate('/');
+    } else {
+      // If we're already on the home page, just scroll to the section
+      if (location.pathname === '/') {
+        const element = document.querySelector('#' + href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        // Navigate to home page with hash
+        navigate('/#' + href);
+      }
+    }
+  };
+
   return (
     <footer className="bg-bharath-blue-900 text-white">
       <div className="container-max px-4 sm:px-6 lg:px-8 py-12">
@@ -14,8 +35,8 @@ const Footer = () => {
                 className="w-12 h-12 object-contain"
               />
               <div className="flex flex-col">
-                <span className="text-xl font-bold">BHARATH</span>
-                <span className="text-sm">ENGINEERINGS</span>
+                <span className="text-xl font-bold">BHARATH ENGINEERINGS</span>
+            
               </div>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
@@ -28,11 +49,10 @@ const Footer = () => {
            <div>
              <h3 className="text-lg font-semibold mb-4 text-[#facc15]">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-bharath-yellow transition-colors duration-200">Home</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-bharath-yellow transition-colors duration-200">About Us</a></li>
-              <li><a href="#products" className="text-gray-300 hover:text-bharath-yellow transition-colors duration-200">Products</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-bharath-yellow transition-colors duration-200">Services</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-bharath-yellow transition-colors duration-200">Contact</a></li>
+              <li><button onClick={() => handleLinkClick('home')} className="text-gray-300 hover:text-[#facc15] transition-colors duration-200">Home</button></li>
+              <li><button onClick={() => handleLinkClick('about')} className="text-gray-300 hover:text-[#facc15] transition-colors duration-200">About Us</button></li>
+              <li><button onClick={() => handleLinkClick('products')} className="text-gray-300 hover:text-[#facc15] transition-colors duration-200">Products</button></li>
+              <li><button onClick={() => handleLinkClick('contact')} className="text-gray-300 hover:text-[#facc15] transition-colors duration-200">Contact</button></li>
             </ul>
           </div>
 
