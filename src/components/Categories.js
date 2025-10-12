@@ -23,7 +23,7 @@ const Categories = () => {
     },
     {
       icon: <Settings />,
-      title: "Service and Spares",
+      title: "Service Solution",
       route: "/services-and-spares"
     },
     {
@@ -96,7 +96,7 @@ const Categories = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
-            Our Categories
+            Discover Our Signature Offerings
           </h2>
           <div 
             className="w-24 h-1 mx-auto mb-6"

@@ -145,10 +145,10 @@ const ServicesAndSpares = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
-            Service and Spares Support
+            Service Solution
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
-            Complete range of service and spares to ensure your equipment operates at peak performance
+            Complete range of service solutions to ensure your equipment operates at peak performance
           </p>
           <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#0a1a3f] mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"></div>
         </div>

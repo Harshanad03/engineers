@@ -103,31 +103,43 @@ const Stats = () => {
       }}
     >
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* White Elevated Container */}
+        {/* Blue Elevated Container */}
         <div 
-          className="bg-white rounded-3xl px-6 py-12 md:px-12 md:py-16 relative overflow-hidden"
+          className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-12 md:px-12 md:py-16 relative overflow-hidden border border-white/10"
           style={{
-            boxShadow: '0 25px 70px rgba(0, 0, 0, 0.12), 0 15px 35px rgba(0, 0, 0, 0.08)',
+            boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3), 0 15px 35px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
           }}
         >
+          {/* Decorative Elements */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div className="absolute top-10 left-10 w-20 h-20 bg-[#facc15]/10 rounded-full blur-xl"></div>
+            <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#facc15]/5 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-[#facc15]/8 rounded-full blur-lg"></div>
+            <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-white/5 rounded-full blur-md"></div>
+          </div>
+          
           {/* Statistics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
             
             {/* Projects */}
-            <div className="text-center transform transition-all duration-500 hover:scale-110">
-              <div 
-                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3"
-                style={{ 
-                  color: '#facc15',
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                {counts.projects}+
+            <div className="text-center transform transition-all duration-500 hover:scale-110 group">
+              <div className="relative">
+                <div 
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                  style={{ 
+                    color: '#facc15',
+                    fontFamily: 'Poppins, sans-serif',
+                    textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                  }}
+                >
+                  {counts.projects}+
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               <div 
-                className="text-xl sm:text-2xl font-semibold"
+                className="text-xl sm:text-2xl font-semibold mb-2"
                 style={{ 
-                  color: '#0a1a3f', 
+                  color: '#ffffff', 
                   fontFamily: 'Inter, sans-serif',
                   letterSpacing: '0.05em'
                 }}
@@ -137,7 +149,7 @@ const Stats = () => {
               <div 
                 className="text-sm mt-2"
                 style={{ 
-                  color: '#6b7280', 
+                  color: '#ffffff', 
                   fontFamily: 'Inter, sans-serif'
                 }}
               >
@@ -146,20 +158,24 @@ const Stats = () => {
             </div>
             
             {/* Clients */}
-            <div className="text-center transform transition-all duration-500 hover:scale-110">
-              <div 
-                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3"
-                style={{ 
-                  color: '#facc15',
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                {counts.clients}+
+            <div className="text-center transform transition-all duration-500 hover:scale-110 group">
+              <div className="relative">
+                <div 
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                  style={{ 
+                    color: '#facc15',
+                    fontFamily: 'Poppins, sans-serif',
+                    textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                  }}
+                >
+                  {counts.clients}+
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               <div 
-                className="text-xl sm:text-2xl font-semibold"
+                className="text-xl sm:text-2xl font-semibold mb-2"
                 style={{ 
-                  color: '#0a1a3f', 
+                  color: '#ffffff', 
                   fontFamily: 'Inter, sans-serif',
                   letterSpacing: '0.05em'
                 }}
@@ -169,7 +185,7 @@ const Stats = () => {
               <div 
                 className="text-sm mt-2"
                 style={{ 
-                  color: '#6b7280', 
+                  color: '#ffffff', 
                   fontFamily: 'Inter, sans-serif'
                 }}
               >
@@ -178,20 +194,24 @@ const Stats = () => {
             </div>
             
             {/* Years Experience */}
-            <div className="text-center transform transition-all duration-500 hover:scale-110">
-              <div 
-                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3"
-                style={{ 
-                  color: '#facc15',
-                  fontFamily: 'Poppins, sans-serif',
-                }}
-              >
-                {counts.years}+
+            <div className="text-center transform transition-all duration-500 hover:scale-110 group">
+              <div className="relative">
+                <div 
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                  style={{ 
+                    color: '#facc15',
+                    fontFamily: 'Poppins, sans-serif',
+                    textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                  }}
+                >
+                  {counts.years}+
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               <div 
-                className="text-xl sm:text-2xl font-semibold"
+                className="text-xl sm:text-2xl font-semibold mb-2"
                 style={{ 
-                  color: '#0a1a3f', 
+                  color: '#ffffff', 
                   fontFamily: 'Inter, sans-serif',
                   letterSpacing: '0.05em'
                 }}
@@ -201,7 +221,7 @@ const Stats = () => {
               <div 
                 className="text-sm mt-2"
                 style={{ 
-                  color: '#6b7280', 
+                  color: '#ffffff', 
                   fontFamily: 'Inter, sans-serif'
                 }}
               >

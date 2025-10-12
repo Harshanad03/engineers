@@ -9,7 +9,7 @@ const Products = () => {
     'Mash plant',
     'Cattle feed unit', 
     'Conveyors',
-    'Service and Spares',
+    'Service Solution',
     'Special purpose machine'
   ];
 
@@ -38,9 +38,9 @@ const Products = () => {
       image: "/images/Conveyers.png",
       description: "Robust conveyor systems for efficient material handling and transportation in industrial environments."
     },
-    'Service and Spares': {
+    'Service Solution': {
       id: 5,
-      title: "Service and Spares",
+      title: "Service Solution",
       image: "/images/Services And Spares.png",
       description: "Comprehensive maintenance and spare parts services for all equipment with expert technical support."
     }
@@ -62,13 +62,6 @@ const Products = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced Section Title */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
-          <h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
-            style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
-          >
-            Discover Our Signature Offerings
-          </h2>
-          <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#facc15] mx-auto mb-6 rounded-full"></div>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive range of industrial machinery and solutions designed for excellence
           </p>
@@ -220,7 +213,7 @@ const Products = () => {
                           'Cattle feed unit': '/cattle-feed-machiners',
                           'Special purpose machine': '/special-purpose-machiners',
                           'Conveyors': '/conveyers',
-                          'Service and Spares': '/services-and-spares'
+                          'Service Solution': '/services-and-spares'
                         };
                         navigate(routeMap[activeTab]);
                       }}

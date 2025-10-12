@@ -122,6 +122,12 @@ const Navbar = () => {
               >
                 BHARATH ENGINEERINGS
               </span>
+              <span 
+                className="text-xs text-[#facc15] uppercase tracking-wider"
+                style={{ fontFamily: 'Poppins, sans-serif' }}
+              >
+                Design, Build, Deliver
+              </span>
             </div>
           </div>
 

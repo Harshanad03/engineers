@@ -207,7 +207,7 @@ const CategoryPage = () => {
       ]
     },
     'Services And Spares': {
-      title: 'Services & Spares',
+      title: 'Service Solution',
       description: 'Comprehensive maintenance and spare parts services for all equipment',
       subcategories: [
         {
