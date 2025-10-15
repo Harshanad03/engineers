@@ -45,23 +45,44 @@ const WhyChooseUs = () => {
     <section className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
-            style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
-          >
-            Why Choose Us
-          </h2>
-          <div 
-            className="w-24 h-1 mx-auto mb-6"
-            style={{ backgroundColor: '#facc15' }}
-          ></div>
-          <p 
-            className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
-            style={{ fontFamily: 'Open Sans, sans-serif' }}
-          >
-            With over three decades of experience, we deliver unmatched quality and reliability in every product we manufacture.
-          </p>
+        <div className="text-center mb-16 relative">
+          {/* Gear Images Background */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+            <img 
+              src="/images/gear.png" 
+              alt="Industrial Gears" 
+              className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain"
+            />
+            <img 
+              src="/images/gear1.png" 
+              alt="Industrial Gear" 
+              className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain absolute top-1/4 right-1/4"
+            />
+            <img 
+              src="/images/gear2.png" 
+              alt="Industrial Gear with Tools" 
+              className="w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 object-contain absolute bottom-1/4 left-1/4"
+            />
+          </div>
+          
+          <div className="relative z-10">
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+              style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+            >
+              Why Choose Us
+            </h2>
+            <div 
+              className="w-24 h-1 mx-auto mb-6"
+              style={{ backgroundColor: '#facc15' }}
+            ></div>
+            <p 
+              className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
+              style={{ fontFamily: 'Open Sans, sans-serif' }}
+            >
+              With over three decades of experience, we deliver unmatched quality and reliability in every product we manufacture.
+            </p>
+          </div>
         </div>
 
         {/* Features Grid */}
