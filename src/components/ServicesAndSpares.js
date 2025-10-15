@@ -13,7 +13,7 @@ const ServicesAndSpares = () => {
     {
       id: 'die',
       name: 'Die',
-      image: '/images/Services And Spares.png',
+      image: '/images/die.png',
       description: 'A Ring Die is a cylindrical, precision-engineered steel component used in pellet mills, where feedstock is compressed by rollers and forced through radial holes on the die\'s inner surface to form uniform pellets. Known for its high strength, wear resistance, and long service life, the ring die is ideal for large-scale pellet production in industries such as animal feed, biomass fuel, and fertilizers, ensuring consistent high efficiency, and reduced operational costs.',
       products: [
         {
@@ -36,7 +36,7 @@ const ServicesAndSpares = () => {
     {
       id: 'beaters',
       name: 'Beaters',
-      image: '/images/Services And Spares.png',
+      image: '/images/beaters.png',
       description: 'Beaters in animal feed grinders are impact parts fixed on the rotor to crush materials against the screen. Made from hardened alloy steel or wear-resistant plates (50-60 HRC), they are usually 4-6 mm thick with their performance depends on hardness, tip speed, and balance, and they may be hardfaced for abrasive feeds reversible edges for longer life. Beaters should be flipped or replaced when worn or unbalanced to ensure smooth and efficient grinding.',
       products: [
         {
@@ -59,7 +59,7 @@ const ServicesAndSpares = () => {
     {
       id: 'connecting-rod',
       name: 'Rods',
-      image: '/images/Services And Spares.png',
+      image: '/images/rods.png',
       description: 'Connecting rods (also called hammer pins or beater rods) in animal feed grinders are hardened alloy steel shafts that hold the beaters and spacers in place on the rotor, allowing the beaters to swing freely during operation. They are usually 16-25 mm in diameter, precision-ground, and heat-treated for strength and wear resistance, with lengths matching the rotor width. These rods are secured with nuts or locking systems, and must be kept smooth and straight to avoid vibration or uneven wear. They should be replaced if bent, worn, or scored. And always checked for balance to ensure efficient grinder performance.',
       products: [
         {
@@ -82,7 +82,7 @@ const ServicesAndSpares = () => {
     {
       id: 'screens',
       name: 'Screens',
-      image: '/images/Services And Spares.png',
+      image: '/images/screens.png',
       description: 'Our durable grinder screens deliver uniform particle size, higher efficiency, and smoother feed production every time.',
       products: [
         {
@@ -105,7 +105,7 @@ const ServicesAndSpares = () => {
     {
       id: 'rollers',
       name: 'Roller Shells',
-      image: '/images/Services And Spares.png',
+      image: '/images/roller.png',
       description: 'Our roll shells deliver unbeatable grip, consistent pellets and longer service life, keeping your production running at its best.',
       products: [
         {

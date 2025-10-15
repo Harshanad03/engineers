@@ -59,7 +59,7 @@ const SpecialPurposeMachiners = () => {
     {
       id: 'crumbler',
       name: 'Crumbler',
-      image: '/images/Special Purpose Machiners.png',
+      image: '/images/crumbler.png',
       description: 'A crumbler is a machine used to break large pellets into smaller, uniform sizes suitable for young animals like chicks, piglets, or fish that cannot consume standard-size pellets. Crumbling ensures that the feed is easier to ingest and digest, reduces wastage, and maintains nutrient balance.',
       products: [
         {
@@ -105,7 +105,7 @@ const SpecialPurposeMachiners = () => {
     {
       id: 'grass-cutting-machine',
       name: 'Grass Cutting Machine',
-      image: '/images/Special Purpose Machiners.png',
+      image: '/images/grasscutter.png',
       description: 'A grass cutting machine (also called a forage cutter or chopper) is widely used in agriculture and feed preparation to cut, chop, or shred green fodder like grass, maize stalks, sugarcane tops, and other crops into smaller pieces suitable for animal feeding or silage preparation. It helps livestock farmers provide uniform, manageable, and digestible feed, improving intake and nutrient utilization.',
       products: [
         {
