@@ -174,7 +174,7 @@ const CattleFeedMachiners = () => {
     {
       id: 'shaker',
       name: 'Shaker',
-      image: '/images/Cattle Feed Machiners.png',
+      image: '/images/shaker.png',
       description: 'In a feed mill unit, a shaker (sometimes called a vibratory shaker or sieve shaker) is used to separate, classify, or screen feed ingredients based on particle size. It ensures that raw materials or finished feed have the desired consistency and quality before further processing or packing.',
       products: [
         {
