@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('Home');
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -11,7 +12,21 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Add scroll listener to detect active section
+  // Add scroll listener to detect scroll state
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if scrolled for background color
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Call once to set initial state
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Add scroll listener to detect active section (only on home page)
   useEffect(() => {
     let ticking = false;
     
@@ -124,7 +139,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1a3f] shadow-lg">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      isScrolled 
+        ? 'bg-[#0a1a3f] shadow-lg backdrop-blur-md' 
+        : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -204,11 +223,11 @@ const Navbar = () => {
         <div 
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isMenuOpen 
-              ? 'max-h-64 opacity-100 transform translate-y-0' 
+              ? 'max-h-80 opacity-100 transform translate-y-0' 
               : 'max-h-0 opacity-0 transform -translate-y-4'
           }`}
         >
-          <div className="bg-[#0a1a3f] border-t border-gray-700 py-4">
+          <div className={`${isScrolled ? 'bg-[#0a1a3f]' : 'bg-[#0a1a3f]/95 backdrop-blur-md'} border-t border-gray-700 py-4`}>
             <div className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
                 <button
