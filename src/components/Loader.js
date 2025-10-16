@@ -60,10 +60,10 @@ const Loader = ({ onLoadingComplete }) => {
                damping: 20,
                duration: 1,
              }}
-             className="relative mb-4 sm:mb-6 md:mb-8"
+             className="loader-logo-container relative mb-8 sm:mb-6 md:mb-8"
            >
              {/* Rotating ring around logo */}
-             <div className="absolute inset-0 -m-4 flex items-center justify-center">
+             <div className="absolute inset-0 -m-4 flex items-center justify-center aspect-square">
                <motion.div
                  animate={{ rotate: 360 }}
                  transition={{
@@ -71,12 +71,12 @@ const Loader = ({ onLoadingComplete }) => {
                    repeat: Infinity,
                    ease: "linear",
                  }}
-                 className="loader-rotating-ring loader-smooth-rotate w-full h-full"
+                 className="loader-rotating-ring loader-smooth-rotate loader-circular-border w-full h-full"
                  style={{
                    transformOrigin: 'center center'
                  }}
                >
-                 <div className="w-full h-full border-4 border-transparent border-t-blue-500 border-r-blue-500 rounded-full" />
+                 <div className="loader-perfect-circle w-full h-full border-4 border-transparent border-t-blue-500 border-r-blue-500 rounded-full aspect-square" />
                </motion.div>
              </div>
 
@@ -96,14 +96,6 @@ const Loader = ({ onLoadingComplete }) => {
 
              {/* Logo */}
              <motion.div
-               animate={{
-                 y: [0, -10, 0],
-               }}
-               transition={{
-                 duration: 2,
-                 repeat: Infinity,
-                 ease: "easeInOut",
-               }}
                className="relative bg-gradient-to-br from-blue-50 to-white p-4 sm:p-5 md:p-6 rounded-full shadow-2xl border-2 sm:border-3 md:border-4 border-blue-100"
              >
                <img
@@ -119,7 +111,7 @@ const Loader = ({ onLoadingComplete }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-center mb-4 sm:mb-6 md:mb-8 px-4"
+            className="loader-text-container text-center mb-4 sm:mb-6 md:mb-8 px-4 mt-2 sm:mt-0"
           >
             <div className="loader-company-name flex items-center justify-center space-x-1 sm:space-x-2 mb-2 flex-nowrap overflow-hidden">
               {'BHARATH ENGINEERINGS'.split('').map((letter, index) => (
@@ -145,7 +137,7 @@ const Loader = ({ onLoadingComplete }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.8 }}
-               className="text-yellow-600 text-sm sm:text-base md:text-lg tracking-widest font-medium"
+               className="text-yellow-600 text-sm sm:text-base md:text-lg tracking-widest font-medium mt-2 sm:mt-1"
             >
               Design, Build, Deliver
             </motion.p>

@@ -286,6 +286,16 @@
        max-width: 100vw !important;
      }
      
+     /* Loader spacing fixes for mobile */
+     .loader-logo-container {
+       margin-bottom: 2rem !important;
+     }
+     
+     .loader-text-container {
+       margin-top: 0.5rem !important;
+       padding-top: 0.5rem !important;
+     }
+     
      /* Loader rotation fixes */
      .loader-rotating-ring {
        transform-origin: center center !important;
@@ -305,6 +315,29 @@
      .loader-smooth-rotate {
        animation: smooth-rotate 3s linear infinite !important;
        transform-origin: center center !important;
+     }
+     
+     /* Circular loader border */
+     .loader-circular-border {
+       border-radius: 50% !important;
+       aspect-ratio: 1 !important;
+       width: 100% !important;
+       height: 100% !important;
+     }
+     
+     .loader-circular-border div {
+       border-radius: 50% !important;
+       aspect-ratio: 1 !important;
+       width: 100% !important;
+       height: 100% !important;
+     }
+     
+     /* Ensure perfect circle */
+     .loader-perfect-circle {
+       border-radius: 50% !important;
+       aspect-ratio: 1 / 1 !important;
+       width: 100% !important;
+       height: auto !important;
      }
      
      /* Hero video specific fixes for mobile */
