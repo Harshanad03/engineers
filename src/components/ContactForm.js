@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -22,8 +24,46 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // EmailJS configuration from environment variables
+      const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      // Debug: Log configuration (remove in production)
+      console.log('EmailJS Config:', {
+        serviceID,
+        templateID,
+        publicKey: publicKey ? `${publicKey.substring(0, 5)}...` : 'undefined'
+      });
+
+      // Check if all required variables are present
+      if (!serviceID || !templateID || !publicKey) {
+        throw new Error('EmailJS configuration is incomplete. Please check your environment variables.');
+      }
+
+      // Template parameters to send to EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_phone: formData.phone,
+        from_company: formData.company || 'Not provided',
+        message: formData.message,
+        to_email: 'bharathengineerings@gmail.com'
+      };
+
+      console.log('Sending email with params:', templateParams);
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceID,
+        templateID,
+        templateParams,
+        publicKey
+      );
+
+      console.log('Email sent successfully:', result);
+
+      // Success
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({
@@ -33,13 +73,120 @@ const ContactForm = () => {
         message: ''
       });
       
-      // Reset status after 3 seconds
-      setTimeout(() => setSubmitStatus(null), 3000);
-    }, 2000);
+      // Show success modal
+      setShowSuccessModal(true);
+      
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      
+      // Reset error status after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
+  };
+
+  // Custom Success Modal Component
+  const SuccessModal = () => {
+    if (!showSuccessModal) return null;
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        {/* Backdrop */}
+        <div 
+          className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+          onClick={() => setShowSuccessModal(false)}
+        ></div>
+        
+        {/* Modal */}
+        <div className="relative bg-white rounded-3xl p-8 md:p-12 max-w-md w-full mx-4 shadow-2xl transform transition-all duration-300 scale-100">
+          {/* Close button */}
+          <button
+            onClick={() => setShowSuccessModal(false)}
+            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Success Icon */}
+          <div className="flex justify-center mb-6">
+            <div 
+              className="w-20 h-20 rounded-full flex items-center justify-center"
+              style={{ backgroundColor: '#facc15' }}
+            >
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="text-center">
+            <h3 
+              className="text-3xl font-bold mb-4"
+              style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+            >
+              Thank You!
+            </h3>
+            
+            <p 
+              className="text-lg text-gray-600 mb-8 leading-relaxed"
+              style={{ fontFamily: 'Open Sans, sans-serif' }}
+            >
+              Thank you for your inquiry! We will contact you soon.
+            </p>
+
+            {/* Company info */}
+            <div className="bg-gray-50 rounded-2xl p-6 mb-6">
+              <p 
+                className="text-sm text-gray-500 mb-2"
+                style={{ fontFamily: 'Open Sans, sans-serif' }}
+              >
+                For immediate assistance:
+              </p>
+              <p 
+                className="font-semibold"
+                style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+              >
+                📞 9842750053
+              </p>
+              <p 
+                className="text-sm"
+                style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
+              >
+                ✉️ bharathengineerings@gmail.com
+              </p>
+            </div>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowSuccessModal(false)}
+              className="w-full py-4 px-8 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 relative overflow-hidden group"
+              style={{ 
+                backgroundColor: '#0a1a3f',
+                color: 'white',
+                fontFamily: 'Poppins, sans-serif'
+              }}
+            >
+              <span className="relative z-10">Close</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   return (
-    <section id="contact" className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <>
+      {/* Success Modal */}
+      <SuccessModal />
+      
+      <section id="contact" className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -217,6 +364,17 @@ const ContactForm = () => {
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <p className="text-green-700 font-medium">Message sent successfully! We'll get back to you soon.</p>
+                </div>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                  <p className="text-red-700 font-medium">Failed to send message. Please try again or contact us directly.</p>
                 </div>
               </div>
             )}
@@ -400,6 +558,7 @@ const ContactForm = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
