@@ -7,7 +7,7 @@ const Categories = () => {
   
   const categories = [
     {
-      image: "/images/Poultry Feed Machiners.png",
+      image: "/images/mashplant.png",
       title: "Mash plant",
       route: "/poultry-feed-machiners"
     },

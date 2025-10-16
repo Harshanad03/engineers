@@ -118,18 +118,14 @@ const WhyChooseUs = () => {
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
             >
               {/* Icon Container */}
-              <motion.div 
+              <div 
                 className="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 group-hover:shadow-lg transition-all duration-300"
                 style={{ backgroundColor: '#facc15' }}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.5, delay: index * 0.1 + 0.2, type: "spring", stiffness: 200 }}
               >
                 <div className="text-white">
                   {feature.icon}
                 </div>
-              </motion.div>
+              </div>
               
               {/* Content */}
               <h3 

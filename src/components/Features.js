@@ -50,7 +50,7 @@ const Features = () => {
             {features.map((feature, index) => (
               <div 
                 key={index} 
-                className={`text-center py-4 md:py-6 px-2 md:px-4 hover:-translate-y-1 transition-all duration-300 hover:shadow-md ${
+                className={`text-center py-4 md:py-6 px-2 md:px-4 ${
                   (index % 2 === 0 && index < 3) || (index === 1) ? 'md:border-r border-gray-200' : ''
                 }`}
               >

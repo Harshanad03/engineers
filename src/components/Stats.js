@@ -1,103 +1,11 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
 const Stats = () => {
-  const [counts, setCounts] = useState({ projects: 0, clients: 0, years: 0 });
-  const sectionRef = useRef(null);
-  const animationRef = useRef(null);
-
-  // Function to start counting animation with specific increments
-  const startCounting = useCallback(() => {
-    // Clear any existing animation
-    if (animationRef.current) {
-      clearInterval(animationRef.current);
-    }
-
-    // Reset to 0
-    setCounts({ projects: 0, clients: 0, years: 0 });
-
-    const increments = { projects: 100, clients: 50, years: 10 };
-    const targets = { projects: 500, clients: 200, years: 35 };
-    const interval = 200; // milliseconds between each increment
-
-    let currentCounts = { projects: 0, clients: 0, years: 0 };
-
-    animationRef.current = setInterval(() => {
-      let allComplete = true;
-
-      // Update projects counter (increment by 100)
-      if (currentCounts.projects < targets.projects) {
-        currentCounts.projects = Math.min(
-          currentCounts.projects + increments.projects,
-          targets.projects
-        );
-        allComplete = false;
-      }
-
-      // Update clients counter (increment by 50)
-      if (currentCounts.clients < targets.clients) {
-        currentCounts.clients = Math.min(
-          currentCounts.clients + increments.clients,
-          targets.clients
-        );
-        allComplete = false;
-      }
-
-      // Update years counter (increment by 10)
-      if (currentCounts.years < targets.years) {
-        currentCounts.years = Math.min(
-          currentCounts.years + increments.years,
-          targets.years
-        );
-        allComplete = false;
-      }
-
-      // Update state
-      setCounts({ ...currentCounts });
-
-      // Stop animation when all counters reach their targets
-      if (allComplete) {
-        clearInterval(animationRef.current);
-      }
-    }, interval);
-  }, []);
-
-  // Intersection Observer to trigger animation when section comes into view
-  useEffect(() => {
-    const currentSection = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // Reset counters and start animation when section comes into view
-          startCounting();
-        } else {
-          // Reset counters when section leaves view
-          setCounts({ projects: 0, clients: 0, years: 0 });
-          if (animationRef.current) {
-            clearInterval(animationRef.current);
-          }
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
-      if (animationRef.current) {
-        clearInterval(animationRef.current);
-      }
-    };
-  }, [startCounting]);
+  // Static values - no animations
+  const counts = { projects: 500, clients: 200, years: 35 };
 
   return (
     <section 
-      ref={sectionRef}
       id="stats"
       className="py-16 px-4 md:px-8 lg:px-16 relative overflow-hidden"
       style={{
@@ -109,15 +17,11 @@ const Stats = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             
             {/* Projects Card */}
-            <motion.div 
+            <div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
-              initial={{ opacity: 0, y: 100, scale: 0.8 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -126,61 +30,41 @@ const Stats = () => {
               </div>
               
               <div className="text-center relative z-10">
-                <div className="relative mb-4">
-                  {/* Projects Icon */}
-                  <div className="flex justify-center mb-4">
-                    <div className="w-20 h-20 flex items-center justify-center">
-                      <img 
-                        src="/images/closure.png" 
-                        alt="Projects Icon"
-                        className="w-16 h-16 drop-shadow-lg filter brightness-0 invert"
-                      />
-                    </div>
+                
+                {/* Icon */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#facc15] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
                   </div>
-                  <div 
-                    className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
-                    style={{ 
-                      color: '#facc15',
-                      fontFamily: 'Poppins, sans-serif',
-                      textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
-                    }}
-                  >
+                </div>
+
+                {/* Number */}
+                <div className="mb-4">
+                  <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#facc15] leading-none">
                     {counts.projects}+
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </span>
                 </div>
-                <div 
-                  className="text-xl sm:text-2xl font-semibold mb-2"
-                  style={{ 
-                    color: '#ffffff', 
-                    fontFamily: 'Inter, sans-serif',
-                    letterSpacing: '0.05em'
-                  }}
-                >
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                   Projects
-                </div>
-                <div 
-                  className="text-sm mt-2"
-                  style={{ 
-                    color: '#ffffff', 
-                    fontFamily: 'Inter, sans-serif'
-                  }}
-                >
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 text-sm md:text-base">
                   Successfully Delivered
-                </div>
+                </p>
               </div>
-            </motion.div>
-            
+            </div>
+
             {/* Clients Card */}
-            <motion.div 
+            <div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
-              initial={{ opacity: 0, y: 100, scale: 0.8 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -189,61 +73,41 @@ const Stats = () => {
               </div>
               
               <div className="text-center relative z-10">
-                <div className="relative mb-4">
-                  {/* Clients Icon */}
-                  <div className="flex justify-center mb-4">
-                    <div className="w-20 h-20 flex items-center justify-center">
-                      <img 
-                        src="/images/group.png" 
-                        alt="Clients Icon"
-                        className="w-16 h-16 drop-shadow-lg filter brightness-0 invert"
-                      />
-                    </div>
+                
+                {/* Icon */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#facc15] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
                   </div>
-                  <div 
-                    className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
-                    style={{ 
-                      color: '#facc15',
-                      fontFamily: 'Poppins, sans-serif',
-                      textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
-                    }}
-                  >
+                </div>
+
+                {/* Number */}
+                <div className="mb-4">
+                  <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#facc15] leading-none">
                     {counts.clients}+
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </span>
                 </div>
-                <div 
-                  className="text-xl sm:text-2xl font-semibold mb-2"
-                  style={{ 
-                    color: '#ffffff', 
-                    fontFamily: 'Inter, sans-serif',
-                    letterSpacing: '0.05em'
-                  }}
-                >
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                   Clients
-                </div>
-                <div 
-                  className="text-sm mt-2"
-                  style={{ 
-                    color: '#ffffff', 
-                    fontFamily: 'Inter, sans-serif'
-                  }}
-                >
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 text-sm md:text-base">
                   Trusted Partners
-                </div>
+                </p>
               </div>
-            </motion.div>
-            
+            </div>
+
             {/* Years Experience Card */}
-            <motion.div 
+            <div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
-              initial={{ opacity: 0, y: 100, scale: 0.8 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -252,50 +116,34 @@ const Stats = () => {
               </div>
               
               <div className="text-center relative z-10">
-                <div className="relative mb-4">
-                  {/* Experience/Award Icon - Star Badge */}
-                  <div className="flex justify-center mb-4">
-                    <div className="w-20 h-20 flex items-center justify-center">
-                      <img 
-                        src="/images/star-badge.png" 
-                        alt="Years Experience Badge"
-                        className="w-16 h-16 drop-shadow-lg filter brightness-0 invert"
-                      />
-                    </div>
+                
+                {/* Icon */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-[#facc15] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
                   </div>
-                  <div 
-                    className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
-                    style={{ 
-                      color: '#facc15',
-                      fontFamily: 'Poppins, sans-serif',
-                      textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
-                    }}
-                  >
+                </div>
+
+                {/* Number */}
+                <div className="mb-4">
+                  <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#facc15] leading-none">
                     {counts.years}+
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </span>
                 </div>
-                <div 
-                  className="text-xl sm:text-2xl font-semibold mb-2"
-                  style={{ 
-                    color: '#ffffff', 
-                    fontFamily: 'Inter, sans-serif',
-                    letterSpacing: '0.05em'
-                  }}
-                >
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                   Years Experience
-                </div>
-                <div 
-                  className="text-sm mt-2"
-                  style={{ 
-                    color: '#ffffff', 
-                    fontFamily: 'Inter, sans-serif'
-                  }}
-                >
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-300 text-sm md:text-base">
                   Industry Excellence
-                </div>
+                </p>
               </div>
-            </motion.div>
+            </div>
         </div>
       </div>
     </section>
@@ -303,4 +151,3 @@ const Stats = () => {
 };
 
 export default Stats;
-

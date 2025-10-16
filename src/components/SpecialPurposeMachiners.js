@@ -146,7 +146,7 @@ const SpecialPurposeMachiners = () => {
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
@@ -159,7 +159,7 @@ const SpecialPurposeMachiners = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             Engineered solutions to meet your specific manufacturing challenges with precision and reliability
           </motion.p>
@@ -168,7 +168,7 @@ const SpecialPurposeMachiners = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.15 }}
           ></motion.div>
         </motion.div>
 
@@ -181,7 +181,7 @@ const SpecialPurposeMachiners = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: categoryIndex * 0.1, ease: "easeOut" }}
             >
               <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12 ${categoryIndex % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                 {/* Product Image Section */}
@@ -190,7 +190,7 @@ const SpecialPurposeMachiners = () => {
                   initial={{ opacity: 0, x: categoryIndex % 2 === 1 ? 50 : -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false }}
-                  transition={{ duration: 0.6, delay: categoryIndex * 0.2 + 0.2, ease: "easeOut" }}
+                  transition={{ duration: 0.3, delay: categoryIndex * 0.1 + 0.1, ease: "easeOut" }}
                 >
                   <div className="relative">
                     <img 
@@ -213,7 +213,7 @@ const SpecialPurposeMachiners = () => {
                   initial={{ opacity: 0, x: categoryIndex % 2 === 1 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false }}
-                  transition={{ duration: 0.6, delay: categoryIndex * 0.2 + 0.3, ease: "easeOut" }}
+                  transition={{ duration: 0.3, delay: categoryIndex * 0.1 + 0.15, ease: "easeOut" }}
                 >
                   <div>
                     <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 leading-tight">
@@ -224,7 +224,7 @@ const SpecialPurposeMachiners = () => {
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
                       viewport={{ once: false }}
-                      transition={{ duration: 0.6, delay: categoryIndex * 0.2 + 0.4 }}
+                      transition={{ duration: 0.3, delay: categoryIndex * 0.1 + 0.2 }}
                     ></motion.div>
                   </div>
                   
@@ -269,7 +269,7 @@ const SpecialPurposeMachiners = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.3, delay: 0.25, ease: "easeOut" }}
         >
           <button 
             onClick={() => navigate('/')}

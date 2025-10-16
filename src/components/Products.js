@@ -19,7 +19,7 @@ const Products = () => {
     'Mash plant': {
       id: 1,
       title: "Mash Plant Machine",
-      image: "/images/Poultry Feed Machiners.png",
+      image: "/images/mashplant.png",
       description: "Advanced mash plant manufacturing equipment designed for optimal nutrition and efficient production processes."
     },
     'Cattle feed unit': {
