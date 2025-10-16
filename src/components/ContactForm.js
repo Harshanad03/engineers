@@ -268,7 +268,7 @@ const ContactForm = () => {
                       fontFamily: 'Open Sans, sans-serif',
                       '--tw-ring-color': '#facc15'
                     }}
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 98427 50053"
                   />
                 </div>
                 <div>

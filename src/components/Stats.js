@@ -97,138 +97,192 @@ const Stats = () => {
   return (
     <section 
       ref={sectionRef}
+      id="stats"
       className="py-16 px-4 md:px-8 lg:px-16 relative overflow-hidden"
       style={{
         background: '#ffffff',
       }}
     >
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Blue Elevated Container */}
-        <div 
-          className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-12 md:px-12 md:py-16 relative overflow-hidden border border-white/10"
-          style={{
-            boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3), 0 15px 35px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-          }}
-        >
-          {/* Decorative Elements */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-            <div className="absolute top-10 left-10 w-20 h-20 bg-[#facc15]/10 rounded-full blur-xl"></div>
-            <div className="absolute bottom-10 right-10 w-32 h-32 bg-[#facc15]/5 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-[#facc15]/8 rounded-full blur-lg"></div>
-            <div className="absolute top-1/3 right-1/4 w-12 h-12 bg-white/5 rounded-full blur-md"></div>
-          </div>
-          
-          {/* Statistics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+        {/* Statistics Grid - Individual Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             
-            {/* Projects */}
-            <div className="text-center transform transition-all duration-500 hover:scale-110 group">
-              <div className="relative">
+            {/* Projects Card */}
+            <div 
+              className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
+              style={{
+                boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              {/* Decorative Elements */}
+              <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-4 left-4 w-12 h-12 bg-[#facc15]/10 rounded-full blur-lg"></div>
+                <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#facc15]/5 rounded-full blur-xl"></div>
+              </div>
+              
+              <div className="text-center relative z-10">
+                <div className="relative mb-4">
+                  {/* Projects Icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 flex items-center justify-center">
+                      <img 
+                        src="/images/closure.png" 
+                        alt="Projects Icon"
+                        className="w-16 h-16 drop-shadow-lg filter brightness-0 invert"
+                      />
+                    </div>
+                  </div>
+                  <div 
+                    className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                    style={{ 
+                      color: '#facc15',
+                      fontFamily: 'Poppins, sans-serif',
+                      textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                    }}
+                  >
+                    {counts.projects}+
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
                 <div 
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                  className="text-xl sm:text-2xl font-semibold mb-2"
                   style={{ 
-                    color: '#facc15',
-                    fontFamily: 'Poppins, sans-serif',
-                    textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                    color: '#ffffff', 
+                    fontFamily: 'Inter, sans-serif',
+                    letterSpacing: '0.05em'
                   }}
                 >
-                  {counts.projects}+
+                  Projects
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <div 
-                className="text-xl sm:text-2xl font-semibold mb-2"
-                style={{ 
-                  color: '#ffffff', 
-                  fontFamily: 'Inter, sans-serif',
-                  letterSpacing: '0.05em'
-                }}
-              >
-                Projects
-              </div>
-              <div 
-                className="text-sm mt-2"
-                style={{ 
-                  color: '#ffffff', 
-                  fontFamily: 'Inter, sans-serif'
-                }}
-              >
-                Successfully Delivered
+                <div 
+                  className="text-sm mt-2"
+                  style={{ 
+                    color: '#ffffff', 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  Successfully Delivered
+                </div>
               </div>
             </div>
             
-            {/* Clients */}
-            <div className="text-center transform transition-all duration-500 hover:scale-110 group">
-              <div className="relative">
+            {/* Clients Card */}
+            <div 
+              className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
+              style={{
+                boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              {/* Decorative Elements */}
+              <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-4 left-4 w-12 h-12 bg-[#facc15]/10 rounded-full blur-lg"></div>
+                <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#facc15]/5 rounded-full blur-xl"></div>
+              </div>
+              
+              <div className="text-center relative z-10">
+                <div className="relative mb-4">
+                  {/* Clients Icon */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 flex items-center justify-center">
+                      <img 
+                        src="/images/group.png" 
+                        alt="Clients Icon"
+                        className="w-16 h-16 drop-shadow-lg filter brightness-0 invert"
+                      />
+                    </div>
+                  </div>
+                  <div 
+                    className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                    style={{ 
+                      color: '#facc15',
+                      fontFamily: 'Poppins, sans-serif',
+                      textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                    }}
+                  >
+                    {counts.clients}+
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
                 <div 
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                  className="text-xl sm:text-2xl font-semibold mb-2"
                   style={{ 
-                    color: '#facc15',
-                    fontFamily: 'Poppins, sans-serif',
-                    textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                    color: '#ffffff', 
+                    fontFamily: 'Inter, sans-serif',
+                    letterSpacing: '0.05em'
                   }}
                 >
-                  {counts.clients}+
+                  Clients
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <div 
-                className="text-xl sm:text-2xl font-semibold mb-2"
-                style={{ 
-                  color: '#ffffff', 
-                  fontFamily: 'Inter, sans-serif',
-                  letterSpacing: '0.05em'
-                }}
-              >
-                Clients
-              </div>
-              <div 
-                className="text-sm mt-2"
-                style={{ 
-                  color: '#ffffff', 
-                  fontFamily: 'Inter, sans-serif'
-                }}
-              >
-                Trusted Partners
+                <div 
+                  className="text-sm mt-2"
+                  style={{ 
+                    color: '#ffffff', 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  Trusted Partners
+                </div>
               </div>
             </div>
             
-            {/* Years Experience */}
-            <div className="text-center transform transition-all duration-500 hover:scale-110 group">
-              <div className="relative">
+            {/* Years Experience Card */}
+            <div 
+              className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
+              style={{
+                boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              {/* Decorative Elements */}
+              <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-4 left-4 w-12 h-12 bg-[#facc15]/10 rounded-full blur-lg"></div>
+                <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#facc15]/5 rounded-full blur-xl"></div>
+              </div>
+              
+              <div className="text-center relative z-10">
+                <div className="relative mb-4">
+                  {/* Experience/Award Icon - Star Badge */}
+                  <div className="flex justify-center mb-4">
+                    <div className="w-20 h-20 flex items-center justify-center">
+                      <img 
+                        src="/images/star-badge.png" 
+                        alt="Years Experience Badge"
+                        className="w-16 h-16 drop-shadow-lg filter brightness-0 invert"
+                      />
+                    </div>
+                  </div>
+                  <div 
+                    className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                    style={{ 
+                      color: '#facc15',
+                      fontFamily: 'Poppins, sans-serif',
+                      textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                    }}
+                  >
+                    {counts.years}+
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
                 <div 
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 drop-shadow-lg"
+                  className="text-xl sm:text-2xl font-semibold mb-2"
                   style={{ 
-                    color: '#facc15',
-                    fontFamily: 'Poppins, sans-serif',
-                    textShadow: '0 0 20px rgba(250, 204, 21, 0.3)',
+                    color: '#ffffff', 
+                    fontFamily: 'Inter, sans-serif',
+                    letterSpacing: '0.05em'
                   }}
                 >
-                  {counts.years}+
+                  Years Experience
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-              <div 
-                className="text-xl sm:text-2xl font-semibold mb-2"
-                style={{ 
-                  color: '#ffffff', 
-                  fontFamily: 'Inter, sans-serif',
-                  letterSpacing: '0.05em'
-                }}
-              >
-                Years Experience
-              </div>
-              <div 
-                className="text-sm mt-2"
-                style={{ 
-                  color: '#ffffff', 
-                  fontFamily: 'Inter, sans-serif'
-                }}
-              >
-                Industry Excellence
+                <div 
+                  className="text-sm mt-2"
+                  style={{ 
+                    color: '#ffffff', 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  Industry Excellence
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>

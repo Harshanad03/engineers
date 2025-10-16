@@ -13,7 +13,7 @@ const Conveyers = () => {
     {
       id: 'belt-conveyor',
       name: 'Belt Conveyor',
-      image: '/images/Conveyers.png',
+      image: '/images/loadingconveyor.png',
       description: 'A belt conveyor in a feed mill is a machine used to efficiently transport bulk materials such as grains, powders, or pellets from one process to another, either horizontally or at an incline. It consists of a continuous belt stretched over pulleys, with one pulley powered by a motor to move the material. Belt conveyors help reduce manual labor, handle large volumes, and maintain a continuous, controlled flow of feed ingredients or finished pellets between machines like grinders, mixers, pellet mills, coolers, and storage bins, improving overall production efficiency and workflow in the feed mill.',
       products: [
         {
@@ -36,7 +36,7 @@ const Conveyers = () => {
     {
       id: 'z-type-conveyor',
       name: 'Z Type Conveyor',
-      image: '/images/Conveyers.png',
+      image: '/images/ztypeconveyors.png',
       description: 'A Z-type conveyor in a feed mill is a compact machine designed to lift and transport feed materials both vertically and horizontally in a single system, following a "Z" shaped path. Material is fed into a lower hopper, carried upward by a belt or chain with flights, and then discharged horizontally to the next process, such as a mixer, pellet mill, or storage bin. It ensures continuous, controlled flow, handles large volumes without damaging feed, reduces manual labor and spillage, and saves floor space, making it an efficient solution for moving ingredients or finished feed within the feed mill.',
       products: [
         {
@@ -57,10 +57,10 @@ const Conveyers = () => {
       ]
     },
     {
-      id: 'loading-conveyor',
-      name: 'Loading Conveyor',
-      image: '/images/loadingconveyor.png',
-      description: 'A loading conveyor in a feed mill is a machine used to transfer feed materials, grains, or finished pellets from the production area to trucks, silos, or storage bins efficiently. It consists of a belt or chain system that moves material from the feed inlet to the discharge point, often with adjustable height or incline to reach the desired loading position. Loading conveyors ensure continuous, controlled flow, reduce manual handling and spillage, and speed up the loading process, making feed mill operations more efficient and organized.',
+      id: 'screw-conveyor',
+      name: 'Screw Conveyor',
+      image: '/images/screw.png',
+      description: 'A screw conveyor is a mechanical device used to transport bulk materials such as grains, powders, sand, or cement from one point to another using a rotating helical screw blade, called a flight, inside a tubular or U-shaped trough. As the screw rotates, the material is pushed forward along the conveyor\'s length, making it suitable for both horizontal and inclined transportation. Screw conveyors are widely used in industries like agriculture, food processing, and manufacturing due to their simplicity, efficiency, and ability to handle semi-solid materials. Their design parameters — such as screw diameter, pitch, speed, and trough type — are selected based on material characteristics, capacity, and conveying distance to ensure smooth and continuous operation.',
       products: [
         {
           name: 'Truck Loading Conveyor - 40 TPH',
@@ -82,7 +82,7 @@ const Conveyers = () => {
     {
       id: 'chain-conveyor',
       name: 'Chain Conveyor',
-      image: '/images/Conveyers.png',
+      image: '/images/',
       description: 'A chain conveyor in a feed mill is a durable machine used to transport bulk materials or feed products over short or long distances, especially in heavy-duty applications. It consists of a series of chains with attached flights or paddles that move material along a trough or enclosed channel. Chain conveyors are ideal for moving heavy, abrasive, or hot feed ingredients, ensuring a controlled, continuous flow between machines like grinders, mixers, pellet mills, or storage bins. They are robust, reliable, and capable of handling large volumes while minimizing spillage and labor, making them essential for efficient feed mill operations.',
       products: [
         {
@@ -122,7 +122,7 @@ const Conveyers = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
-            Conveyor System Solutions
+            Conveyors
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Comprehensive range of conveyor systems designed for efficient material handling and transportation

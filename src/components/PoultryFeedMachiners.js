@@ -145,7 +145,7 @@ const PoultryFeedMachiners = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
-            Mash Plant Solutions
+            Mash Plant
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Specialized mash plant machinery engineered for consistent, high-quality feed production

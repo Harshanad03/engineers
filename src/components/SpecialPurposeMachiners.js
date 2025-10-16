@@ -13,7 +13,7 @@ const SpecialPurposeMachiners = () => {
     {
       id: 'industrial-blender',
       name: 'Industrial Blender',
-      image: '/images/Special Purpose Machiners.png',
+      image: '/images/industrialblender.png',
       description: 'In a feed mill unit, an industrial blender is a machine used to thoroughly mix various feed ingredients to produce a uniform and homogeneous feed blend. It ensures that every particle of feed contains the correct proportion of energy, protein, vitamins, and minerals, which is essential for animal growth and health.',
       products: [
         {
@@ -80,25 +80,25 @@ const SpecialPurposeMachiners = () => {
       ]
     },
     {
-      id: 'peddle-conveyor',
-      name: 'Paddle Conveyor',
-      image: '/images/Special Purpose Machiners.png',
-      description: 'A paddle conveyor (also called a paddle feeder or drag conveyor) is used to move bulk materials such as grains, feed powders, or pellets from one process to another in a controlled manner. It consists of a rotating shaft with paddles inside a trough, which gently pushes the material forward without damaging it.',
+      id: 'medicine-blender',
+      name: 'Medicine Blender',
+      image: '/images/medicineblender.png',
+      description: 'A medicine blender is a specialized mixing device used in pharmaceutical industries to uniformly blend powdered or granular ingredients for tablet, capsule, or suspension formulations. It ensures consistent distribution of active pharmaceutical ingredients (APIs) and excipients, maintaining the desired potency and quality of each dose. Common types include double-cone blenders, V-blenders, and ribbon blenders, each designed to minimize dead spots and ensure gentle yet thorough mixing without degrading sensitive materials. Proper blending time, speed, and load capacity are crucial factors for achieving homogeneity, which directly affects the effectiveness and stability of the final medicinal product.',
       products: [
         {
-          name: 'Heavy Duty Peddle Conveyor - 20 TPH',
-          capacity: '20 tons per hour',
-          features: ['Robust peddles', 'High capacity', 'Smooth operation']
+          name: 'Pharmaceutical Ribbon Blender - 100L',
+          capacity: '100L capacity',
+          features: ['GMP compliant', 'Gentle mixing', 'Easy cleaning']
         },
         {
-          name: 'Inclined Peddle Conveyor - 15 TPH',
-          capacity: '15 tons per hour',
-          features: ['Steep incline', 'Secure material handling', 'Efficient transport']
+          name: 'Double Cone Blender - 200L',
+          capacity: '200L capacity',
+          features: ['Uniform blending', 'Variable speed', 'Quality control']
         },
         {
-          name: 'Horizontal Peddle Conveyor - 25 TPH',
-          capacity: '25 tons per hour',
-          features: ['Level transport', 'High speed', 'Low maintenance']
+          name: 'V-Blender for APIs - 50L',
+          capacity: '50L capacity',
+          features: ['API safe', 'Precise mixing', 'Contamination free']
         }
       ]
     },
@@ -145,7 +145,7 @@ const SpecialPurposeMachiners = () => {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
-            Special Purpose Machine Solutions
+            Special Purpose Machine
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Engineered solutions to meet your specific manufacturing challenges with precision and reliability

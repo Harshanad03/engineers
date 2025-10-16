@@ -4,6 +4,7 @@ import SwipeableTestimonialCards from './SwipeableTestimonialCards';
 const Testimonials = () => {
   return (
     <section 
+      id="testimonials"
       className="py-6 px-4 md:px-8 lg:px-16 relative overflow-hidden flex items-center"
       style={{
         backgroundImage: 'url(/images/categorybg1.jpg)',

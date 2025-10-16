@@ -20,7 +20,7 @@ const Navbar = () => {
       
       if (!ticking) {
         requestAnimationFrame(() => {
-          const sections = ['home', 'about', 'products', 'contact'];
+          const sections = ['home', 'about', 'categories', 'products', 'testimonials', 'why-choose-us', 'stats', 'contact'];
           const scrollPosition = window.scrollY + 200; // Increased offset for better detection
           
           let currentSection = 'Home';
@@ -34,7 +34,14 @@ const Navbar = () => {
               
               // Check if we're in the middle portion of the section for better accuracy
               if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionBottom - 100) {
-                currentSection = sections[i].charAt(0).toUpperCase() + sections[i].slice(1);
+                // Map sections to navbar display
+                if (sections[i] === 'categories') {
+                  currentSection = 'Products';
+                } else if (sections[i] === 'why-choose-us' || sections[i] === 'stats') {
+                  currentSection = 'Testimonials';
+                } else {
+                  currentSection = sections[i].charAt(0).toUpperCase() + sections[i].slice(1);
+                }
                 break;
               }
             }
@@ -59,6 +66,10 @@ const Navbar = () => {
     if (link.name === 'Home') {
       navigate('/');
       setActiveSection('Home');
+    } else if (link.href.startsWith('/')) {
+      // Handle direct route navigation (Projects, etc.)
+      navigate(link.href);
+      setActiveSection(link.name);
     } else {
       // If we're already on the home page, just scroll to the section
       if (location.pathname === '/') {
@@ -89,6 +100,17 @@ const Navbar = () => {
       return 'Products';
     }
     
+    // Check for specific routes
+    if (location.pathname === '/projects') {
+      return 'Projects';
+    }
+    if (location.pathname === '/our-clients-adore-our-work') {
+      return 'Testimonials';
+    }
+    if (location.pathname === '/why-choose-us') {
+      return 'Why Choose Us';
+    }
+    
     // Use the activeSection state for home page
     if (location.pathname === '/') {
       return activeSection;
@@ -101,6 +123,8 @@ const Navbar = () => {
     { name: 'Home', href: 'home' },
     { name: 'About', href: 'about' },
     { name: 'Products', href: 'products' },
+    { name: 'Testimonials', href: 'testimonials' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: 'contact' }
   ];
 

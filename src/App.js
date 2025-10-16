@@ -17,6 +17,9 @@ import PoultryFeedMachiners from './components/PoultryFeedMachiners';
 import Conveyers from './components/Conveyers';
 import SpecialPurposeMachiners from './components/SpecialPurposeMachiners';
 import ServicesAndSpares from './components/ServicesAndSpares';
+import OurClientsAdoreOurWork from './components/OurClientsAdoreOurWork';
+import WhyChooseUsPage from './components/WhyChooseUsPage';
+import Projects from './components/Projects';
 
 function HomePage() {
   const location = useLocation();
@@ -65,6 +68,9 @@ function App() {
             <Route path="/conveyers" element={<Conveyers />} />
             <Route path="/special-purpose-machiners" element={<SpecialPurposeMachiners />} />
             <Route path="/services-and-spares" element={<ServicesAndSpares />} />
+            <Route path="/our-clients-adore-our-work" element={<OurClientsAdoreOurWork />} />
+            <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </main>
         <Footer />

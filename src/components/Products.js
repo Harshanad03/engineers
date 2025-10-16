@@ -9,7 +9,7 @@ const Products = () => {
     'Mash plant',
     'Cattle feed unit', 
     'Conveyors',
-    'Service Solution',
+    'Service Solutions',
     'Special purpose machine'
   ];
 
@@ -29,19 +29,19 @@ const Products = () => {
     'Special purpose machine': {
       id: 3,
       title: "Special Purpose Machine",
-      image: "/images/Special Purpose Machiners.png",
+      image: "/images/jacketmixture.png",
       description: "Specialized machinery designed for specific industrial applications with precision engineering."
     },
     'Conveyors': {
       id: 4,
       title: "Conveyor System",
-      image: "/images/Conveyers.png",
+      image: "/images/loadingconveyor.png",
       description: "Robust conveyor systems for efficient material handling and transportation in industrial environments."
     },
-    'Service Solution': {
+    'Service Solutions': {
       id: 5,
-      title: "Service Solution",
-      image: "/images/Services And Spares.png",
+      title: "Service Solutions",
+      image: "/images/gear1.png",
       description: "Comprehensive maintenance and spare parts services for all equipment with expert technical support."
     }
   };
@@ -90,7 +90,7 @@ const Products = () => {
                     }
                   `}
                     style={{
-                      backgroundColor: activeTab === category ? '#fefce8' : 'transparent'
+                      backgroundColor: activeTab === category ? '#facc15' : 'transparent'
                     }}
                 >
                   <span className="relative z-10">{category}</span>
@@ -213,13 +213,13 @@ const Products = () => {
                           'Cattle feed unit': '/cattle-feed-machiners',
                           'Special purpose machine': '/special-purpose-machiners',
                           'Conveyors': '/conveyers',
-                          'Service Solution': '/services-and-spares'
+                          'Service Solutions': '/services-and-spares'
                         };
                         navigate(routeMap[activeTab]);
                       }}
                       className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-sm flex items-center"
                     >
-                      View Details
+                      View All Products
                       <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
