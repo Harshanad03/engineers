@@ -100,10 +100,6 @@ const Navbar = () => {
       return 'Products';
     }
     
-    // Check for specific routes
-    if (location.pathname === '/projects') {
-      return 'Projects';
-    }
     if (location.pathname === '/our-clients-adore-our-work') {
       return 'Testimonials';
     }
@@ -124,7 +120,6 @@ const Navbar = () => {
     { name: 'About', href: 'about' },
     { name: 'Products', href: 'products' },
     { name: 'Testimonials', href: 'testimonials' },
-    { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: 'contact' }
   ];
 

@@ -82,7 +82,7 @@ const Conveyers = () => {
     {
       id: 'chain-conveyor',
       name: 'Chain Conveyor',
-      image: '/images/',
+      image: '/images/chainconveyor.png',
       description: 'A chain conveyor in a feed mill is a durable machine used to transport bulk materials or feed products over short or long distances, especially in heavy-duty applications. It consists of a series of chains with attached flights or paddles that move material along a trough or enclosed channel. Chain conveyors are ideal for moving heavy, abrasive, or hot feed ingredients, ensuring a controlled, continuous flow between machines like grinders, mixers, pellet mills, or storage bins. They are robust, reliable, and capable of handling large volumes while minimizing spillage and labor, making them essential for efficient feed mill operations.',
       products: [
         {

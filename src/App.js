@@ -19,7 +19,6 @@ import SpecialPurposeMachiners from './components/SpecialPurposeMachiners';
 import ServicesAndSpares from './components/ServicesAndSpares';
 import OurClientsAdoreOurWork from './components/OurClientsAdoreOurWork';
 import WhyChooseUsPage from './components/WhyChooseUsPage';
-import Projects from './components/Projects';
 import Loader from './components/Loader';
 
 function HomePage() {
@@ -81,7 +80,6 @@ function App() {
             <Route path="/services-and-spares" element={<ServicesAndSpares />} />
             <Route path="/our-clients-adore-our-work" element={<OurClientsAdoreOurWork />} />
             <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
-            <Route path="/projects" element={<Projects />} />
           </Routes>
         </main>
         <Footer />
