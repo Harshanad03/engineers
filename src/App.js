@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -20,6 +20,7 @@ import ServicesAndSpares from './components/ServicesAndSpares';
 import OurClientsAdoreOurWork from './components/OurClientsAdoreOurWork';
 import WhyChooseUsPage from './components/WhyChooseUsPage';
 import Projects from './components/Projects';
+import Loader from './components/Loader';
 
 function HomePage() {
   const location = useLocation();
@@ -56,6 +57,16 @@ function HomePage() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <Loader onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
     <Router>
       <div className="App">
