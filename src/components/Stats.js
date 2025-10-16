@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 
 const Stats = () => {
   const [counts, setCounts] = useState({ projects: 0, clients: 0, years: 0 });
@@ -108,11 +109,15 @@ const Stats = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             
             {/* Projects Card */}
-            <div 
+            <motion.div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
+              initial={{ opacity: 0, y: 100, scale: 0.8 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -164,14 +169,18 @@ const Stats = () => {
                   Successfully Delivered
                 </div>
               </div>
-            </div>
+            </motion.div>
             
             {/* Clients Card */}
-            <div 
+            <motion.div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
+              initial={{ opacity: 0, y: 100, scale: 0.8 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -223,14 +232,18 @@ const Stats = () => {
                   Trusted Partners
                 </div>
               </div>
-            </div>
+            </motion.div>
             
             {/* Years Experience Card */}
-            <div 
+            <motion.div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
+              initial={{ opacity: 0, y: 100, scale: 0.8 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -282,7 +295,7 @@ const Stats = () => {
                   Industry Excellence
                 </div>
               </div>
-            </div>
+            </motion.div>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const WhyChooseUs = () => {
   const features = [
@@ -48,59 +49,87 @@ const WhyChooseUs = () => {
         <div className="text-center mb-16 relative">
           {/* Gear Images Background */}
           <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-            <img 
+            <motion.img 
               src="/images/gear.png" 
               alt="Industrial Gears" 
               className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
-            <img 
+            <motion.img 
               src="/images/gear1.png" 
               alt="Industrial Gear" 
               className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-contain absolute top-1/4 right-1/4"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             />
-            <img 
-              src="/images/gear2.png" 
+            <motion.img 
+              src="/images/gear1.png" 
               alt="Industrial Gear with Tools" 
               className="w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 object-contain absolute bottom-1/4 left-1/4"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
             />
           </div>
           
-          <div className="relative z-10">
+          <motion.div 
+            className="relative z-10"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
               style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
             >
               Why Choose Us
             </h2>
-            <div 
+            <motion.div 
               className="w-24 h-1 mx-auto mb-6"
               style={{ backgroundColor: '#facc15' }}
-            ></div>
-            <p 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            ></motion.div>
+            <motion.p 
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
               style={{ fontFamily: 'Open Sans, sans-serif' }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               With over three decades of experience, we deliver unmatched quality and reliability in every product we manufacture.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
               key={index}
               className="text-center group hover:transform hover:-translate-y-2 transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
             >
               {/* Icon Container */}
-              <div 
+              <motion.div 
                 className="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6 group-hover:shadow-lg transition-all duration-300"
                 style={{ backgroundColor: '#facc15' }}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: index * 0.1 + 0.2, type: "spring", stiffness: 200 }}
               >
                 <div className="text-white">
                   {feature.icon}
                 </div>
-              </div>
+              </motion.div>
               
               {/* Content */}
               <h3 
@@ -115,7 +144,7 @@ const WhyChooseUs = () => {
               >
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 

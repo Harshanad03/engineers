@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Products = () => {
   const [activeTab, setActiveTab] = useState('Mash plant');
@@ -61,14 +62,26 @@ const Products = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Enhanced Section Title */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
+        <motion.div 
+          className="text-center mb-8 sm:mb-12 md:mb-16 px-4"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive range of industrial machinery and solutions designed for excellence
           </p>
-        </div>
+        </motion.div>
 
         {/* Enhanced Category Tab Selector */}
-        <div className="flex justify-center mb-8 md:mb-16 px-4">
+        <motion.div 
+          className="flex justify-center mb-8 md:mb-16 px-4"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="bg-[#0a1a3f] rounded-xl shadow-xl p-4 sm:p-5 border border-gray-200/50 w-full max-w-5xl">
             {/* Mobile Layout - 2 per row with centered last item */}
             <div className="grid grid-cols-2 gap-4 sm:hidden">
@@ -162,75 +175,102 @@ const Products = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Featured Product Display */}
         <div className="max-w-6xl mx-auto mb-8 md:mb-16 px-4">
-          {products[activeTab] && (
-            <div className="relative">
-              
-              <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12">
-                {/* Product Image Section */}
-                <div className="relative flex justify-center lg:justify-start">
-                  <div className="relative">
-                    <img 
-                      src={products[activeTab].image} 
-                      alt={products[activeTab].title}
-                      className={`w-full h-auto object-contain transform hover:scale-105 transition-transform duration-700 ${
-                        activeTab === 'Cattle feed unit' ? 'max-w-lg lg:max-w-xl' : 'max-w-md'
-                      }`}
-                      loading="lazy"
-                    />
-                    
-                    {/* Decorative Elements */}
-                    <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-[#0a1a3f] rounded-full opacity-10"></div>
-                  </div>
-                </div>
+          <AnimatePresence mode="wait">
+            {products[activeTab] && (
+              <motion.div 
+                key={activeTab}
+                className="relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
                 
-                {/* Product Content Section */}
-                <div className="flex flex-col justify-center space-y-6 lg:space-y-8">
-                  <div>
-                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 leading-tight">
-                      {products[activeTab].title}
-                    </h3>
-                    <div className="w-16 h-1 bg-[#facc15] rounded-full"></div>
-                  </div>
+                <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12">
+                  {/* Product Image Section */}
+                  <motion.div 
+                    className="relative flex justify-center lg:justify-start"
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                  >
+                    <div className="relative">
+                      <img 
+                        src={products[activeTab].image} 
+                        alt={products[activeTab].title}
+                        className={`w-full h-auto object-contain transform hover:scale-105 transition-transform duration-700 ${
+                          activeTab === 'Cattle feed unit' ? 'max-w-lg lg:max-w-xl' : 'max-w-md'
+                        }`}
+                        loading="lazy"
+                      />
+                      
+                      {/* Decorative Elements */}
+                      <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-[#0a1a3f] rounded-full opacity-10"></div>
+                    </div>
+                  </motion.div>
                   
-                  <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
-                    {products[activeTab].description}
-                  </p>
-                  
-                  {/* Premium Quality Indicator */}
-                  <div className="flex items-center space-x-3">
-                    <div className="w-4 h-4 bg-[#facc15] rounded-full"></div>
-                    <span className="text-[#0a1a3f] font-semibold text-lg">Premium Quality</span>
-                  </div>
-                  
-                  {/* CTA Button */}
-                  <div className="pt-4">
-                    <button 
-                      onClick={() => {
-                        const routeMap = {
-                          'Mash plant': '/poultry-feed-machiners',
-                          'Cattle feed unit': '/cattle-feed-machiners',
-                          'Special purpose machine': '/special-purpose-machiners',
-                          'Conveyors': '/conveyers',
-                          'Service Solutions': '/services-and-spares'
-                        };
-                        navigate(routeMap[activeTab]);
-                      }}
-                      className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-sm flex items-center"
-                    >
-                      View All Products
-                      <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
+                  {/* Product Content Section */}
+                  <motion.div 
+                    className="flex flex-col justify-center space-y-6 lg:space-y-8"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                  >
+                    <div>
+                      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 leading-tight">
+                        {products[activeTab].title}
+                      </h3>
+                      <motion.div 
+                        className="w-16 h-1 bg-[#facc15] rounded-full"
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                      ></motion.div>
+                    </div>
+                    
+                    <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                      {products[activeTab].description}
+                    </p>
+                    
+                    {/* Premium Quality Indicator */}
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-[#facc15] rounded-full"></div>
+                      <span className="text-[#0a1a3f] font-semibold text-lg">Premium Quality</span>
+                    </div>
+                    
+                    {/* CTA Button */}
+                    <div className="pt-4">
+                      <button 
+                        onClick={() => {
+                          const routeMap = {
+                            'Mash plant': '/poultry-feed-machiners',
+                            'Cattle feed unit': '/cattle-feed-machiners',
+                            'Special purpose machine': '/special-purpose-machiners',
+                            'Conveyors': '/conveyers',
+                            'Service Solutions': '/services-and-spares'
+                          };
+                          navigate(routeMap[activeTab]);
+                        }}
+                        className="group bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 hover:shadow-sm flex items-center"
+                      >
+                        View All Products
+                        <svg className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            </div>
-          )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>

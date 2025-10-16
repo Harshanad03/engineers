@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
@@ -189,28 +190,48 @@ const ContactForm = () => {
       <section id="contact" className="py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
             Get In Touch
           </h2>
-          <div 
+          <motion.div 
             className="w-24 h-1 mx-auto mb-6"
             style={{ backgroundColor: '#facc15' }}
-          ></div>
-          <p 
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          ></motion.div>
+          <motion.p 
             className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
             style={{ fontFamily: 'Open Sans, sans-serif' }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             Ready to discuss your industrial machinery needs? Contact us today for expert consultation and competitive quotes.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          >
             <div>
               <h3 
                 className="text-2xl md:text-3xl font-bold mb-6"
@@ -218,30 +239,48 @@ const ContactForm = () => {
               >
                 Contact Information
               </h3>
-              <div 
+              <motion.div 
                 className="w-16 h-1 mb-6"
                 style={{ backgroundColor: '#facc15' }}
-              ></div>
-              <p 
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              ></motion.div>
+              <motion.p 
                 className="text-gray-600 mb-8"
                 style={{ fontFamily: 'Open Sans, sans-serif' }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
                 We're here to help you find the perfect industrial machinery solutions for your business needs.
-              </p>
+              </motion.p>
             </div>
 
             {/* Contact Details */}
             <div className="space-y-6">
               {/* Phone */}
-              <div className="flex items-start space-x-4">
-                <div 
+              <motion.div 
+                className="flex items-start space-x-4"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+              >
+                <motion.div 
                   className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: '#facc15' }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4, delay: 0.6, type: "spring", stiffness: 200 }}
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                </div>
+                </motion.div>
                 <div>
                   <h4 
                     className="font-semibold text-lg mb-1"
@@ -256,18 +295,28 @@ const ContactForm = () => {
                     9842750053
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Email */}
-              <div className="flex items-start space-x-4">
-                <div 
+              <motion.div 
+                className="flex items-start space-x-4"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+              >
+                <motion.div 
                   className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: '#facc15' }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4, delay: 0.7, type: "spring", stiffness: 200 }}
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                </div>
+                </motion.div>
                 <div>
                   <h4 
                     className="font-semibold text-lg mb-1"
@@ -282,19 +331,29 @@ const ContactForm = () => {
                     bharathengineerings@gmail.com
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Address */}
-              <div className="flex items-start space-x-4">
-                <div 
+              <motion.div 
+                className="flex items-start space-x-4"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
+              >
+                <motion.div 
                   className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: '#facc15' }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4, delay: 0.8, type: "spring", stiffness: 200 }}
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                </div>
+                </motion.div>
                 <div>
                   <h4 
                     className="font-semibold text-lg mb-1"
@@ -312,18 +371,28 @@ const ContactForm = () => {
                     Erode 638 153
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Business Hours */}
-              <div className="flex items-start space-x-4">
-                <div 
+              <motion.div 
+                className="flex items-start space-x-4"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+              >
+                <motion.div 
                   className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                   style={{ backgroundColor: '#facc15' }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4, delay: 0.9, type: "spring", stiffness: 200 }}
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                </div>
+                </motion.div>
                 <div>
                   <h4 
                     className="font-semibold text-lg mb-1"
@@ -340,22 +409,32 @@ const ContactForm = () => {
                     Sunday: Closed
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100">
+          <motion.div 
+            className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-gray-100"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          >
             <h3 
               className="text-2xl md:text-3xl font-bold mb-6"
               style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
             >
               Send us a Message
             </h3>
-            <div 
+            <motion.div 
               className="w-16 h-1 mb-6"
               style={{ backgroundColor: '#facc15' }}
-            ></div>
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            ></motion.div>
 
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -515,32 +594,58 @@ const ContactForm = () => {
                 </button>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
 
         {/* Map Section */}
-        <div className="mt-16">
-          <div className="text-center mb-8">
+        <motion.div 
+          className="mt-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+        >
+          <motion.div 
+            className="text-center mb-8"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <h3 
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
               style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
             >
               Find Us Here
             </h3>
-            <div 
+            <motion.div 
               className="w-24 h-1 mx-auto mb-6"
               style={{ backgroundColor: '#facc15' }}
-            ></div>
-            <p 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            ></motion.div>
+            <motion.p 
               className="text-gray-600"
               style={{ fontFamily: 'Open Sans, sans-serif' }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.8 }}
             >
               Visit our manufacturing facility in Erode, Tamil Nadu
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           
           {/* Google Maps Embed */}
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+          <motion.div 
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+          >
             <div className="relative w-full h-96 md:h-[500px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2083.2951772827223!2d77.80714258697354!3d11.249727301216861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba97b7aca0db6a1%3A0x2a1d3f3633a2a19c!2sBharath%20Engineerings!5e0!3m2!1sen!2sin!4v1760081381356!5m2!1sen!2sin"
@@ -554,8 +659,8 @@ const ContactForm = () => {
                 className="w-full h-full"
               ></iframe>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
     </>

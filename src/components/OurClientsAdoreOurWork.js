@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import SwipeableTestimonialCards from './SwipeableTestimonialCards';
 
 const OurClientsAdoreOurWork = () => {
@@ -23,34 +24,48 @@ const OurClientsAdoreOurWork = () => {
             {/* Left Side - Content */}
             <div className="space-y-4 sm:space-y-6">
               {/* Main Heading */}
-              <h1 
+              <motion.h1 
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                 style={{ 
                   color: '#0a1a3f', 
                   fontFamily: 'Poppins, sans-serif',
                   textShadow: '2px 2px 4px rgba(255,255,255,0.8)'
                 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 Our Clients
                 <br />
                 <span style={{ color: '#facc15' }}>Adore Our Work</span>
-              </h1>
+              </motion.h1>
 
               {/* Subtext */}
-              <p 
+              <motion.p 
                 className="text-base sm:text-lg md:text-xl leading-relaxed max-w-lg"
                 style={{ 
                   color: '#374151', 
                   fontFamily: 'Inter, sans-serif',
                   textShadow: '1px 1px 2px rgba(255,255,255,0.8)'
                 }}
+                initial={{ opacity: 0, x: -80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
                 Trusted by industry leaders across India for over 35 years. Our engineering solutions have powered countless successful projects.
-              </p>
+              </motion.p>
 
               {/* Call to Action */}
-               <div className="flex flex-row gap-3 sm:gap-4 w-fit">
-                <a
+               <motion.div 
+                 className="flex flex-row gap-3 sm:gap-4 w-fit"
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: false, amount: 0.3 }}
+                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+               >
+                <motion.a
                   href="#contact"
                   className="group relative px-5 py-3 sm:px-6 sm:py-4 rounded-lg font-semibold text-sm sm:text-base text-white text-center overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu whitespace-nowrap"
                   style={{
@@ -58,6 +73,10 @@ const OurClientsAdoreOurWork = () => {
                     fontFamily: 'Inter, sans-serif',
                     boxShadow: '0 8px 25px rgba(10, 26, 63, 0.4)'
                   }}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 >
                   {/* Animated background overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
@@ -77,9 +96,9 @@ const OurClientsAdoreOurWork = () => {
                   
                   {/* Ripple effect */}
                   <div className="absolute inset-0 rounded-lg opacity-0 group-active:opacity-20 bg-white transition-opacity duration-150"></div>
-                </a>
+                </motion.a>
                 
-                <a
+                <motion.a
                   href="tel:+919876543210"
                   className="group relative px-5 py-3 sm:px-6 sm:py-4 rounded-lg font-semibold text-sm sm:text-base text-center overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl transform-gpu whitespace-nowrap"
                   style={{
@@ -88,6 +107,10 @@ const OurClientsAdoreOurWork = () => {
                     fontFamily: 'Inter, sans-serif',
                     boxShadow: '0 8px 25px rgba(250, 204, 21, 0.4)'
                   }}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                 >
                   {/* Animated background overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
@@ -107,14 +130,20 @@ const OurClientsAdoreOurWork = () => {
                   
                   {/* Ripple effect */}
                   <div className="absolute inset-0 rounded-lg opacity-0 group-active:opacity-20 bg-white transition-opacity duration-150"></div>
-                </a>
-              </div>
+                </motion.a>
+              </motion.div>
             </div>
 
             {/* Right Side - Swipeable Testimonial Cards */}
-            <div className="relative">
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            >
               <SwipeableTestimonialCards />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

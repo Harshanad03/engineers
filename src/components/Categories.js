@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -91,18 +92,28 @@ const Categories = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
          {/* Section Title */}
-         <div className="text-center mb-8 sm:mb-10 md:mb-12">
+         <motion.div 
+           className="text-center mb-8 sm:mb-10 md:mb-12"
+           initial={{ opacity: 0, y: -50 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: false, amount: 0.3 }}
+           transition={{ duration: 0.6, ease: "easeOut" }}
+         >
            <h2 
              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
              style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
            >
              Discover Our Signature Offerings
            </h2>
-           <div 
+           <motion.div 
              className="w-24 h-1 mx-auto mb-6"
              style={{ backgroundColor: '#facc15' }}
-           ></div>
-         </div>
+             initial={{ scaleX: 0 }}
+             whileInView={{ scaleX: 1 }}
+             viewport={{ once: false }}
+             transition={{ duration: 0.6, delay: 0.2 }}
+           ></motion.div>
+         </motion.div>
 
         {/* Categories Grid */}
         <div className="max-w-4xl mx-auto lg:max-w-6xl">
@@ -111,10 +122,14 @@ const Categories = () => {
              {/* First Row */}
              <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-4">
                {categories.slice(0, 3).map((category, index) => (
-                 <div 
+                 <motion.div 
                    key={index} 
                    className="flex flex-col items-center text-center group cursor-pointer p-2 sm:p-4"
                    onClick={() => handleCategoryClick(category.route)}
+                   initial={{ opacity: 0, y: 50 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   viewport={{ once: false, amount: 0.3 }}
+                   transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                  >
                    {/* Main Icon Circle */}
                    <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center border-4 border-[#0a1a3f] group-hover:border-[#facc15] transition-all duration-300 shadow-lg hover-bounce transform-gpu mb-2 sm:mb-3 md:mb-4">
@@ -131,17 +146,21 @@ const Categories = () => {
                    <h3 className="text-xs sm:text-sm md:text-base font-medium text-[#0a1a3f] leading-tight px-1">
                      {category.title}
                    </h3>
-                 </div>
+                 </motion.div>
                ))}
              </div>
             
             {/* Second Row - Centered */}
             <div className="flex justify-center gap-4 sm:gap-6 md:gap-8">
               {categories.slice(3, 5).map((category, index) => (
-                <div 
+                <motion.div 
                   key={index + 3} 
                   className="flex flex-col items-center text-center group cursor-pointer p-2 sm:p-4"
                   onClick={() => handleCategoryClick(category.route)}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: (index + 3) * 0.1, ease: "easeOut" }}
                 >
                   {/* Main Icon Circle */}
                   <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center border-4 border-[#0a1a3f] group-hover:border-[#facc15] transition-all duration-300 shadow-lg hover-bounce transform-gpu mb-2 sm:mb-3 md:mb-4">
@@ -158,7 +177,7 @@ const Categories = () => {
                   <h3 className="text-xs sm:text-sm md:text-base font-medium text-[#0a1a3f] leading-tight px-1">
                     {category.title}
                   </h3>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -166,10 +185,14 @@ const Categories = () => {
           {/* Desktop Layout - Single Line */}
           <div className="hidden lg:flex lg:justify-center lg:gap-8">
             {categories.map((category, index) => (
-              <div 
+              <motion.div 
                 key={index} 
                 className="flex flex-col items-center text-center group cursor-pointer p-4"
                 onClick={() => handleCategoryClick(category.route)}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
               >
                 {/* Main Icon Circle */}
                 <div className="relative w-36 h-36 bg-white rounded-full flex items-center justify-center border-4 border-[#0a1a3f] group-hover:border-[#facc15] transition-all duration-300 shadow-lg hover-bounce transform-gpu mb-4">
@@ -186,7 +209,7 @@ const Categories = () => {
                 <h3 className="text-base font-medium text-[#0a1a3f] leading-tight px-1">
                   {category.title}
                 </h3>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
