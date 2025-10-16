@@ -45,7 +45,7 @@ const Features = () => {
     <section className="relative">
       {/* Floating Features Box */}
       <div className="relative -mt-20 z-20">
-        <div className="bg-white rounded-2xl shadow-lg py-10 px-8 mx-auto w-4/5">
+        <div className="bg-white rounded-2xl shadow-lg py-10 px-4 sm:px-6 md:px-8 mx-auto w-11/12 sm:w-4/5 max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {features.map((feature, index) => (
               <div 

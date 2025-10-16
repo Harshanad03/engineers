@@ -45,7 +45,7 @@ const Categories = () => {
   return (
     <section 
       id="categories"
-      className="py-6 sm:py-8 md:py-10 relative overflow-hidden bg-gray-50"
+      className="py-6 sm:py-8 md:py-10 relative overflow-hidden bg-gray-50 w-full"
     >
       {/* Clean Minimal Background */}
       <div className="absolute inset-0 overflow-hidden">

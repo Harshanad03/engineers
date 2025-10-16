@@ -149,12 +149,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out w-full ${
       isScrolled || isProductPage()
         ? 'bg-[#0a1a3f] shadow-lg backdrop-blur-md' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-16 w-full">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center space-x-3">

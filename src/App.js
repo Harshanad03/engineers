@@ -68,9 +68,9 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App w-full overflow-x-hidden">
         <Navbar />
-        <main>
+        <main className="w-full">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/cattle-feed-machiners" element={<CattleFeedMachiners />} />

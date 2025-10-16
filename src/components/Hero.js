@@ -34,17 +34,36 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/herobg.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
       {/* Background Video */}
       <video
         key={currentVideo}
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-center min-w-full min-h-full"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center center'
+        }}
         autoPlay
         loop
         muted
         playsInline
         preload="metadata"
+        onError={(e) => {
+          console.log('Video failed to load, using background image');
+          e.target.style.display = 'none';
+        }}
       >
         <source src={videos[currentVideo]} type="video/mp4" />
         Your browser does not support the video tag.
