@@ -34,12 +34,6 @@ const Hero = () => {
     <section 
       id="home"
       className="relative h-screen w-full flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/herobg.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
-        backgroundRepeat: 'no-repeat'
-      }}
     >
       {/* Background Video */}
       <video
