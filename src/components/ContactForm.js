@@ -641,17 +641,64 @@ const ContactForm = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
           >
-            <div className="relative w-full h-96 md:h-[500px]">
+            <div className="map-container relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+              {/* Loading placeholder */}
+              <div className="absolute inset-0 bg-gray-100 flex items-center justify-center z-10" id="map-loading">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0a1a3f] mx-auto mb-4"></div>
+                  <p className="text-gray-600 font-medium">Loading map...</p>
+                </div>
+              </div>
+              
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2083.2951772827223!2d77.80714258697354!3d11.249727301216861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba97b7aca0db6a1%3A0x2a1d3f3633a2a19c!2sBharath%20Engineerings!5e0!3m2!1sen!2sin!4v1760081381356!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ 
+                  border: 0,
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  minHeight: '400px'
+                }}
                 allowFullScreen=""
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Bharath Engineerings Location - Erode, Tamil Nadu"
-                className="w-full h-full"
+                className="absolute inset-0 w-full h-full z-20"
+                frameBorder="0"
+                onLoad={() => {
+                  const loadingElement = document.getElementById('map-loading');
+                  if (loadingElement) {
+                    loadingElement.style.display = 'none';
+                  }
+                }}
+                onError={() => {
+                  const loadingElement = document.getElementById('map-loading');
+                  if (loadingElement) {
+                    loadingElement.innerHTML = `
+                      <div class="text-center p-8">
+                        <div class="text-red-500 mb-4">
+                          <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 19.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                          </svg>
+                        </div>
+                        <p class="text-gray-600 font-medium mb-2">Map failed to load</p>
+                        <p class="text-sm text-gray-500 mb-4">Please check your internet connection</p>
+                        <div class="space-y-2">
+                          <button onclick="window.location.reload()" class="block w-full px-4 py-2 bg-[#0a1a3f] text-white rounded-lg hover:bg-opacity-80 transition-colors">
+                            Retry
+                          </button>
+                          <a href="https://maps.google.com/maps?q=151+Karur+Main+road+Chinnammapuram+Ganapathipayam+Erode+638+153" target="_blank" rel="noopener noreferrer" class="block w-full px-4 py-2 bg-[#facc15] text-[#0a1a3f] rounded-lg hover:bg-opacity-80 transition-colors font-medium">
+                            Open in Google Maps
+                          </a>
+                        </div>
+                      </div>
+                    `;
+                  }
+                }}
               ></iframe>
             </div>
           </motion.div>

@@ -63,17 +63,22 @@ const Loader = ({ onLoadingComplete }) => {
              className="relative mb-4 sm:mb-6 md:mb-8"
            >
              {/* Rotating ring around logo */}
-             <motion.div
-               animate={{ rotate: 360 }}
-               transition={{
-                 duration: 3,
-                 repeat: Infinity,
-                 ease: "linear",
-               }}
-               className="absolute inset-0 -m-4"
-             >
-               <div className="w-full h-full border-4 border-transparent border-t-blue-500 border-r-blue-500 rounded-full" />
-             </motion.div>
+             <div className="absolute inset-0 -m-4 flex items-center justify-center">
+               <motion.div
+                 animate={{ rotate: 360 }}
+                 transition={{
+                   duration: 3,
+                   repeat: Infinity,
+                   ease: "linear",
+                 }}
+                 className="loader-rotating-ring loader-smooth-rotate w-full h-full"
+                 style={{
+                   transformOrigin: 'center center'
+                 }}
+               >
+                 <div className="w-full h-full border-4 border-transparent border-t-blue-500 border-r-blue-500 rounded-full" />
+               </motion.div>
+             </div>
 
              {/* Pulsing glow effect */}
              <motion.div
@@ -116,7 +121,7 @@ const Loader = ({ onLoadingComplete }) => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-center mb-4 sm:mb-6 md:mb-8 px-4"
           >
-            <div className="flex items-center justify-center space-x-1 sm:space-x-2 mb-2 flex-wrap">
+            <div className="loader-company-name flex items-center justify-center space-x-1 sm:space-x-2 mb-2 flex-nowrap overflow-hidden">
               {'BHARATH ENGINEERINGS'.split('').map((letter, index) => (
                 <motion.span
                   key={index}
@@ -126,7 +131,7 @@ const Loader = ({ onLoadingComplete }) => {
                     delay: 0.8 + index * 0.05,
                     duration: 0.5,
                   }}
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-blue-900 tracking-wider"
+                  className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-blue-900 tracking-wider whitespace-nowrap"
                   style={{
                     textShadow: '0 0 20px rgba(30, 58, 138, 0.3)',
                   }}
