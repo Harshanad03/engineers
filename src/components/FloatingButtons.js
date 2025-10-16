@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line no-unused-vars
-import { Phone, X, Mail } from 'lucide-react';
 
 const FloatingButtons = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -62,7 +60,9 @@ const FloatingButtons = () => {
           className="w-10 h-10 bg-blue-400 hover:bg-blue-500 rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
           title="Call Us"
         >
-          <Phone className="w-4 h-4 text-white" />
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.69l1.5 4.49a1 1 0 01-.5 1.21l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.49 1.5a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z" />
+          </svg>
         </button>
       </div>
 
@@ -79,7 +79,9 @@ const FloatingButtons = () => {
           className="w-10 h-10 bg-red-500 hover:bg-red-600 rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center group"
           title="Email Us"
         >
-          <Mail className="w-4 h-4 text-white" />
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
         </button>
       </div>
 
@@ -89,9 +91,13 @@ const FloatingButtons = () => {
         className="w-16 h-16 bg-[#0a1a3f] hover:bg-[#1e3a8a] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
       >
         {isExpanded ? (
-          <X className="w-6 h-6 text-white" />
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         ) : (
-          <Phone className="w-6 h-6 text-white" />
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.69l1.5 4.49a1 1 0 01-.5 1.21l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.49 1.5a1 1 0 01.69.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z" />
+          </svg>
         )}
       </button>
     </div>
