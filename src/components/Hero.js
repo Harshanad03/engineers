@@ -61,7 +61,6 @@ const Hero = () => {
         playsInline
         preload="metadata"
         onError={(e) => {
-          console.log('Video failed to load, using background image');
           e.target.style.display = 'none';
         }}
       >

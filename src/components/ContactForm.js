@@ -31,12 +31,7 @@ const ContactForm = () => {
       const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-      // Debug: Log configuration (remove in production)
-      console.log('EmailJS Config:', {
-        serviceID,
-        templateID,
-        publicKey: publicKey ? `${publicKey.substring(0, 5)}...` : 'undefined'
-      });
+      // EmailJS configuration validation
 
       // Check if all required variables are present
       if (!serviceID || !templateID || !publicKey) {
@@ -52,7 +47,7 @@ const ContactForm = () => {
         to_email: 'bharathengineerings@gmail.com'
       };
 
-      console.log('Sending email with params:', templateParams);
+      // Sending email with template parameters
 
       // Send email using EmailJS
       const result = await emailjs.send(
@@ -62,7 +57,7 @@ const ContactForm = () => {
         publicKey
       );
 
-      console.log('Email sent successfully:', result);
+      // Email sent successfully
 
       // Success
       setIsSubmitting(false);
@@ -80,7 +75,7 @@ const ContactForm = () => {
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
-      console.error('Failed to send email:', error);
+      // Failed to send email - handle error silently
       setIsSubmitting(false);
       setSubmitStatus('error');
       

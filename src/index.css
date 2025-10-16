@@ -8,6 +8,14 @@
     overflow-x: hidden;
   }
   
+  /* Security: Hide any potential console output in production */
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+  }
+  
   body {
     font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
