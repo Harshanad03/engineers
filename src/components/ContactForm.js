@@ -50,7 +50,7 @@ const ContactForm = () => {
       // Sending email with template parameters
 
       // Send email using EmailJS
-      const result = await emailjs.send(
+      await emailjs.send(
         serviceID,
         templateID,
         templateParams,

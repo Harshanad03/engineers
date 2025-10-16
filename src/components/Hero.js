@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import GradientText from './GradientText';
 
 const Hero = () => {
   const [currentVideo, setCurrentVideo] = useState(0);
