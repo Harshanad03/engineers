@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const CattleFeedMachiners = () => {
   const navigate = useNavigate();
@@ -232,26 +233,57 @@ const CattleFeedMachiners = () => {
       
       <div className="max-w-7xl mx-auto relative z-10 pt-16">
         {/* Enhanced Section Title */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4">
+        <motion.div 
+          className="text-center mb-8 sm:mb-12 md:mb-16 px-4"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
             style={{ color: '#0a1a3f', fontFamily: 'Poppins, sans-serif' }}
           >
             Cattle Feed Unit
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
+          <motion.p 
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl sm:max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Comprehensive range of cattle feed processing machinery designed for efficient, high-quality feed production
-          </p>
-          <div className="w-16 sm:w-20 md:w-24 h-1 bg-[#0a1a3f] mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"></div>
-        </div>
+          </motion.p>
+          <motion.div 
+            className="w-16 sm:w-20 md:w-24 h-1 bg-[#0a1a3f] mx-auto mt-4 sm:mt-5 md:mt-6 rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          ></motion.div>
+        </motion.div>
 
         {/* All Products Display */}
         <div className="max-w-6xl mx-auto px-4 space-y-16 md:space-y-20">
           {subcategories.map((subcategory, categoryIndex) => (
-            <div key={subcategory.id} className="relative">
+            <motion.div 
+              key={subcategory.id} 
+              className="relative"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.2, ease: "easeOut" }}
+            >
               <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 lg:py-12 ${categoryIndex % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
                 {/* Product Image Section */}
-                <div className={`relative flex justify-center lg:justify-start ${categoryIndex % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <motion.div 
+                  className={`relative flex justify-center lg:justify-start ${categoryIndex % 2 === 1 ? 'lg:col-start-2' : ''}`}
+                  initial={{ opacity: 0, x: categoryIndex % 2 === 1 ? 50 : -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: categoryIndex * 0.2 + 0.2, ease: "easeOut" }}
+                >
                   <div className="relative">
                     <img 
                       src={subcategory.image} 
@@ -265,15 +297,27 @@ const CattleFeedMachiners = () => {
                     <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-[#0a1a3f] rounded-full opacity-10"></div>
                     <div className="absolute top-1/2 -right-8 w-6 h-6 bg-[#facc15] rounded-full opacity-30"></div>
                   </div>
-                </div>
+                </motion.div>
                 
                 {/* Product Content Section */}
-                <div className={`flex flex-col justify-center space-y-6 lg:space-y-8 ${categoryIndex % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <motion.div 
+                  className={`flex flex-col justify-center space-y-6 lg:space-y-8 ${categoryIndex % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}
+                  initial={{ opacity: 0, x: categoryIndex % 2 === 1 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: categoryIndex * 0.2 + 0.3, ease: "easeOut" }}
+                >
                   <div>
                     <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a1a3f] mb-4 leading-tight">
                       {subcategory.name}
                     </h3>
-                    <div className="w-16 h-1 bg-[#facc15] rounded-full"></div>
+                    <motion.div 
+                      className="w-16 h-1 bg-[#facc15] rounded-full"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.6, delay: categoryIndex * 0.2 + 0.4 }}
+                    ></motion.div>
                   </div>
                   
                   <div className="text-gray-700 text-lg sm:text-xl leading-relaxed space-y-4">
@@ -322,7 +366,7 @@ const CattleFeedMachiners = () => {
                       </svg>
                     </button>
                   </div>
-                </div>
+                </motion.div>
               </div>
               
               {/* Divider between sections (except last one) */}
@@ -331,12 +375,18 @@ const CattleFeedMachiners = () => {
                   <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Back to Home Button */}
-        <div className="mt-12 mb-8 text-center">
+        <motion.div 
+          className="mt-12 mb-8 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+        >
           <button 
             onClick={() => navigate('/')}
             className="bg-[#0a1a3f] text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-[#0a1a3f] hover:border-[#0a1a3f] border-2 transition-all duration-300 hover:scale-105 flex items-center mx-auto"
@@ -346,7 +396,7 @@ const CattleFeedMachiners = () => {
             </svg>
             Back to Home
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

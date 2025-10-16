@@ -8,6 +8,16 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Check if we're on a product page
+  const isProductPage = () => {
+    return location.pathname.includes('cattle-feed-machiners') || 
+           location.pathname.includes('poultry-feed-machiners') || 
+           location.pathname.includes('conveyers') || 
+           location.pathname.includes('special-purpose-machiners') || 
+           location.pathname.includes('automation') || 
+           location.pathname.includes('services-and-spares');
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -140,7 +150,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-      isScrolled 
+      isScrolled || isProductPage()
         ? 'bg-[#0a1a3f] shadow-lg backdrop-blur-md' 
         : 'bg-transparent'
     }`}>
@@ -227,7 +237,7 @@ const Navbar = () => {
               : 'max-h-0 opacity-0 transform -translate-y-4'
           }`}
         >
-          <div className={`${isScrolled ? 'bg-[#0a1a3f]' : 'bg-[#0a1a3f]/95 backdrop-blur-md'} border-t border-gray-700 py-4`}>
+          <div className={`${isScrolled || isProductPage() ? 'bg-[#0a1a3f]' : 'bg-[#0a1a3f]/95 backdrop-blur-md'} border-t border-gray-700 py-4`}>
             <div className="flex flex-col space-y-4 px-4">
               {navLinks.map((link) => (
                 <button

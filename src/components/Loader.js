@@ -117,7 +117,7 @@ const Loader = ({ onLoadingComplete }) => {
             className="text-center mb-4 sm:mb-6 md:mb-8 px-4"
           >
             <div className="flex items-center justify-center space-x-1 sm:space-x-2 mb-2 flex-wrap">
-              {'BHARATH ENGINEERS'.split('').map((letter, index) => (
+              {'BHARATH ENGINEERINGS'.split('').map((letter, index) => (
                 <motion.span
                   key={index}
                   initial={{ opacity: 0, y: 50 }}

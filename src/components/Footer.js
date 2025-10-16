@@ -90,9 +90,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 Bharath Engineerings. All rights reserved. | 
-            <a href="/privacy-policy" className="hover:text-bharath-yellow transition-colors duration-200 ml-1">Privacy Policy</a> | 
-            <a href="/terms-of-service" className="hover:text-bharath-yellow transition-colors duration-200 ml-1">Terms of Service</a>
+            © 2025 Bharath Engineerings. All rights reserved.
           </p>
           <p className="text-gray-400 mt-2">
             Designed and developed by{' '}
