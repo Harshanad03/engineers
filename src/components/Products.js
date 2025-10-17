@@ -205,7 +205,7 @@ const Products = () => {
                         src={products[activeTab].image} 
                         alt={products[activeTab].title}
                         className={`w-full h-auto object-contain transform hover:scale-105 transition-transform duration-700 ${
-                          activeTab === 'Cattle feed unit' ? 'max-w-lg lg:max-w-xl' : 'max-w-md'
+                          activeTab === 'Mash plant' ? 'max-w-2xl lg:max-w-7xl' : 'max-w-lg lg:max-w-xl'
                         }`}
                         loading="lazy"
                       />
