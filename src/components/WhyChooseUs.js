@@ -109,13 +109,9 @@ const WhyChooseUs = () => {
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <motion.div 
+            <div 
               key={index}
               className="text-center group hover:transform hover:-translate-y-2 transition-all duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
             >
               {/* Icon Container */}
               <div 
@@ -140,7 +136,7 @@ const WhyChooseUs = () => {
               >
                 {feature.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
