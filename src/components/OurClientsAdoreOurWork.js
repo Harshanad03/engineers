@@ -31,8 +31,8 @@ const OurClientsAdoreOurWork = () => {
                   fontFamily: 'Poppins, sans-serif',
                   textShadow: '2px 2px 4px rgba(255,255,255,0.8)'
                 }}
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
@@ -49,8 +49,8 @@ const OurClientsAdoreOurWork = () => {
                   fontFamily: 'Inter, sans-serif',
                   textShadow: '1px 1px 2px rgba(255,255,255,0.8)'
                 }}
-                initial={{ opacity: 0, x: -80 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
@@ -73,8 +73,8 @@ const OurClientsAdoreOurWork = () => {
                     fontFamily: 'Inter, sans-serif',
                     boxShadow: '0 8px 25px rgba(10, 26, 63, 0.4)'
                   }}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 >
@@ -107,8 +107,8 @@ const OurClientsAdoreOurWork = () => {
                     fontFamily: 'Inter, sans-serif',
                     boxShadow: '0 8px 25px rgba(250, 204, 21, 0.4)'
                   }}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: false }}
                   transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
                 >
@@ -137,8 +137,8 @@ const OurClientsAdoreOurWork = () => {
             {/* Right Side - Swipeable Testimonial Cards */}
             <motion.div 
               className="relative"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >

@@ -1,12 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const Stats = () => {
-  // Static values - no animations
-  const counts = { projects: 500, clients: 200, years: 35 };
+  const [counts, setCounts] = useState({ projects: 0, clients: 0, years: 0 });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
+
+  useEffect(() => {
+    if (isInView) {
+      // Reset counts to 0 when coming into view
+      setCounts({ projects: 0, clients: 0, years: 0 });
+      
+      const targetCounts = { projects: 500, clients: 200, years: 35 };
+      const duration = 2000; // 2 seconds
+      const steps = 60;
+      const interval = duration / steps;
+
+      let currentStep = 0;
+
+      const timer = setInterval(() => {
+        currentStep++;
+        const progress = currentStep / steps;
+
+        setCounts({
+          projects: Math.floor(targetCounts.projects * progress),
+          clients: Math.floor(targetCounts.clients * progress),
+          years: Math.floor(targetCounts.years * progress),
+        });
+
+        if (currentStep >= steps) {
+          setCounts(targetCounts);
+          clearInterval(timer);
+        }
+      }, interval);
+
+      return () => clearInterval(timer);
+    }
+  }, [isInView]);
 
   return (
     <section 
       id="stats"
+      ref={ref}
       className="py-16 px-4 md:px-8 lg:px-16 relative overflow-hidden"
       style={{
         background: '#ffffff',
@@ -17,11 +52,14 @@ const Stats = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             
             {/* Projects Card */}
-            <div 
+            <motion.div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -57,14 +95,17 @@ const Stats = () => {
                   Successfully Delivered
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Clients Card */}
-            <div 
+            <motion.div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -100,14 +141,17 @@ const Stats = () => {
                   Trusted Partners
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Years Experience Card */}
-            <div 
+            <motion.div 
               className="bg-gradient-to-br from-[#0a1a3f] to-[#1a2a4f] rounded-3xl px-6 py-8 md:px-8 md:py-12 relative overflow-hidden border border-white/10 transform transition-all duration-500 hover:scale-105 group"
               style={{
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
               }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -143,7 +187,7 @@ const Stats = () => {
                   Industry Excellence
                 </p>
               </div>
-            </div>
+            </motion.div>
         </div>
       </div>
     </section>
